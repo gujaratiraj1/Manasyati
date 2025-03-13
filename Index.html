@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manasyati Engineering Services</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#1a3c6e',
+secondary: '#465b6e'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.nav-link:hover { color: #1a3c6e; }
+.service-card:hover { transform: translateY(-5px); }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+</style>
+</head>
+<body class="bg-white font-['Open_Sans']">
+<header class="fixed w-full bg-white shadow-sm z-50">
+<div class="container mx-auto px-4">
+<div class="h-10 flex items-center justify-end space-x-6 text-sm text-gray-600 border-b">
+<a href="tel:+917306885392" class="flex items-center space-x-2">
+<i class="ri-phone-line"></i>
+<span>+91 730 688 5392</span>
+</a>
+<a href="mailto:ramana@manasyati.com" class="flex items-center space-x-2">
+<i class="ri-mail-line"></i>
+<span>ramana@manasyati.com</span>
+</a>
+</div>
+<nav class="flex items-center justify-between h-20">
+<a href="Index.html" class="h-12">
+<img src="Index_files/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
+</a>
+<div class="flex items-center space-x-8">
+<a href="/" class="nav-link" onclick="event.preventDefault(); if(window.location.pathname === '/') { window.scrollTo({ top: 0, behavior: 'smooth' }); } else { window.location.href = 'Index.html'; }">Home</a>
+<a href="About Manasyati Engineering.html" data-readdy="true" class="nav-link">About Us</a>
+<a href="Service Details - Manasyati Engineering.html" data-readdy="true" class="nav-link">Services</a>
+<a href="#" class="nav-link">Projects</a>
+<a href="#" class="nav-link">Industries</a>
+<a href="#" class="nav-link">Contact</a>
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 whitespace-nowrap">Get Quote</button>
+</div>
+</nav>
+</div>
+</header>
+<main class="pt-30">
+<section class="relative h-[600px] flex items-center" style="background-image: url('Index_files/df88c3049a6787841e6587541dd0df1f.jpg'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-primary bg-opacity-70"></div>
+<div class="container mx-auto px-4 relative z-10">
+<div class="grid grid-cols-2 gap-12 items-center">
+<div class="text-white">
+<h1 class="text-5xl font-bold font-['Roboto'] leading-tight mb-6">
+Engineering Excellence for Tomorrow's Infrastructure
+</h1>
+<p class="text-xl mb-8 opacity-90">
+Leading MEP design services in Hyderabad, delivering innovative solutions for modern construction challenges
+</p>
+<button onclick="openConsultationModal()" class="bg-white text-primary px-8 py-3 !rounded-button text-lg font-semibold hover:bg-opacity-90 whitespace-nowrap">
+Schedule Consultation
+</button>
+<div id="consultationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+<div class="bg-white !rounded-lg p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold text-gray-900">Schedule a Consultation</h3>
+<button onclick="closeConsultationModal()" class="text-gray-500 hover:text-gray-700">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<form id="consultationForm" class="space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+<input type="text" required class="w-full px-4 py-2 border !rounded-button" id="consultName">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+<input type="email" required class="w-full px-4 py-2 border !rounded-button" id="consultEmail">
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+<input type="tel" required pattern="[0-9]{10}" class="w-full px-4 py-2 border !rounded-button" id="consultPhone">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Service Category</label>
+<select required class="w-full px-4 py-2 border !rounded-button" id="consultService">
+<option value="">Select Service</option>
+<option value="phe">Public Health Engineering</option>
+<option value="firefighting">Firefighting Systems</option>
+<option value="safety">Life Safety & Security</option>
+<option value="electrical">Electrical Engineering</option>
+<option value="communication">Communication Systems</option>
+<option value="hvac">HVAC & IBMS</option>
+<option value="allied">Allied Services</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
+<input type="date" required class="w-full px-4 py-2 border !rounded-button" id="consultDate" min="">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Preferred Time Slot</label>
+<div class="grid grid-cols-4 gap-3" id="timeSlots">
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Project Description</label>
+<textarea required class="w-full px-4 py-2 border !rounded-button h-32 resize-none" id="consultDescription" placeholder="Please briefly describe your project requirements"></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap flex items-center justify-center">
+<span>Submit Request</span>
+<div class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+</button>
+</form>
+</div>
+</div>
+<script>
+function openConsultationModal() {
+const modal = document.getElementById('consultationModal');
+modal.classList.remove('hidden');
+modal.classList.add('flex');
+// Set minimum date to today
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('consultDate').min = today;
+// Generate time slots
+generateTimeSlots();
+}
+function closeConsultationModal() {
+const modal = document.getElementById('consultationModal');
+modal.classList.add('hidden');
+modal.classList.remove('flex');
+}
+function generateTimeSlots() {
+const timeSlotsContainer = document.getElementById('timeSlots');
+timeSlotsContainer.innerHTML = '';
+const timeSlots = [
+'09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM',
+'02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM'
+];
+timeSlots.forEach(time => {
+const slot = document.createElement('button');
+slot.type = 'button';
+slot.className = 'px-4 py-2 border !rounded-button text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors';
+slot.textContent = time;
+slot.onclick = function() {
+document.querySelectorAll('#timeSlots button').forEach(btn => {
+btn.classList.remove('bg-primary', 'text-white');
+btn.classList.add('text-gray-700');
+});
+this.classList.remove('text-gray-700');
+this.classList.add('bg-primary', 'text-white');
+};
+timeSlotsContainer.appendChild(slot);
+});
+}
+document.getElementById('consultationForm').addEventListener('submit', async function(e) {
+e.preventDefault();
+const submitBtn = this.querySelector('button[type="submit"]');
+const btnText = submitBtn.querySelector('span');
+const spinner = submitBtn.querySelector('div');
+// Show loading state
+btnText.textContent = 'Submitting...';
+spinner.classList.remove('hidden');
+submitBtn.disabled = true;
+try {
+// Simulate API call
+await new Promise(resolve => setTimeout(resolve, 2000));
+// Show success message
+closeConsultationModal();
+const successDialog = document.createElement('div');
+successDialog.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+successDialog.innerHTML = `
+<div class="bg-white !rounded-lg p-8 max-w-md w-full mx-4">
+<div class="text-center">
+<div class="w-16 h-16 bg-green-100 !rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-check-line text-3xl text-green-500"></i>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Consultation Scheduled!</h3>
+<p class="text-gray-600 mb-6">Your consultation request has been successfully submitted. We will confirm your appointment shortly via email.</p>
+<button onclick="this.closest('.fixed').remove()" class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90">Close</button>
+</div>
+</div>
+`;
+document.body.appendChild(successDialog);
+// Reset form
+e.target.reset();
+} catch (error) {
+console.error('Submission failed:', error);
+} finally {
+// Reset button state
+btnText.textContent = 'Submit Request';
+spinner.classList.add('hidden');
+submitBtn.disabled = false;
+}
+});
+</script>
+</div>
+<div class="bg-white p-6 !rounded-lg shadow-xl">
+<h3 class="text-2xl font-['Roboto'] text-primary mb-4">Request a Quote</h3>
+<form id="quoteForm" class="space-y-4">
+<div>
+<input type="text" id="fullName" name="fullName" required placeholder="Full Name" class="w-full px-4 py-2 border !rounded-button">
+<span class="text-red-500 text-sm hidden"></span>
+</div>
+<div>
+<input type="email" id="email" name="email" required placeholder="Email Address" class="w-full px-4 py-2 border !rounded-button">
+<span class="text-red-500 text-sm hidden"></span>
+</div>
+<div>
+<input type="tel" id="phone" name="phone" required placeholder="Phone Number" pattern="[0-9]{10}" class="w-full px-4 py-2 border !rounded-button">
+<span class="text-red-500 text-sm hidden"></span>
+</div>
+<div>
+<select id="service" name="service" required class="w-full px-4 py-2 border !rounded-button">
+<option value="">Select Service</option>
+<option value="phe">Public Health Engineering</option>
+<option value="firefighting">Firefighting Systems</option>
+<option value="safety">Life Safety & Security</option>
+<option value="electrical">Electrical Engineering</option>
+<option value="communication">Communication Systems</option>
+<option value="hvac">HVAC & IBMS</option>
+<option value="allied">Allied Services</option>
+</select>
+<span class="text-red-500 text-sm hidden"></span>
+</div>
+<button type="submit" id="submitBtn" class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap flex items-center justify-center">
+<span>Submit Request</span>
+<div class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+</button>
+</form>
+<div id="successDialog" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+<div class="bg-white !rounded-lg p-8 max-w-md w-full mx-4">
+<div class="text-center">
+<div class="w-16 h-16 bg-green-100 !rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-check-line text-3xl text-green-500"></i>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
+<p class="text-gray-600 mb-4">Your request has been successfully submitted. Our team will review and respond within 24 hours.</p>
+<p class="text-gray-800 font-semibold mb-6">Confirmation Number: <span id="confirmationNumber"></span></p>
+<button onclick="closeSuccessDialog()" class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90">Close</button>
+</div>
+</div>
+</div>
+<script>
+document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+e.preventDefault();
+// Reset previous error messages
+document.querySelectorAll('.text-red-500').forEach(span => span.classList.add('hidden'));
+// Validate form
+let isValid = true;
+const fields = ['fullName', 'email', 'phone', 'service'];
+fields.forEach(field => {
+const input = document.getElementById(field);
+const errorSpan = input.nextElementSibling;
+if (!input.value) {
+isValid = false;
+errorSpan.textContent = 'This field is required';
+errorSpan.classList.remove('hidden');
+} else if (field === 'email' && !isValidEmail(input.value)) {
+isValid = false;
+errorSpan.textContent = 'Please enter a valid email address';
+errorSpan.classList.remove('hidden');
+} else if (field === 'phone' && !isValidPhone(input.value)) {
+isValid = false;
+errorSpan.textContent = 'Please enter a valid 10-digit phone number';
+errorSpan.classList.remove('hidden');
+}
+});
+if (!isValid) return;
+// Show loading state
+const submitBtn = document.getElementById('submitBtn');
+const btnText = submitBtn.querySelector('span');
+const spinner = submitBtn.querySelector('div');
+btnText.textContent = 'Submitting...';
+spinner.classList.remove('hidden');
+submitBtn.disabled = true;
+try {
+// Simulate API call
+await new Promise(resolve => setTimeout(resolve, 2000));
+// Generate confirmation number
+const confirmationNumber = 'MES' + Date.now().toString().slice(-6);
+document.getElementById('confirmationNumber').textContent = confirmationNumber;
+// Show success dialog
+document.getElementById('successDialog').classList.remove('hidden');
+document.getElementById('successDialog').classList.add('flex');
+// Reset form
+e.target.reset();
+} catch (error) {
+console.error('Submission failed:', error);
+} finally {
+// Reset button state
+btnText.textContent = 'Submit Request';
+spinner.classList.add('hidden');
+submitBtn.disabled = false;
+}
+});
+function closeSuccessDialog() {
+document.getElementById('successDialog').classList.add('hidden');
+document.getElementById('successDialog').classList.remove('flex');
+}
+function isValidEmail(email) {
+return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+function isValidPhone(phone) {
+return /^[0-9]{10}$/.test(phone);
+}
+</script>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">Our Services</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">
+Comprehensive MEP design solutions tailored to meet the diverse needs of modern construction projects
+</p>
+</div>
+<div class="grid grid-cols-4 gap-6">
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-water-flash-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">Public Health Engineering</h3>
+<p class="text-gray-600 mb-4">
+Water supply, plumbing, sewage treatment, drainage systems
+</p>
+<a href="Public Health Engineering Details.html" data-readdy="true" class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-fire-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">Firefighting Systems</h3>
+<p class="text-gray-600 mb-4">
+Hydrant, sprinkler systems, fire alarms and NFPA solutions
+</p>
+<a href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/ad143b7d-f12b-45e9-ba40-3e52b5190de1" data-readdy="true" class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-shield-keyhole-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">Life Safety & Security</h3>
+<p class="text-gray-600 mb-4">
+Access control, emergency systems, and public address solutions
+</p>
+<a href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/ad143b7d-f12b-45e9-ba40-3e52b5190de1" data-readdy="true" class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-flashlight-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">Electrical Engineering</h3>
+<p class="text-gray-600 mb-4">
+Power distribution, UPS, lighting and load management
+</p>
+<a href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/ad143b7d-f12b-45e9-ba40-3e52b5190de1" data-readdy="true" class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-base-station-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">Communication Systems</h3>
+<p class="text-gray-600 mb-4">
+FTTH, DTH, CCTV, boom barriers and EPABX solutions
+</p>
+<a href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/ad143b7d-f12b-45e9-ba40-3e52b5190de1" data-readdy="true" class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-temp-hot-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">HVAC & IBMS</h3>
+<p class="text-gray-600 mb-4">
+Air conditioning, ventilation and building automation
+</p>
+<a href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/ad143b7d-f12b-45e9-ba40-3e52b5190de1" data-readdy="true" class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-gas-station-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">Allied Services</h3>
+<p class="text-gray-600 mb-4">
+LPG reticulation, waste management and tank design
+</p>
+<a href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/ad143b7d-f12b-45e9-ba40-3e52b5190de1" data-readdy="true" class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-2 gap-12 items-center">
+<div>
+<img src="Index_files/84b2709e8d331a9713087a92e7cf91aa.jpg" alt="About Us" class="!rounded-lg shadow-xl">
+</div>
+<div>
+<h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-6">About Manasyati Engineering</h2>
+<p class="text-gray-600 mb-6">
+Founded in March 2024, Manasyati Engineering Services specializes in comprehensive MEP design solutions including Electrical, PHE, Fire & Safety, Security, Automation, and HVAC services. Our multi-disciplinary approach ensures a one-stop solution, prioritizing client requirements with agile, responsive, and innovative strategies.
+</p>
+<p class="text-gray-600 mb-6">
+At Manasyati, we are committed to delivering creative, high-quality, and forward-thinking engineering solutions. We continuously refine our practice based on client feedback and industry advancements, ensuring excellence in every project.
+</p>
+<div class="grid grid-cols-3 gap-6 mb-8">
+<div class="text-center">
+<div class="text-3xl font-bold text-primary mb-2">20+</div>
+<div class="text-gray-600">Projects Initiated</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-primary mb-2">15+</div>
+<div class="text-gray-600">Expert Engineers</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-primary mb-2">6+</div>
+<div class="text-gray-600">Service Categories</div>
+</div>
+</div>
+<a href="Comprehensive About Us - Manasyati Engineering.html" data-readdy="true" class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap inline-block">
+Learn More About Us
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">Featured Projects</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">
+Explore our portfolio of successful projects across various industries
+</p>
+</div>
+<div class="grid grid-cols-3 gap-8">
+<div class="bg-white !rounded-lg overflow-hidden shadow-lg">
+<img src="Index_files/8e348efcb2f12c59700830d1ecd82b06.jpg" alt="Project 1" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-['Roboto'] font-bold mb-2">Tech Park MEP Design</h3>
+<p class="text-gray-600 mb-4">Complete MEP solution for a 500,000 sq ft tech park</p>
+<button class="text-primary font-semibold flex items-center">
+View Details
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+<div class="bg-white !rounded-lg overflow-hidden shadow-lg">
+<img src="https://public.readdy.ai/ai/img_res/6a49b0c7959c77e3fa0988ec8da42ec9.jpg" alt="Project 2" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-['Roboto'] font-bold mb-2">Healthcare Facility</h3>
+<p class="text-gray-600 mb-4">Advanced MEP systems for 300-bed hospital</p>
+<button class="text-primary font-semibold flex items-center">
+View Details
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+<div class="bg-white !rounded-lg overflow-hidden shadow-lg">
+<img src="Index_files/d2b94aa2bd2ac1e6364f7c33cd50b9e9.jpg" alt="Project 3" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-['Roboto'] font-bold mb-2">Luxury Hotel Complex</h3>
+<p class="text-gray-600 mb-4">Integrated MEP design for 5-star hotel</p>
+<button class="text-primary font-semibold flex items-center">
+View Details
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">Client Testimonials</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">
+What our clients say about our engineering excellence
+</p>
+</div>
+<div class="grid grid-cols-3 gap-8">
+<div class="bg-white p-8 !rounded-lg shadow-lg">
+<div class="flex items-center mb-4">
+<img src="https://public.readdy.ai/ai/img_res/62812ee00db8cec0e060d91b0ce3f8a4.jpg" alt="Client" class="w-12 h-12 !rounded-full mr-4">
+<div>
+<h4 class="font-['Roboto'] font-bold">Robert Anderson</h4>
+<p class="text-gray-600">Project Director, GlobalTech</p>
+</div>
+</div>
+<p class="text-gray-600">
+"Manasyati's expertise in MEP design significantly improved our project's efficiency. Their innovative solutions helped us achieve LEED certification."
+</p>
+</div>
+<div class="bg-white p-8 !rounded-lg shadow-lg">
+<div class="flex items-center mb-4">
+<img src="Index_files/e3a8a81c5b3ba1fdadd5892d74c2ed0e.jpg" alt="Client" class="w-12 h-12 !rounded-full mr-4">
+<div>
+<h4 class="font-['Roboto'] font-bold">Sarah Mitchell</h4>
+<p class="text-gray-600">CEO, BuildCorp</p>
+</div>
+</div>
+<p class="text-gray-600">
+"Working with Manasyati has been exceptional. Their attention to detail and technical expertise are unmatched in the industry."
+</p>
+</div>
+<div class="bg-white p-8 !rounded-lg shadow-lg">
+<div class="flex items-center mb-4">
+<img src="https://public.readdy.ai/ai/img_res/2cc3d72b1bd5f6aec6a8a2419466a6b7.jpg" alt="Client" class="w-12 h-12 !rounded-full mr-4">
+<div>
+<h4 class="font-['Roboto'] font-bold">David Kumar</h4>
+<p class="text-gray-600">MD, Infratech Solutions</p>
+</div>
+</div>
+<p class="text-gray-600">
+"The team's professionalism and commitment to delivering quality MEP designs have made them our go-to engineering partner."
+</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-primary text-white">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-3xl font-['Roboto'] font-bold mb-6">Ready to Start Your Project?</h2>
+<p class="text-xl mb-8 opacity-90">
+Contact us today for a free consultation and quote
+</p>
+<div class="flex justify-center space-x-4">
+<button onclick="openContactModal()" class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap">
+Contact Us
+</button>
+<div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+<div class="bg-white !rounded-lg p-8 max-w-2xl w-full mx-4">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold text-gray-900">Contact Us</h3>
+<button onclick="closeContactModal()" class="text-gray-500 hover:text-gray-700">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<form id="contactForm" class="space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+<input type="text" required class="w-full px-4 py-2 border !rounded-button" id="contactName">
+<span class="text-red-500 text-sm hidden"></span>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+<input type="email" required class="w-full px-4 py-2 border !rounded-button" id="contactEmail">
+<span class="text-red-500 text-sm hidden"></span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+<input type="tel" required pattern="[0-9]{10}" class="w-full px-4 py-2 border !rounded-button" id="contactPhone">
+<span class="text-red-500 text-sm hidden"></span>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+<input type="text" required class="w-full px-4 py-2 border !rounded-button" id="contactSubject">
+<span class="text-red-500 text-sm hidden"></span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+<textarea required class="w-full px-4 py-2 border !rounded-button h-32 resize-none" id="contactMessage"></textarea>
+<span class="text-red-500 text-sm hidden"></span>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap flex items-center justify-center">
+<span>Send Message</span>
+<div class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+</button>
+</form>
+</div>
+</div>
+<script>
+function openContactModal() {
+const modal = document.getElementById('contactModal');
+modal.classList.remove('hidden');
+modal.classList.add('flex');
+}
+function closeContactModal() {
+const modal = document.getElementById('contactModal');
+modal.classList.add('hidden');
+modal.classList.remove('flex');
+}
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+e.preventDefault();
+// Reset previous error messages
+document.querySelectorAll('.text-red-500').forEach(span => span.classList.add('hidden'));
+// Validate form
+let isValid = true;
+const fields = ['contactName', 'contactEmail', 'contactPhone', 'contactSubject', 'contactMessage'];
+fields.forEach(field => {
+const input = document.getElementById(field);
+const errorSpan = input.nextElementSibling;
+if (!input.value) {
+isValid = false;
+errorSpan.textContent = 'This field is required';
+errorSpan.classList.remove('hidden');
+} else if (field === 'contactEmail' && !isValidEmail(input.value)) {
+isValid = false;
+errorSpan.textContent = 'Please enter a valid email address';
+errorSpan.classList.remove('hidden');
+} else if (field === 'contactPhone' && !isValidPhone(input.value)) {
+isValid = false;
+errorSpan.textContent = 'Please enter a valid 10-digit phone number';
+errorSpan.classList.remove('hidden');
+}
+});
+if (!isValid) return;
+// Show loading state
+const submitBtn = this.querySelector('button[type="submit"]');
+const btnText = submitBtn.querySelector('span');
+const spinner = submitBtn.querySelector('div');
+btnText.textContent = 'Sending...';
+spinner.classList.remove('hidden');
+submitBtn.disabled = true;
+try {
+// Simulate API call
+await new Promise(resolve => setTimeout(resolve, 2000));
+// Show success message
+closeContactModal();
+const successDialog = document.createElement('div');
+successDialog.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+successDialog.innerHTML = `
+<div class="bg-white !rounded-lg p-8 max-w-md w-full mx-4">
+<div class="text-center">
+<div class="w-16 h-16 bg-green-100 !rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-check-line text-3xl text-green-500"></i>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+<p class="text-gray-600 mb-6">Thank you for contacting us. We will get back to you within 24 hours.</p>
+<button onclick="this.closest('.fixed').remove()" class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90">Close</button>
+</div>
+</div>
+`;
+document.body.appendChild(successDialog);
+// Reset form
+e.target.reset();
+} catch (error) {
+console.error('Submission failed:', error);
+} finally {
+// Reset button state
+btnText.textContent = 'Send Message';
+spinner.classList.add('hidden');
+submitBtn.disabled = false;
+}
+});
+function isValidEmail(email) {
+return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+function isValidPhone(phone) {
+return /^[0-9]{10}$/.test(phone);
+}
+</script>
+<button class="border-2 border-white px-8 py-3 !rounded-button font-semibold hover:bg-white hover:text-primary whitespace-nowrap">
+Download Brochure
+</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-900 text-white py-16">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-4 gap-8">
+<div>
+<a href="/" class="h-12 mb-6 block">
+<img src="Index_files/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
+</a>
+<p class="text-gray-400 mb-6">
+Leading MEP design services provider in Hyderabad, bridging the gap between evolving construction needs and consultancy services since March 2024
+</p>
+<div class="flex space-x-4">
+<a href="#" class="hover:text-primary">
+<i class="ri-linkedin-fill text-xl"></i>
+</a>
+<a href="#" class="hover:text-primary">
+<i class="ri-twitter-fill text-xl"></i>
+</a>
+<a href="#" class="hover:text-primary">
+<i class="ri-facebook-fill text-xl"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Projects</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Industries</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Services</h4>
+<ul class="space-y-3">
+<li><a href="Public Health Engineering Details.html" class="text-gray-400 hover:text-white">Public Health Engineering</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Firefighting Systems</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Life Safety & Security</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Electrical Engineering</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Communication Systems</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">HVAC & IBMS</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Allied Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Contact Info</h4>
+<ul class="space-y-3">
+<li class="flex items-center">
+<i class="ri-map-pin-line mr-3"></i>
+<span class="text-gray-400">123 Tech Park, Hyderabad, India</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span class="text-gray-400">+91 730 688 5392</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span class="text-gray-400">ramana@manasyati.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+<p>&copy; 2024-2025 Manasyati Engineering Services. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
