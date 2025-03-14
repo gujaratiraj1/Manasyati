@@ -68,7 +68,7 @@ margin: 0;
 <a href="#" class="nav-link">Projects</a>
 <a href="#" class="nav-link">Industries</a>
 <a href="#" class="nav-link">Contact</a>
-<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 whitespace-nowrap">Get Quote</button>
+<button onclick="openQuoteModal()" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 whitespace-nowrap">Get Quote</button>
 </div>
 </nav>
 </div>
@@ -225,117 +225,6 @@ spinner.classList.add('hidden');
 submitBtn.disabled = false;
 }
 });
-</script>
-</div>
-<div class="bg-white p-6 !rounded-lg shadow-xl">
-<h3 class="text-2xl font-['Roboto'] text-primary mb-4">Request a Quote</h3>
-<form id="quoteForm" class="space-y-4">
-<div>
-<input type="text" id="fullName" name="fullName" required placeholder="Full Name" class="w-full px-4 py-2 border !rounded-button">
-<span class="text-red-500 text-sm hidden"></span>
-</div>
-<div>
-<input type="email" id="email" name="email" required placeholder="Email Address" class="w-full px-4 py-2 border !rounded-button">
-<span class="text-red-500 text-sm hidden"></span>
-</div>
-<div>
-<input type="tel" id="phone" name="phone" required placeholder="Phone Number" pattern="[0-9]{10}" class="w-full px-4 py-2 border !rounded-button">
-<span class="text-red-500 text-sm hidden"></span>
-</div>
-<div>
-<select id="service" name="service" required class="w-full px-4 py-2 border !rounded-button">
-<option value="">Select Service</option>
-<option value="phe">Public Health Engineering</option>
-<option value="firefighting">Firefighting Systems</option>
-<option value="safety">Life Safety & Security</option>
-<option value="electrical">Electrical Engineering</option>
-<option value="communication">Communication Systems</option>
-<option value="hvac">HVAC & IBMS</option>
-<option value="allied">Allied Services</option>
-</select>
-<span class="text-red-500 text-sm hidden"></span>
-</div>
-<button type="submit" id="submitBtn" class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap flex items-center justify-center">
-<span>Submit Request</span>
-<div class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-</button>
-</form>
-<div id="successDialog" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
-<div class="bg-white !rounded-lg p-8 max-w-md w-full mx-4">
-<div class="text-center">
-<div class="w-16 h-16 bg-green-100 !rounded-full flex items-center justify-center mx-auto mb-4">
-<i class="ri-check-line text-3xl text-green-500"></i>
-</div>
-<h3 class="text-2xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
-<p class="text-gray-600 mb-4">Your request has been successfully submitted. Our team will review and respond within 24 hours.</p>
-<p class="text-gray-800 font-semibold mb-6">Confirmation Number: <span id="confirmationNumber"></span></p>
-<button onclick="closeSuccessDialog()" class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90">Close</button>
-</div>
-</div>
-</div>
-<script>
-document.getElementById('quoteForm').addEventListener('submit', async function(e) {
-e.preventDefault();
-// Reset previous error messages
-document.querySelectorAll('.text-red-500').forEach(span => span.classList.add('hidden'));
-// Validate form
-let isValid = true;
-const fields = ['fullName', 'email', 'phone', 'service'];
-fields.forEach(field => {
-const input = document.getElementById(field);
-const errorSpan = input.nextElementSibling;
-if (!input.value) {
-isValid = false;
-errorSpan.textContent = 'This field is required';
-errorSpan.classList.remove('hidden');
-} else if (field === 'email' && !isValidEmail(input.value)) {
-isValid = false;
-errorSpan.textContent = 'Please enter a valid email address';
-errorSpan.classList.remove('hidden');
-} else if (field === 'phone' && !isValidPhone(input.value)) {
-isValid = false;
-errorSpan.textContent = 'Please enter a valid 10-digit phone number';
-errorSpan.classList.remove('hidden');
-}
-});
-if (!isValid) return;
-// Show loading state
-const submitBtn = document.getElementById('submitBtn');
-const btnText = submitBtn.querySelector('span');
-const spinner = submitBtn.querySelector('div');
-btnText.textContent = 'Submitting...';
-spinner.classList.remove('hidden');
-submitBtn.disabled = true;
-try {
-// Simulate API call
-await new Promise(resolve => setTimeout(resolve, 2000));
-// Generate confirmation number
-const confirmationNumber = 'MES' + Date.now().toString().slice(-6);
-document.getElementById('confirmationNumber').textContent = confirmationNumber;
-// Show success dialog
-document.getElementById('successDialog').classList.remove('hidden');
-document.getElementById('successDialog').classList.add('flex');
-// Reset form
-e.target.reset();
-} catch (error) {
-console.error('Submission failed:', error);
-} finally {
-// Reset button state
-btnText.textContent = 'Submit Request';
-spinner.classList.add('hidden');
-submitBtn.disabled = false;
-}
-});
-function closeSuccessDialog() {
-document.getElementById('successDialog').classList.add('hidden');
-document.getElementById('successDialog').classList.remove('flex');
-}
-function isValidEmail(email) {
-return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-function isValidPhone(phone) {
-return /^[0-9]{10}$/.test(phone);
-}
 </script>
 </div>
 </div>
@@ -714,6 +603,60 @@ Download Brochure
 </div>
 </div>
 </section>
+<div id="quoteModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 !rounded-lg shadow-xl max-w-md w-full mx-4">
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="text-2xl font-['Roboto'] text-primary mb-4">Request a Quote</h3>
+            <button onclick="closeQuoteModal()" class="text-gray-500 hover:text-gray-700">
+                <i class="ri-close-line text-2xl"></i>
+            </button>
+        </div>
+        <form id="quoteForm" class="space-y-4">
+            <div>
+                <input type="text" id="fullName" name="fullName" required placeholder="Full Name" class="w-full px-4 py-2 border !rounded-button">
+                <span class="text-red-500 text-sm hidden"></span>
+            </div>
+            <div>
+                <input type="email" id="email" name="email" required placeholder="Email Address" class="w-full px-4 py-2 border !rounded-button">
+                <span class="text-red-500 text-sm hidden"></span>
+            </div>
+            <div>
+                <input type="tel" id="phone" name="phone" required placeholder="Phone Number" pattern="[0-9]{10}" class="w-full px-4 py-2 border !rounded-button">
+                <span class="text-red-500 text-sm hidden"></span>
+            </div>
+            <div>
+                <select id="service" name="service" required class="w-full px-4 py-2 border !rounded-button">
+                    <option value="">Select Service</option>
+                    <option value="phe">Public Health Engineering</option>
+                    <option value="firefighting">Firefighting Systems</option>
+                    <option value="safety">Life Safety & Security</option>
+                    <option value="electrical">Electrical Engineering</option>
+                    <option value="communication">Communication Systems</option>
+                    <option value="hvac">HVAC & IBMS</option>
+                    <option value="allied">Allied Services</option>
+                </select>
+                <span class="text-red-500 text-sm hidden"></span>
+            </div>
+            <button type="submit" id="submitBtn" class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap flex items-center justify-center">
+                <span>Submit Request</span>
+                <div class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+            </button>
+        </form>
+    </div>
+</div>
+<script>
+function openQuoteModal() {
+    const modal = document.getElementById('quoteModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+}
+
+function closeQuoteModal() {
+    const modal = document.getElementById('quoteModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+}
+</script>
 </main>
 <footer class="bg-gray-900 text-white py-16">
 <div class="container mx-auto px-4">
