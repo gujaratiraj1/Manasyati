@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Manasyati Engineering Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a3c6e",
+              secondary: "#465b6e",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      .nav-link:hover { color: #1a3c6e; }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      .tab-active { background-color: #1a3c6e; color: white; }
+      .tab-content { display: none; }
+      .tab-content.active { display: block; }
+    </style>
+  </head>
+  <body class="bg-white font-['Open_Sans']">
+    <header class="fixed w-full bg-white shadow-sm z-50">
+      <div class="container mx-auto px-4">
+        <div
+          class="h-10 flex items-center justify-end space-x-6 text-sm text-gray-600 border-b"
+        >
+          <a href="tel:+917306885392" class="flex items-center space-x-2">
+            <i class="ri-phone-line"></i>
+            <span>+91 730 688 5392</span>
+          </a>
+          <a
+            href="mailto:ramana@manasyati.com"
+            class="flex items-center space-x-2"
+          >
+            <i class="ri-mail-line"></i>
+            <span>ramana@manasyati.com</span>
+          </a>
+        </div>
+        <nav class="flex items-center justify-between h-20">
+          <a href="/" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+          <div class="flex items-center space-x-8">
+            <a
+              href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/44c32bd6-396b-48d8-bbb9-a769ead666ce"
+              data-readdy="true"
+              class="nav-link"
+              >Home</a
+            >
+            <a href="#" class="nav-link">About Us</a>
+            <a href="#" class="nav-link">Services</a>
+            <a href="#" class="nav-link">Projects</a>
+            <a href="#" class="nav-link">Industries</a>
+            <a href="#" class="nav-link text-primary font-semibold">Contact</a>
+            <button
+              class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 whitespace-nowrap"
+            >
+              Get Quote
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-30">
+      <section
+        class="relative h-[400px] flex items-center"
+        style="background-image: url('https://public.readdy.ai/ai/img_res/f89d2c1b3e4a5d6f7g8h9i0j.jpg'); background-size: cover; background-position: center;"
+      >
+        <div class="absolute inset-0 bg-primary bg-opacity-70"></div>
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="text-center text-white">
+            <nav class="text-sm mb-4">
+              <a
+                href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/44c32bd6-396b-48d8-bbb9-a769ead666ce"
+                data-readdy="true"
+                class="hover:text-gray-200"
+                >Home</a
+              >
+              <span class="mx-2">/</span>
+              <span>Contact</span>
+            </nav>
+            <h1 class="text-5xl font-bold font-['Roboto'] mb-4">Contact Us</h1>
+            <p class="text-xl opacity-90 max-w-2xl mx-auto">
+              Get in touch with our expert team for professional MEP engineering
+              solutions
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-3 gap-8 mb-16">
+            <div class="bg-white p-8 !rounded-lg shadow-lg text-center">
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <i class="ri-map-pin-line text-2xl text-primary"></i>
+              </div>
+              <h3 class="text-xl font-['Roboto'] font-bold mb-4">Visit Us</h3>
+              <p class="text-gray-600">
+                123 Tech Park, Madhapur<br />Hyderabad, Telangana 500081<br />India
+              </p>
+            </div>
+            <div class="bg-white p-8 !rounded-lg shadow-lg text-center">
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <i class="ri-phone-line text-2xl text-primary"></i>
+              </div>
+              <h3 class="text-xl font-['Roboto'] font-bold mb-4">Call Us</h3>
+              <p class="text-gray-600">
+                Phone: +91 730 688 5392<br />Toll Free: 1800 123 4567<br />Emergency:
+                +91 98765 43210
+              </p>
+            </div>
+            <div class="bg-white p-8 !rounded-lg shadow-lg text-center">
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <i class="ri-time-line text-2xl text-primary"></i>
+              </div>
+              <h3 class="text-xl font-['Roboto'] font-bold mb-4">
+                Business Hours
+              </h3>
+              <p class="text-gray-600">
+                Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 2:00
+                PM<br />Sunday: Closed
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-12">
+            <div>
+              <div class="bg-white p-8 !rounded-lg shadow-lg">
+                <h2
+                  class="text-2xl font-['Roboto'] font-bold text-primary mb-6"
+                >
+                  Send Us a Message
+                </h2>
+                <div class="flex space-x-4 mb-6">
+                  <button
+                    class="flex-1 py-2 !rounded-button text-center tab-btn tab-active"
+                    data-tab="general"
+                  >
+                    General Inquiry
+                  </button>
+                  <button
+                    class="flex-1 py-2 !rounded-button text-center tab-btn"
+                    data-tab="career"
+                  >
+                    Career
+                  </button>
+                  <button
+                    class="flex-1 py-2 !rounded-button text-center tab-btn"
+                    data-tab="project"
+                  >
+                    Project
+                  </button>
+                </div>
+
+                <div id="general" class="tab-content active">
+                  <form class="space-y-4">
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      class="w-full px-4 py-2 border !rounded-button"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      class="w-full px-4 py-2 border !rounded-button"
+                    />
+                    <input
+                      type="tel"
+                      placeholder="Phone Number"
+                      class="w-full px-4 py-2 border !rounded-button"
+                    />
+                    <textarea
+                      placeholder="Your Message"
+                      rows="4"
+                      class="w-full px-4 py-2 border !rounded-button"
+                    ></textarea>
+                    <button
+                      type="submit"
+                      class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90"
+                    >
+                      Send Message
+                    </button>
+                  </form>
+                </div>
+
+                <div id="career" class="tab-content">
+                  <form class="space-y-4">
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      class="w-full px-4 py-2 border !rounded-button"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      class="w-full px-4 py-2 border !rounded-button"
+                    />
+                    <input
+                      type="tel"
+                      placeholder="Phone Number"
+                      class="w-full px-4 py-2 border !rounded-button"
+                    />
+                    <select class="w-full px-4 py-2 border !rounded-button">
+                      <option>Select Position</option>
+                      <option>MEP Engineer</option>
+                      <option>HVAC Designer</option>
+                      <option>Electrical Engineer</option>
+                      <option>Project Manager</option>
+                    </select>
+                    <div
+                      class="flex items-center space-x-2 border !rounded-button p-4"
+                    >
+                      <i class="ri-upload-line text-gray-400"></i>
+                      <span class="text-gray-600"
+                        >Upload Resume (PDF, DOC)</span
+                      >
+                      <input
+                        type="file"
+                        class="hidden"
+                        accept=".pdf,.doc,.docx"
+                      />
+                    </div>
+                    <textarea
+                      placeholder="Cover Letter"
+                      rows="4"
+                      class="w-full px-4 py-2 border !rounded-button"
+                    ></textarea>
+                    <button
+                      type="submit"
+                      class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90"
+                    >
+                      Submit Application
+                    </button>
+                  </form>
+                </div>
+
+                <div id="project" class="tab-content">
+                  <form class="space-y-4">
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      class="w-full px-4 py-2 border !rounded-button"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      class="w-full px-4 py-2 border !rounded-button"
+                    />
+                    <input
+                      type="tel"
+                      placeholder="Phone Number"
+                      class="w-full px-4 py-2 border !rounded-button"
+                    />
+                    <select class="w-full px-4 py-2 border !rounded-button">
+                      <option>Select Service</option>
+                      <option>Public Health Engineering</option>
+                      <option>Firefighting Systems</option>
+                      <option>Life Safety & Security</option>
+                      <option>Electrical Engineering</option>
+                      <option>HVAC & IBMS</option>
+                    </select>
+                    <textarea
+                      placeholder="Project Details"
+                      rows="4"
+                      class="w-full px-4 py-2 border !rounded-button"
+                    ></textarea>
+                    <div
+                      class="flex items-center space-x-2 border !rounded-button p-4"
+                    >
+                      <i class="ri-upload-line text-gray-400"></i>
+                      <span class="text-gray-600"
+                        >Upload Project Documents</span
+                      >
+                      <input type="file" class="hidden" multiple />
+                    </div>
+                    <button
+                      type="submit"
+                      class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90"
+                    >
+                      Submit Project Request
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="bg-white p-8 !rounded-lg shadow-lg mb-8">
+                <h3 class="text-xl font-['Roboto'] font-bold mb-4">
+                  Connect With Us
+                </h3>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="w-10 h-10 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center hover:bg-primary hover:text-white"
+                  >
+                    <i class="ri-linkedin-fill"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center hover:bg-primary hover:text-white"
+                  >
+                    <i class="ri-twitter-fill"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center hover:bg-primary hover:text-white"
+                  >
+                    <i class="ri-facebook-fill"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center hover:bg-primary hover:text-white"
+                  >
+                    <i class="ri-instagram-fill"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="!rounded-lg overflow-hidden shadow-lg">
+                <div
+                  class="h-[400px] bg-cover bg-center"
+                  style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Find answers to common questions about our services and processes
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-white p-6 !rounded-lg shadow-lg">
+              <h3 class="text-lg font-['Roboto'] font-bold mb-3">
+                What services do you offer?
+              </h3>
+              <p class="text-gray-600">
+                We provide comprehensive MEP design solutions including
+                electrical, plumbing, firefighting, HVAC, and building
+                automation systems.
+              </p>
+            </div>
+            <div class="bg-white p-6 !rounded-lg shadow-lg">
+              <h3 class="text-lg font-['Roboto'] font-bold mb-3">
+                How long does a typical project take?
+              </h3>
+              <p class="text-gray-600">
+                Project timelines vary based on scope and complexity. We provide
+                detailed timelines during initial consultations.
+              </p>
+            </div>
+            <div class="bg-white p-6 !rounded-lg shadow-lg">
+              <h3 class="text-lg font-['Roboto'] font-bold mb-3">
+                Do you work on international projects?
+              </h3>
+              <p class="text-gray-600">
+                Yes, we have experience working on international projects and
+                can adapt to various building codes and standards.
+              </p>
+            </div>
+            <div class="bg-white p-6 !rounded-lg shadow-lg">
+              <h3 class="text-lg font-['Roboto'] font-bold mb-3">
+                What industries do you serve?
+              </h3>
+              <p class="text-gray-600">
+                We serve various sectors including commercial, healthcare,
+                hospitality, residential, and industrial facilities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-16">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-4 gap-8">
+<div>
+<a href="/" class="h-12 mb-6 block">
+<img src="Index_files/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
+</a>
+<p class="text-gray-400 mb-6">
+Leading MEP design services provider in Hyderabad, bridging the gap between evolving construction needs and consultancy services since March 2024
+</p>
+<div class="flex space-x-4">
+<a href="#" class="hover:text-primary">
+<i class="ri-linkedin-fill text-xl"></i>
+</a>
+<a href="#" class="hover:text-primary">
+<i class="ri-twitter-fill text-xl"></i>
+</a>
+<a href="#" class="hover:text-primary">
+<i class="ri-facebook-fill text-xl"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="About Manasyati Engineering.html" class="text-gray-400 hover:text-white">About Us</a></li>
+<li><a href="Service Details - Manasyati Engineering.html" class="text-gray-400 hover:text-white">Services</a></li>
+<li><a href="Projects - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Projects</a></li>
+<li><a href="Industries Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Industries</a></li>
+<li><a href="Contact Us - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Services</h4>
+<ul class="space-y-3">
+<li><a href="Public Health Engineering Services - Manasyati Engineering.html" class="text-gray-400 hover:text-white">Public Health Engineering</a></li>
+<li><a href="Fire Safety Engineering Services - Manasyati Engineering.html" class="text-gray-400 hover:text-white">Firefighting Systems</a></li>
+<li><a href="Life Safety & Security - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Life Safety & Security</a></li>
+<li><a href="Electrical Engineering - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Electrical Engineering</a></li>
+<li><a href="Communication Systems - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Communication Systems</a></li>
+<li><a href="HVAC & IBMS - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">HVAC & IBMS</a></li>
+<li><a href="Allied Services - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Allied Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Contact Info</h4>
+<ul class="space-y-3">
+<li class="flex items-center">
+<i class="ri-map-pin-line mr-3"></i>
+<span class="text-gray-400">123 Tech Park, Hyderabad, India</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span class="text-gray-400">+91 730 688 5392</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span class="text-gray-400">ramana@manasyati.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+<p>&copy; 2024-2025 Manasyati Engineering Services. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll(".tab-btn");
+        const contents = document.querySelectorAll(".tab-content");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.classList.remove("tab-active"));
+            tab.classList.add("tab-active");
+
+            const tabId = tab.getAttribute("data-tab");
+            contents.forEach((content) => {
+              content.classList.remove("active");
+              if (content.id === tabId) {
+                content.classList.add("active");
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Manasyati Engineering Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a3c6e",
+              secondary: "#465b6e",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      .nav-link:hover { color: #1a3c6e; }
+      .project-card:hover { transform: translateY(-5px); }
+      .project-filter.active {
+        background-color: #1a3c6e;
+        color: white;
+      }
+      .project-filter:not(.active):hover {
+        background-color: rgba(26, 60, 110, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-white font-['Open_Sans']">
+    <header class="fixed w-full bg-white shadow-sm z-50">
+      <div class="container mx-auto px-4">
+        <div
+          class="h-10 flex items-center justify-end space-x-6 text-sm text-gray-600 border-b"
+        >
+          <a href="tel:+917306885392" class="flex items-center space-x-2">
+            <i class="ri-phone-line"></i>
+            <span>+91 730 688 5392</span>
+          </a>
+          <a
+            href="mailto:ramana@manasyati.com"
+            class="flex items-center space-x-2"
+          >
+            <i class="ri-mail-line"></i>
+            <span>ramana@manasyati.com</span>
+          </a>
+        </div>
+        <nav class="flex items-center justify-between h-20">
+          <a href="/" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+          <div class="flex items-center space-x-8">
+            <a href="/" class="nav-link">Home</a>
+            <a
+              href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/ca73ce62-0002-47bd-8d7d-b1c3dfdf5e61"
+              data-readdy="true"
+              class="nav-link"
+              >About Us</a
+            >
+            <a href="#" class="nav-link">Services</a>
+            <a
+              href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/44c32bd6-396b-48d8-bbb9-a769ead666ce"
+              data-readdy="true"
+              class="nav-link text-primary font-semibold"
+              >Projects</a
+            >
+            <a href="#" class="nav-link">Industries</a>
+            <a href="#" class="nav-link">Contact</a>
+            <button
+              class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 whitespace-nowrap"
+            >
+              Get Quote
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-30">
+      <section
+        class="relative h-[400px] flex items-center"
+        style="background-image: url('https://public.readdy.ai/ai/img_res/d840007b54d0d1159c718a14e7a0b3cd.jpg'); background-size: cover; background-position: center;"
+      >
+        <div class="absolute inset-0 bg-primary bg-opacity-70"></div>
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="text-white">
+            <div class="text-sm mb-4">
+              <a href="/" class="hover:underline">Home</a>
+              <span class="mx-2">/</span>
+              <span>Projects</span>
+            </div>
+            <h1 class="text-5xl font-bold font-['Roboto'] mb-4">
+              Our Projects
+            </h1>
+            <p class="text-xl opacity-90 max-w-2xl">
+              Discover our portfolio of innovative engineering solutions across
+              various sectors, showcasing our expertise in MEP design and
+              implementation
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+            <div class="flex space-x-2">
+              <button
+                class="project-filter active px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
+              >
+                All Projects
+              </button>
+              <button
+                class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
+              >
+                Commercial
+              </button>
+              <button
+                class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
+              >
+                Healthcare
+              </button>
+              <button
+                class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
+              >
+                Residential
+              </button>
+              <button
+                class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
+              >
+                Industrial
+              </button>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="relative">
+                <input
+                  type="text"
+                  placeholder="Search projects..."
+                  class="pl-10 pr-4 py-2 !rounded-full border-none bg-white shadow-sm w-64"
+                />
+                <i
+                  class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                ></i>
+              </div>
+              <div class="flex space-x-2">
+                <button
+                  class="w-10 h-10 flex items-center justify-center bg-white shadow-sm !rounded-full"
+                >
+                  <i class="ri-layout-grid-line text-gray-600"></i>
+                </button>
+                <button
+                  class="w-10 h-10 flex items-center justify-center bg-white shadow-sm !rounded-full"
+                >
+                  <i class="ri-list-check-2 text-gray-600"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-8">
+            <div
+              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
+            >
+              <img
+                src="https://public.readdy.ai/ai/img_res/caf335e5cf1d9ab52e5f1a061d89a884.jpg"
+                alt="Tech Park"
+                class="w-full h-[250px] object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full"
+                    >Commercial</span
+                  >
+                  <span
+                    class="text-green-600 text-sm font-semibold flex items-center"
+                  >
+                    <i class="ri-checkbox-circle-line mr-1"></i>
+                    Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
+                  Hyderabad Tech Park
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Comprehensive MEP design for 500,000 sq ft commercial space
+                  including HVAC, electrical, and plumbing systems
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">HITEC City, Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Duration</span>
+                    <p class="font-semibold">18 months</p>
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-primary text-white py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
+                  onclick="showProjectDetails('tech-park')"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
+            >
+              <img
+                src="https://public.readdy.ai/ai/img_res/36f102445d78279fd17575b7e835917f.jpg"
+                alt="Hospital"
+                class="w-full h-[250px] object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 !rounded-full"
+                    >Healthcare</span
+                  >
+                  <span
+                    class="text-blue-600 text-sm font-semibold flex items-center"
+                  >
+                    <i class="ri-time-line mr-1"></i>
+                    Ongoing
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
+                  Apollo Medical Center
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  State-of-the-art MEP systems for 300-bed hospital including
+                  medical gas, HVAC, and electrical infrastructure
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Jubilee Hills, Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Duration</span>
+                    <p class="font-semibold">24 months</p>
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-primary text-white py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
+                  onclick="showProjectDetails('hospital')"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
+            >
+              <img
+                src="https://public.readdy.ai/ai/img_res/270f897c4ee33c4ae0594e1f53612d76.jpg"
+                alt="Residential"
+                class="w-full h-[250px] object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full"
+                    >Residential</span
+                  >
+                  <span
+                    class="text-green-600 text-sm font-semibold flex items-center"
+                  >
+                    <i class="ri-checkbox-circle-line mr-1"></i>
+                    Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
+                  Prestige Smart Homes
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Smart home automation and MEP systems for 200-unit luxury
+                  residential complex
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Gachibowli, Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Duration</span>
+                    <p class="font-semibold">15 months</p>
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-primary text-white py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
+                  onclick="showProjectDetails('residential')"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
+            >
+              <img
+                src="https://public.readdy.ai/ai/img_res/ce7af8320e7ce605f9ac9847bba51ded.jpg"
+                alt="Mall"
+                class="w-full h-[250px] object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full"
+                    >Commercial</span
+                  >
+                  <span
+                    class="text-blue-600 text-sm font-semibold flex items-center"
+                  >
+                    <i class="ri-time-line mr-1"></i>
+                    Ongoing
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
+                  Inorbit Mall Expansion
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  MEP upgrade and expansion project for existing mall including
+                  new HVAC and fire safety systems
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Madhapur, Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Duration</span>
+                    <p class="font-semibold">12 months</p>
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-primary text-white py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
+                  onclick="showProjectDetails('mall')"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
+            >
+              <img
+                src="https://public.readdy.ai/ai/img_res/539fb162f764692c6e96f50fa370ca17.jpg"
+                alt="Industrial"
+                class="w-full h-[250px] object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 !rounded-full"
+                    >Industrial</span
+                  >
+                  <span
+                    class="text-green-600 text-sm font-semibold flex items-center"
+                  >
+                    <i class="ri-checkbox-circle-line mr-1"></i>
+                    Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
+                  Pharma Manufacturing Facility
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Specialized MEP design for pharmaceutical manufacturing
+                  including clean room and HVAC systems
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Genome Valley, Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Duration</span>
+                    <p class="font-semibold">20 months</p>
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-primary text-white py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
+                  onclick="showProjectDetails('industrial')"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
+            >
+              <img
+                src="https://public.readdy.ai/ai/img_res/1bb063c4ae24198633e3261dabd293af.jpg"
+                alt="Hotel"
+                class="w-full h-[250px] object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full"
+                    >Commercial</span
+                  >
+                  <span
+                    class="text-green-600 text-sm font-semibold flex items-center"
+                  >
+                    <i class="ri-checkbox-circle-line mr-1"></i>
+                    Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
+                  Marriott Hotel
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Complete MEP solutions for 5-star hotel including smart
+                  building management systems
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Financial District, Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Duration</span>
+                    <p class="font-semibold">22 months</p>
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-primary text-white py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
+                  onclick="showProjectDetails('hotel')"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">
+              Project Statistics
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Our track record of successful project delivery across various
+              sectors
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-8">
+            <div class="bg-white !rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-['Roboto'] font-bold mb-4">
+                Projects by Sector
+              </h3>
+              <div id="sectorChart" class="w-full h-[300px]"></div>
+            </div>
+            <div class="bg-white !rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-['Roboto'] font-bold mb-4">
+                Project Timeline
+              </h3>
+              <div id="timelineChart" class="w-full h-[300px]"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        id="projectModal"
+        class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden"
+      >
+        <div
+          class="container mx-auto px-4 h-full flex items-center justify-center"
+        >
+          <div
+            class="bg-white !rounded-lg w-full max-w-4xl max-h-[80vh] overflow-y-auto"
+          >
+            <div
+              class="sticky top-0 bg-white border-b p-6 flex items-center justify-between"
+            >
+              <h3
+                class="text-2xl font-['Roboto'] font-bold"
+                id="modalTitle"
+              ></h3>
+              <button
+                onclick="closeProjectDetails()"
+                class="text-gray-500 hover:text-gray-700"
+              >
+                <i class="ri-close-line text-2xl"></i>
+              </button>
+            </div>
+            <div class="p-6" id="modalContent"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+   <footer class="bg-gray-900 text-white py-16">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-4 gap-8">
+<div>
+<a href="/" class="h-12 mb-6 block">
+<img src="Index_files/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
+</a>
+<p class="text-gray-400 mb-6">
+Leading MEP design services provider in Hyderabad, bridging the gap between evolving construction needs and consultancy services since March 2024
+</p>
+<div class="flex space-x-4">
+<a href="#" class="hover:text-primary">
+<i class="ri-linkedin-fill text-xl"></i>
+</a>
+<a href="#" class="hover:text-primary">
+<i class="ri-twitter-fill text-xl"></i>
+</a>
+<a href="#" class="hover:text-primary">
+<i class="ri-facebook-fill text-xl"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="About Manasyati Engineering.html" class="text-gray-400 hover:text-white">About Us</a></li>
+<li><a href="Service Details - Manasyati Engineering.html" class="text-gray-400 hover:text-white">Services</a></li>
+<li><a href="Projects - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Projects</a></li>
+<li><a href="Industries Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Industries</a></li>
+<li><a href="Contact Us - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Services</h4>
+<ul class="space-y-3">
+<li><a href="Public Health Engineering Services - Manasyati Engineering.html" class="text-gray-400 hover:text-white">Public Health Engineering</a></li>
+<li><a href="Fire Safety Engineering Services - Manasyati Engineering.html" class="text-gray-400 hover:text-white">Firefighting Systems</a></li>
+<li><a href="Life Safety & Security - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Life Safety & Security</a></li>
+<li><a href="Electrical Engineering - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Electrical Engineering</a></li>
+<li><a href="Communication Systems - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Communication Systems</a></li>
+<li><a href="HVAC & IBMS - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">HVAC & IBMS</a></li>
+<li><a href="Allied Services - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Allied Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Contact Info</h4>
+<ul class="space-y-3">
+<li class="flex items-center">
+<i class="ri-map-pin-line mr-3"></i>
+<span class="text-gray-400">123 Tech Park, Hyderabad, India</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span class="text-gray-400">+91 730 688 5392</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span class="text-gray-400">ramana@manasyati.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+<p>&copy; 2024-2025 Manasyati Engineering Services. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+    <script>
+      const projectFilters = document.querySelectorAll(".project-filter");
+      projectFilters.forEach((filter) => {
+        filter.addEventListener("click", () => {
+          projectFilters.forEach((f) => f.classList.remove("active"));
+          filter.classList.add("active");
+        });
+      });
+
+      const projectData = {
+        "tech-park": {
+          title: "Hyderabad Tech Park",
+          content: `
+            <div class="grid grid-cols-2 gap-8 mb-8">
+              <img src="https://public.readdy.ai/ai/img_res/cdabe361238006c163505e2424cd822b.jpg" class="w-full h-[300px] object-cover !rounded-lg" alt="Tech Park Interior">
+              <div>
+                <h4 class="text-xl font-bold mb-4">Project Overview</h4>
+                <p class="text-gray-600 mb-4">A state-of-the-art commercial complex featuring advanced MEP systems designed for optimal efficiency and sustainability.</p>
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <span class="text-gray-500 text-sm">Client</span>
+                    <p class="font-semibold">TechSpace Developers</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">HITEC City, Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Area</span>
+                    <p class="font-semibold">500,000 sq ft</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Completion</span>
+                    <p class="font-semibold">December 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-6 mb-8">
+              <div class="bg-gray-50 p-6 !rounded-lg">
+                <h4 class="font-bold mb-2">Scope of Work</h4>
+                <ul class="text-gray-600 space-y-2">
+                  <li>• HVAC System Design</li>
+                  <li>• Electrical Infrastructure</li>
+                  <li>• Plumbing Systems</li>
+                  <li>• Fire Safety Integration</li>
+                  <li>• Building Automation</li>
+                </ul>
+              </div>
+              <div class="bg-gray-50 p-6 !rounded-lg">
+                <h4 class="font-bold mb-2">Challenges</h4>
+                <ul class="text-gray-600 space-y-2">
+                  <li>• Complex Integration Requirements</li>
+                  <li>• Energy Efficiency Targets</li>
+                  <li>• Space Optimization</li>
+                  <li>• Timeline Management</li>
+                </ul>
+              </div>
+              <div class="bg-gray-50 p-6 !rounded-lg">
+                <h4 class="font-bold mb-2">Solutions</h4>
+                <ul class="text-gray-600 space-y-2">
+                  <li>• Smart Building Management</li>
+                  <li>• Energy Recovery Systems</li>
+                  <li>• Modular MEP Design</li>
+                  <li>• Phased Implementation</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-primary bg-opacity-5 p-6 !rounded-lg mb-8">
+              <h4 class="font-bold mb-4">Key Achievements</h4>
+              <div class="grid grid-cols-4 gap-6 text-center">
+                <div>
+                  <div class="text-2xl font-bold text-primary mb-2">30%</div>
+                  <p class="text-gray-600">Energy Savings</p>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-primary mb-2">LEED</div>
+                  <p class="text-gray-600">Gold Certified</p>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-primary mb-2">99.9%</div>
+                  <p class="text-gray-600">Uptime</p>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-primary mb-2">18mo</div>
+                  <p class="text-gray-600">Completion Time</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <button class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap">Download Case Study</button>
+            </div>
+          `,
+        },
+      };
+
+      function showProjectDetails(projectId) {
+        const modal = document.getElementById("projectModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalContent = document.getElementById("modalContent");
+
+        const project = projectData[projectId];
+        if (project) {
+          modalTitle.textContent = project.title;
+          modalContent.innerHTML = project.content;
+        }
+
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeProjectDetails() {
+        const modal = document.getElementById("projectModal");
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      const sectorChart = echarts.init(document.getElementById("sectorChart"));
+      const timelineChart = echarts.init(document.getElementById("timelineChart"));
+      sectorChart.setOption({
+        animation: false,
+        tooltip: {
+          trigger: "item",
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          textStyle: {
+            color: "#1f2937",
+          },
+        },
+        legend: {
+          bottom: "0",
+          left: "center",
+          textStyle: {
+            color: "#1f2937",
+          },
+        },
+        series: [
+          {
+            type: "pie",
+            radius: ["40%", "70%"],
+            center: ["50%", "45%"],
+            avoidLabelOverlap: false,
+            itemStyle: {
+              borderRadius: 8,
+            },
+            label: {
+              show: false,
+            },
+            data: [
+              {
+                value: 40,
+                name: "Commercial",
+                itemStyle: { color: "rgba(87, 181, 231, 1)" },
+              },
+              {
+                value: 25,
+                name: "Healthcare",
+                itemStyle: { color: "rgba(141, 211, 199, 1)" },
+              },
+              {
+                value: 20,
+                name: "Residential",
+                itemStyle: { color: "rgba(251, 191, 114, 1)" },
+              },
+              {
+                value: 15,
+                name: "Industrial",
+                itemStyle: { color: "rgba(252, 141, 98, 1)" },
+              },
+            ],
+          },
+        ],
+      });
+
+      timelineChart.setOption({
+        animation: false,
+        tooltip: {
+          trigger: "axis",
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          textStyle: {
+            color: "#1f2937",
+          },
+        },
+        grid: {
+          left: "3%",
+          right: "4%",
+          bottom: "3%",
+          containLabel: true,
+        },
+        xAxis: {
+          type: "category",
+          boundaryGap: false,
+          data: ["2024 Q1", "Q2", "Q3", "Q4", "2025 Q1"],
+          axisLabel: {
+            color: "#1f2937",
+          },
+        },
+        yAxis: {
+          type: "value",
+          axisLabel: {
+            color: "#1f2937",
+          },
+        },
+        series: [
+          {
+            name: "Completed Projects",
+            type: "line",
+            smooth: true,
+            data: [3, 5, 8, 11, 15],
+            itemStyle: {
+              color: "#1a3c6e",
+            },
+            areaStyle: {
+              color: {
+                type: "linear",
+                x: 0,
+                y: 0,
+                x2: 0,
+                y2: 1,
+                colorStops: [
+                  {
+                    offset: 0,
+                    color: "rgba(26, 60, 110, 0.3)",
+                  },
+                  {
+                    offset: 1,
+                    color: "rgba(26, 60, 110, 0.05)",
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      });
+
+      window.addEventListener("resize", () => {
+        sectorChart.resize();
+        timelineChart.resize();
+      });
+    </script>
+  </body>
+</html>

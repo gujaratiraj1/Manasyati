@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industries | Manasyati Engineering Services</title>
+<script src="https://cdn.tailwindcss.com">
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#1a3c6e",
+        secondary: "#465b6e",
+      },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.nav-link:hover { color: #1a3c6e; }
+.industry-card:hover { transform: translateY(-5px); }
+.tab-button.active {
+background-color: #1a3c6e;
+color: white;
+}
+.tab-content {
+display: none;
+}
+.tab-content.active {
+display: block;
+}
+</style>
+</head>
+<body class="bg-white font-['Open_Sans']">
+<header class="fixed w-full bg-white shadow-sm z-50">
+<div class="container mx-auto px-4">
+<div class="h-10 flex items-center justify-end space-x-6 text-sm text-gray-600 border-b">
+<a href="tel:+917306885392" class="flex items-center space-x-2">
+<i class="ri-phone-line"></i>
+<span>+91 730 688 5392</span>
+</a>
+<a href="mailto:ramana@manasyati.com" class="flex items-center space-x-2">
+<i class="ri-mail-line"></i>
+<span>ramana@manasyati.com</span>
+</a>
+</div>
+<nav class="flex items-center justify-between h-20">
+<a href="/" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+<div class="flex items-center space-x-8">
+<a href="/" class="nav-link">Home</a>
+<a href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/ca73ce62-0002-47bd-8d7d-b1c3dfdf5e61" data-readdy="true" class="nav-link">About Us</a>
+<a href="#" class="nav-link">Services</a>
+<a href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/43e0f7a4-3b26-4350-bbbe-3ab055f48d4f" data-readdy="true" class="nav-link">Projects</a>
+<a href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/44c32bd6-396b-48d8-bbb9-a769ead666ce" data-readdy="true" class="nav-link text-primary">Industries</a>
+<a href="#" class="nav-link">Contact</a>
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 whitespace-nowrap">Get Quote</button>
+</div>
+</nav>
+</div>
+</header>
+
+<main class="pt-30">
+<section class="relative h-[400px] flex items-center" style="background-image: url('https://public.readdy.ai/ai/img_res/682ec8dfe56afcbb8099cb75e7ac348a.jpg'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-primary bg-opacity-70"></div>
+<div class="container mx-auto px-4 relative z-10">
+<div class="max-w-3xl">
+<h1 class="text-5xl font-bold font-['Roboto'] text-white leading-tight mb-6">Industry Solutions</h1>
+<p class="text-xl text-white opacity-90">
+Delivering specialized MEP engineering solutions across diverse sectors with innovation and excellence
+</p>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-3 gap-8">
+<div class="industry-card bg-white p-8 !rounded-lg shadow-lg transition duration-300 cursor-pointer" onclick="showIndustryDetails('healthcare')">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-hospital-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">Healthcare</h3>
+<p class="text-gray-600 mb-4">Specialized MEP solutions for hospitals, clinics, and medical facilities</p>
+<ul class="text-gray-600 space-y-2 mb-6">
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Medical Gas Systems</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Sterilization Units</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Critical Power Systems</li>
+</ul>
+<button class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+
+<div class="industry-card bg-white p-8 !rounded-lg shadow-lg transition duration-300 cursor-pointer" onclick="showIndustryDetails('commercial')">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-building-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">Commercial</h3>
+<p class="text-gray-600 mb-4">Comprehensive solutions for office buildings and retail spaces</p>
+<ul class="text-gray-600 space-y-2 mb-6">
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Smart Building Systems</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Energy Management</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Access Control</li>
+</ul>
+<button class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+
+<div class="industry-card bg-white p-8 !rounded-lg shadow-lg transition duration-300 cursor-pointer" onclick="showIndustryDetails('residential')">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-home-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">Residential</h3>
+<p class="text-gray-600 mb-4">Smart solutions for apartments and housing complexes</p>
+<ul class="text-gray-600 space-y-2 mb-6">
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Home Automation</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Water Management</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Security Systems</li>
+</ul>
+<button class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+
+<div class="industry-card bg-white p-8 !rounded-lg shadow-lg transition duration-300 cursor-pointer" onclick="showIndustryDetails('industrial')">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-factory-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">Industrial</h3>
+<p class="text-gray-600 mb-4">Robust solutions for manufacturing and processing facilities</p>
+<ul class="text-gray-600 space-y-2 mb-6">
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Process Automation</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Industrial HVAC</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Power Distribution</li>
+</ul>
+<button class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+
+<div class="industry-card bg-white p-8 !rounded-lg shadow-lg transition duration-300 cursor-pointer" onclick="showIndustryDetails('datacenters')">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-server-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">Data Centers</h3>
+<p class="text-gray-600 mb-4">Critical infrastructure solutions for data facilities</p>
+<ul class="text-gray-600 space-y-2 mb-6">
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Cooling Systems</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>UPS & Backup Power</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Fire Suppression</li>
+</ul>
+<button class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+
+<div class="industry-card bg-white p-8 !rounded-lg shadow-lg transition duration-300 cursor-pointer" onclick="showIndustryDetails('hospitality')">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
+<i class="ri-hotel-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-['Roboto'] font-bold mb-4">Hospitality</h3>
+<p class="text-gray-600 mb-4">Luxury solutions for hotels and resorts</p>
+<ul class="text-gray-600 space-y-2 mb-6">
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Guest Room Controls</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Entertainment Systems</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Energy Efficiency</li>
+</ul>
+<button class="text-primary font-semibold flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<div id="industryModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+<div class="container mx-auto px-4 h-full flex items-center justify-center">
+<div class="bg-white !rounded-lg p-8 max-w-4xl w-full max-h-[80vh] overflow-y-auto">
+<div class="flex justify-between items-center mb-6">
+<h2 id="modalTitle" class="text-2xl font-['Roboto'] font-bold text-primary"></h2>
+<button onclick="closeIndustryDetails()" class="text-gray-500 hover:text-gray-700">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+
+<div class="flex space-x-4 mb-6">
+<button class="tab-button active px-4 py-2 !rounded-full" onclick="switchTab(event, 'overview')">Overview</button>
+<button class="tab-button px-4 py-2 !rounded-full" onclick="switchTab(event, 'solutions')">Solutions</button>
+<button class="tab-button px-4 py-2 !rounded-full" onclick="switchTab(event, 'casestudies')">Case Studies</button>
+<button class="tab-button px-4 py-2 !rounded-full" onclick="switchTab(event, 'compliance')">Compliance</button>
+</div>
+
+<div id="overview" class="tab-content active">
+<div class="grid grid-cols-2 gap-8">
+<div>
+<img id="modalImage" class="w-full !rounded-lg mb-4" alt="Industry Image">
+<p id="modalDescription" class="text-gray-600"></p>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">Key Features</h4>
+<ul id="modalFeatures" class="space-y-3"></ul>
+</div>
+</div>
+</div>
+<div id="solutions" class="tab-content">
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="text-xl font-bold mb-4">Technical Capabilities</h4>
+<ul id="modalCapabilities" class="space-y-3"></ul>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">Industry-Specific Solutions</h4>
+<ul id="modalSolutions" class="space-y-3"></ul>
+</div>
+</div>
+</div>
+
+<div id="casestudies" class="tab-content">
+<div class="grid grid-cols-2 gap-8">
+<div class="bg-gray-50 p-6 !rounded-lg">
+<h4 class="text-xl font-bold mb-4">Featured Project</h4>
+<img id="modalCaseStudyImage" class="w-full !rounded-lg mb-4" alt="Case Study">
+<h5 id="modalCaseStudyTitle" class="text-lg font-bold mb-2"></h5>
+<p id="modalCaseStudyDescription" class="text-gray-600"></p>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">Project Highlights</h4>
+<ul id="modalHighlights" class="space-y-3"></ul>
+</div>
+</div>
+</div>
+<div id="compliance" class="tab-content">
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="text-xl font-bold mb-4">Standards & Certifications</h4>
+<ul id="modalStandards" class="space-y-3"></ul>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">Safety Protocols</h4>
+<ul id="modalProtocols" class="space-y-3"></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+const industryData = {
+  healthcare: {
+    title: "Healthcare Solutions",
+    image:
+      "https://public.readdy.ai/ai/img_res/4df57aba0bae75785952a22b4803d38e.jpg",
+    description:
+      "Comprehensive MEP solutions designed specifically for healthcare facilities, ensuring optimal patient care environments and medical equipment performance.",
+    features: [
+      "Advanced medical gas distribution systems",
+      "Specialized ventilation for operating rooms",
+      "Emergency power systems",
+      "Clean room technology",
+      "Infection control systems",
+    ],
+    capabilities: [
+      "ISO Class 7 & 8 clean room design",
+      "Medical gas system installation",
+      "HVAC with HEPA filtration",
+      "Critical power distribution",
+      "Building automation systems",
+    ],
+    solutions: [
+      "Operating room MEP systems",
+      "Laboratory infrastructure",
+      "Patient room controls",
+      "Pharmacy facilities design",
+      "Diagnostic imaging support",
+    ],
+    caseStudy: {
+      image:
+        "https://public.readdy.ai/ai/img_res/d5b7c31a9278c8cfcb3971dc6fe4fa44.jpg",
+      title: "Apollo Hospitals Comprehensive MEP Solution",
+      description:
+        "Delivered complete MEP infrastructure for a 500-bed multi-specialty hospital, including advanced medical gas systems and critical power backup.",
+      highlights: [
+        "100% power backup system",
+        "Advanced BMS integration",
+        "Energy-efficient HVAC",
+        "Modular OT design",
+        "Smart patient monitoring",
+      ],
+    },
+    standards: [
+      "JCI Accreditation compliance",
+      "NABH standards",
+      "ISO 14644 clean room standards",
+      "ASHRAE healthcare guidelines",
+      "NFPA safety codes",
+    ],
+    protocols: [
+      "Infection control measures",
+      "Air quality monitoring",
+      "Emergency response systems",
+      "Waste management protocols",
+      "Equipment sterilization",
+    ],
+  },
+  // Similar data structure for other industries...
+};
+
+function showIndustryDetails(industry) {
+  const data = industryData[industry];
+  document.getElementById("modalTitle").textContent = data.title;
+  document.getElementById("modalImage").src = data.image;
+  document.getElementById("modalDescription").textContent = data.description;
+  const featuresHtml = data.features
+    .map(
+      (feature) =>
+        `<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>${feature}</li>`,
+    )
+    .join("");
+  document.getElementById("modalFeatures").innerHTML = featuresHtml;
+
+  const capabilitiesHtml = data.capabilities
+    .map(
+      (capability) =>
+        `<li class="flex items-center"><i class="ri-arrow-right-circle-line text-primary mr-2"></i>${capability}</li>`,
+    )
+    .join("");
+  document.getElementById("modalCapabilities").innerHTML = capabilitiesHtml;
+  const solutionsHtml = data.solutions
+    .map(
+      (solution) =>
+        `<li class="flex items-center"><i class="ri-arrow-right-circle-line text-primary mr-2"></i>${solution}</li>`,
+    )
+    .join("");
+  document.getElementById("modalSolutions").innerHTML = solutionsHtml;
+
+  document.getElementById("modalCaseStudyImage").src = data.caseStudy.image;
+  document.getElementById("modalCaseStudyTitle").textContent =
+    data.caseStudy.title;
+  document.getElementById("modalCaseStudyDescription").textContent =
+    data.caseStudy.description;
+  const highlightsHtml = data.caseStudy.highlights
+    .map(
+      (highlight) =>
+        `<li class="flex items-center"><i class="ri-star-line text-primary mr-2"></i>${highlight}</li>`,
+    )
+    .join("");
+  document.getElementById("modalHighlights").innerHTML = highlightsHtml;
+
+  const standardsHtml = data.standards
+    .map(
+      (standard) =>
+        `<li class="flex items-center"><i class="ri-shield-check-line text-primary mr-2"></i>${standard}</li>`,
+    )
+    .join("");
+  document.getElementById("modalStandards").innerHTML = standardsHtml;
+  const protocolsHtml = data.protocols
+    .map(
+      (protocol) =>
+        `<li class="flex items-center"><i class="ri-shield-check-line text-primary mr-2"></i>${protocol}</li>`,
+    )
+    .join("");
+  document.getElementById("modalProtocols").innerHTML = protocolsHtml;
+
+  document.getElementById("industryModal").classList.remove("hidden");
+  document.body.style.overflow = "hidden";
+}
+
+function closeIndustryDetails() {
+  document.getElementById("industryModal").classList.add("hidden");
+  document.body.style.overflow = "auto";
+}
+
+function switchTab(event, tabId) {
+  const buttons = document.getElementsByClassName("tab-button");
+  for (let button of buttons) {
+    button.classList.remove("active");
+  }
+  event.currentTarget.classList.add("active");
+
+  const contents = document.getElementsByClassName("tab-content");
+  for (let content of contents) {
+    content.classList.remove("active");
+  }
+  document.getElementById(tabId).classList.add("active");
+}
+</script>
+<section class="py-20 bg-primary text-white">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-3xl font-['Roboto'] font-bold mb-6">Ready to Transform Your Industry?</h2>
+<p class="text-xl mb-8 opacity-90">
+Contact us today to discuss your specific industry requirements
+</p>
+<div class="flex justify-center space-x-4">
+<button class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap">
+Schedule Consultation
+</button>
+<button class="border-2 border-white px-8 py-3 !rounded-button font-semibold hover:bg-white hover:text-primary whitespace-nowrap">
+Download Industry Brochure
+</button>
+</div>
+</div>
+</section>
+
+<footer class="bg-gray-900 text-white py-16">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-4 gap-8">
+<div>
+<a href="/" class="text-3xl font-['Pacifico'] mb-6 block">logo</a>
+<p class="text-gray-400 mb-6">
+Leading MEP design services provider in Hyderabad, delivering innovative solutions across diverse industries since March 2024
+</p>
+<div class="flex space-x-4">
+<a href="#" class="hover:text-primary">
+<i class="ri-linkedin-fill text-xl"></i>
+</a>
+<a href="#" class="hover:text-primary">
+<i class="ri-twitter-fill text-xl"></i>
+</a>
+<a href="#" class="hover:text-primary">
+<i class="ri-facebook-fill text-xl"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Projects</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Industries</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Industries</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white">Healthcare</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Commercial</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Residential</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Industrial</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Data Centers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Hospitality</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Contact Info</h4>
+<ul class="space-y-3">
+<li class="flex items-center">
+<i class="ri-map-pin-line mr-3"></i>
+<span class="text-gray-400">123 Tech Park, Hyderabad, India</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span class="text-gray-400">+91 730 688 5392</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span class="text-gray-400">ramana@manasyati.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+<p>&copy; 2024-2025 Manasyati Engineering Services. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
