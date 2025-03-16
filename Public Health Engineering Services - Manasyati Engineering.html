@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Public Health Engineering Services - Manasyati Engineering</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#1a3c6e',
+secondary: '#465b6e'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px', 
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+</style>
+</head>
+<body class="bg-white font-['Open_Sans']">
+
+<header class="fixed w-full bg-white shadow-sm z-50">
+<div class="container mx-auto px-4">
+<nav class="flex items-center justify-between h-20">
+<a href="index.html" data-readdy="true" class="flex items-center space-x-2">
+<i class="ri-arrow-left-line text-xl"></i>
+<span>Back to Services</span>
+</a>
+<div class="flex items-center space-x-8">
+<a href="tel:+917306885392" class="flex items-center space-x-2">
+<i class="ri-phone-line"></i>
+<span>+91 730 688 5392</span>
+</a>
+<a href="mailto:ramana@manasyati.com" class="flex items-center space-x-2">
+<i class="ri-mail-line"></i>
+<span>ramana@manasyati.com</span>
+</a>
+<button onclick="openConsultationModal()" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 whitespace-nowrap">Get Consultation</button>
+</div>
+</nav>
+</div>
+</header>
+
+<main class="pt-20">
+<section class="relative h-[500px] flex items-center" style="background-image: url('img_res/b08036320ea77e22cacc01ed93e8f118.jpg'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-primary bg-opacity-70"></div>
+<div class="container mx-auto px-4 relative z-10">
+<div class="max-w-3xl">
+<h1 class="text-5xl font-bold text-white mb-6">Public Health Engineering Services</h1>
+<p class="text-xl text-white opacity-90 mb-8">Comprehensive water management and sanitation solutions for modern infrastructure projects. Expert design and implementation of water supply, plumbing, sewage treatment, and drainage systems.</p>
+<button onclick="openQuoteModal()" class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap">Request a Quote</button>
+</div>
+</div>
+</section>
+
+<section class="py-16">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-3xl font-bold text-primary mb-6">Service Overview</h2>
+<p class="text-gray-600 mb-6">Our Public Health Engineering services encompass the complete spectrum of water and waste management solutions for commercial, residential, and industrial projects. We leverage cutting-edge technology and sustainable practices to design efficient systems that meet both current needs and future demands.</p>
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center">
+<i class="ri-drop-line text-xl text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold">Water Quality</h4>
+<p class="text-sm text-gray-600">ISO 9001:2015 certified</p>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center">
+<i class="ri-recycle-line text-xl text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold">Sustainability</h4>
+<p class="text-sm text-gray-600">LEED certified designs</p>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center">
+<i class="ri-shield-check-line text-xl text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold">Compliance</h4>
+<p class="text-sm text-gray-600">100% regulatory adherence</p>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center">
+<i class="ri-tools-line text-xl text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold">Maintenance</h4>
+<p class="text-sm text-gray-600">24/7 support available</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="bg-white shadow-xl !rounded-lg overflow-hidden">
+<div id="performanceChart" class="h-[400px]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-primary text-center mb-12">Key Features & Specifications</h2>
+<div class="grid grid-cols-2 gap-8">
+<div class="bg-white p-8 !rounded-lg shadow-lg">
+<div class="flex items-start space-x-6">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0">
+<i class="ri-water-flash-line text-2xl text-primary"></i>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-4">Water Supply Systems</h3>
+<ul class="space-y-3 text-gray-600">
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Advanced filtration & purification</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Pressure boosting systems</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Storage tank design</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Distribution network planning</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="bg-white p-8 !rounded-lg shadow-lg">
+<div class="flex items-start space-x-6">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0">
+<i class="ri-plug-line text-2xl text-primary"></i>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-4">Plumbing Solutions</h3>
+<ul class="space-y-3 text-gray-600">
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Hot & cold water systems</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Fixture selection & layout</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Water conservation features</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Maintenance access planning</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="bg-white p-8 !rounded-lg shadow-lg">
+<div class="flex items-start space-x-6">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0">
+<i class="ri-recycle-line text-2xl text-primary"></i>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-4">Sewage Treatment</h3>
+<ul class="space-y-3 text-gray-600">
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>STP design & implementation</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Treatment process optimization</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Sludge management</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Water recycling systems</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="bg-white p-8 !rounded-lg shadow-lg">
+<div class="flex items-start space-x-6">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0">
+<i class="ri-flow-chart text-2xl text-primary"></i>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-4">Drainage Systems</h3>
+<ul class="space-y-3 text-gray-600">
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Stormwater management</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Gravity flow optimization</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Flood prevention design</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ri-checkbox-circle-line text-primary"></i>
+<span>Maintenance access points</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-primary text-center mb-12">Featured Case Studies</h2>
+<div class="grid grid-cols-3 gap-8">
+<div class="bg-white !rounded-lg overflow-hidden shadow-lg">
+<img src="img_res/24658a7ea4740fe42b46dcadf00bce1b.jpg" alt="Hospital Project" class="w-full h-[250px] object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Multi-Specialty Hospital</h3>
+<p class="text-gray-600 mb-4">Complete PHE solution for 500-bed hospital including medical gas systems</p>
+<div class="space-y-2">
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-600">Project Duration</span>
+<span class="font-semibold">18 months</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-600">Water Savings</span>
+<span class="font-semibold">45% reduction</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-600">System Capacity</span>
+<span class="font-semibold">500,000 L/day</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bg-white !rounded-lg overflow-hidden shadow-lg">
+<img src="img_res/dd052efa5320dd61c6ae085503ff5f8e.jpg" alt="Residential Project" class="w-full h-[250px] object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Luxury Residential Complex</h3>
+<p class="text-gray-600 mb-4">Integrated water management for 1200-unit premium housing project</p>
+<div class="space-y-2">
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-600">Project Duration</span>
+<span class="font-semibold">24 months</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-600">Water Recycling</span>
+<span class="font-semibold">80% efficiency</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-600">Daily Capacity</span>
+<span class="font-semibold">800,000 L/day</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bg-white !rounded-lg overflow-hidden shadow-lg">
+<img src="img_res/8a16819d2a06e3cbd322af22dd1c80a1.jpg" alt="Commercial Project" class="w-full h-[250px] object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Tech Park Development</h3>
+<p class="text-gray-600 mb-4">LEED Platinum certified water systems for IT campus</p>
+<div class="space-y-2">
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-600">Project Duration</span>
+<span class="font-semibold">15 months</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-600">Energy Savings</span>
+<span class="font-semibold">35% reduction</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-600">Area Covered</span>
+<span class="font-semibold">1.2M sq ft</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold text-primary mb-12">Get Started with Our PHE Services</h2>
+<div class="grid grid-cols-3 gap-8 text-center mb-12">
+<div>
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-discuss-line text-2xl text-primary"></i>
+</div>
+<h3 class="font-bold mb-2">Consultation</h3>
+<p class="text-gray-600 text-sm">Initial discussion of your project requirements</p>
+</div>
+<div>
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-file-list-3-line text-2xl text-primary"></i>
+</div>
+<h3 class="font-bold mb-2">Proposal</h3>
+<p class="text-gray-600 text-sm">Detailed solution design and quotation</p>
+</div>
+<div>
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-install-line text-2xl text-primary"></i>
+</div>
+<h3 class="font-bold mb-2">Implementation</h3>
+<p class="text-gray-600 text-sm">Expert execution and project delivery</p>
+</div>
+</div>
+<button onclick="openConsultationModal()" class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap">Schedule a Consultation</button>
+</div>
+</div>
+</section>
+
+<div id="consultationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+<div class="bg-white !rounded-lg p-8 max-w-2xl w-full mx-4">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold text-gray-900">Schedule a Consultation</h3>
+<button onclick="closeConsultationModal()" class="text-gray-500 hover:text-gray-700">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<form id="consultationForm" class="space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+<input type="text" required class="w-full px-4 py-2 border !rounded-button">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+<input type="email" required class="w-full px-4 py-2 border !rounded-button">
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+<input type="tel" required class="w-full px-4 py-2 border !rounded-button">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Project Type</label>
+<select required class="w-full px-4 py-2 border !rounded-button">
+<option value="">Select Type</option>
+<option value="commercial">Commercial</option>
+<option value="residential">Residential</option>
+<option value="industrial">Industrial</option>
+<option value="healthcare">Healthcare</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Project Requirements</label>
+<textarea required class="w-full px-4 py-2 border !rounded-button h-32"></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90">Submit Request</button>
+</form>
+</div>
+</div>
+
+<script>
+const chartData = {
+xAxis: {
+type: 'category',
+data: ['2020', '2021', '2022', '2023', '2024'],
+axisLabel: {color: '#1f2937'}
+},
+yAxis: {
+type: 'value',
+axisLabel: {color: '#1f2937'}
+},
+grid: {top: 20, right: 20, bottom: 20, left: 40},
+series: [{
+name: 'Water Savings',
+type: 'line',
+smooth: true,
+data: [20, 32, 41, 54, 68],
+itemStyle: {color: 'rgba(87, 181, 231, 1)'},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0, y: 0, x2: 0, y2: 1,
+colorStops: [{
+offset: 0,
+color: 'rgba(87, 181, 231, 0.3)'
+}, {
+offset: 1,
+color: 'rgba(87, 181, 231, 0.1)'
+}]
+}
+}
+}]
+};
+
+const chart = echarts.init(document.getElementById('performanceChart'));
+chart.setOption({...chartData, animation: false});
+
+function openConsultationModal() {
+document.getElementById('consultationModal').classList.remove('hidden');
+document.getElementById('consultationModal').classList.add('flex');
+}
+
+function closeConsultationModal() {
+document.getElementById('consultationModal').classList.add('hidden');
+document.getElementById('consultationModal').classList.remove('flex');
+}
+
+document.getElementById('consultationForm').addEventListener('submit', async (e) => {
+e.preventDefault();
+closeConsultationModal();
+const successDialog = document.createElement('div');
+successDialog.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+successDialog.innerHTML = `
+<div class="bg-white !rounded-lg p-8 max-w-md w-full mx-4">
+<div class="text-center">
+<div class="w-16 h-16 bg-green-100 !rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-check-line text-3xl text-green-500"></i>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
+<p class="text-gray-600 mb-6">Thank you for your interest. Our team will contact you within 24 hours.</p>
+<button onclick="this.closest('.fixed').remove()" class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90">Close</button>
+</div>
+</div>
+`;
+document.body.appendChild(successDialog);
+e.target.reset();
+});
+</script>
+
+</main>
+
+<footer class="bg-gray-900 text-white py-16">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-4 gap-8">
+<div>
+<h4 class="text-lg font-bold mb-6">About Us</h4>
+<p class="text-gray-400 mb-6">Leading MEP design services provider specializing in sustainable and efficient engineering solutions for modern infrastructure.</p>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Contact Info</h4>
+<ul class="space-y-3 text-gray-400">
+<li class="flex items-center">
+<i class="ri-map-pin-line mr-3"></i>
+<span>123 Tech Park, Hyderabad, India</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span>+91 730 688 5392</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span>ramana@manasyati.com</span>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Projects</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Follow Us</h4>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white">
+<i class="ri-linkedin-fill text-xl"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white">
+<i class="ri-twitter-fill text-xl"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white">
+<i class="ri-facebook-fill text-xl"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+<p>&copy; 2024-2025 Manasyati Engineering Services. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
