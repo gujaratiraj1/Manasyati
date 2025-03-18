@@ -1,0 +1,26 @@
+/* Common styles for all pages */
+.site-logo {
+  height: 56px; /* 14 * 4px for consistent sizing */
+  width: auto;
+  object-fit: contain;
+}
+
+.page-banner {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.page-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 60, 110, 0.7); /* Primary color overlay */
+}
+
+/* Consistent spacing */
+.section-padding {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
