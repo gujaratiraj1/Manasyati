@@ -167,16 +167,6 @@
         0% { d: path("M0,96L48,112C96,128,192,160,288,160..."); }
         100% { d: path("M0,160L48,144C96,128,192,96,288,96..."); }
       }
-
-      @keyframes textBlink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.5; }
-      }
-      
-      .text-blink {
-        animation: textBlink 2s ease-in-out infinite;
-        color: #FFC107;
-      }
     </style>
   </head>
   <body class="bg-white font-['Open_Sans']">
@@ -238,8 +228,8 @@
           <div class="max-w-3xl">
             <div class="overflow-hidden mb-4">
               <h1 class="text-5xl md:text-6xl font-bold font-['Roboto'] leading-tight slide-up">
-                Engineering <span class="text-blink">Excellence</span> Through 
-                <span class="text-blink">Innovation</span> & <span class="text-blink">Expertise</span>
+                Engineering <span class="text-secondary animate-pulse">Excellence</span> Through 
+                <span class="text-secondary animate-pulse">Innovation</span> & <span class="text-secondary animate-pulse">Expertise</span>
               </h1>
             </div>
             <p class="text-xl text-white opacity-90 fade-in-up">
