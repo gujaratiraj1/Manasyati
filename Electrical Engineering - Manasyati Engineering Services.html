@@ -33,23 +33,17 @@
         theme: {
           extend: {
             colors: {
-              primary: "#1a3c6e",
-              secondary: "#465b6e",
-            },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
-          },
-        },
+              primary: '#2E7D32',    // Green
+              secondary: '#FFC107',  // Turmeric
+              tertiary: '#673AB7',   // Purple
+              accent: '#FFD700',     // Gold
+              'green-light': '#4CAF50',
+              'turmeric-light': '#FFE082',
+              'purple-light': '#9575CD',
+              'gold-light': '#FFE57F'
+            }
+          }
+        }
       };
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -65,6 +59,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
     <style>
       :where([class^="ri-"])::before { content: "\f3c2"; }
+      /* Additional green theme styles */
+      .bg-primary.bg-opacity-70 {
+        background: linear-gradient(45deg, rgba(46, 125, 50, 0.85), rgba(255, 193, 7, 0.85));
+      }
+      .bg-primary.bg-opacity-10 {
+        background-color: rgba(76, 175, 80, 0.1);
+      }
+      .hover\:bg-opacity-90:hover {
+        background-color: rgba(46, 125, 50, 0.9);
+      }
+      .text-primary {
+        color: #2E7D32;
+      }
+      button.bg-primary, 
+      .bg-primary {
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
+      }
+      button.hover\:bg-opacity-90:hover {
+        background: linear-gradient(45deg, #673AB7, #FFD700);
+      }
+      .btn-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+      @keyframes glow {
+        from {
+          box-shadow: 0 0 5px #FFD700, 0 0 10px #FFC107, 0 0 15px #2E7D32;
+        }
+        to {
+          box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
+        }
+      }
     </style>
   </head>
   <body class="bg-white font-['Open_Sans']">
@@ -126,73 +151,45 @@
           </div>
         </div>
       </section>
-      <section class="py-16">
+      <section class="py-24 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="grid grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 class="text-3xl font-bold text-primary mb-6">
-                Service Overview
-              </h2>
-              <p class="text-gray-600 mb-6">
-                We provide customized firefighting solutions with end-to-end
-                support, ensuring safety and reliability. Our comprehensive fire
-                safety systems are designed to protect lives and assets while
-                meeting all regulatory requirements.
-              </p>
-              <div class="grid grid-cols-2 gap-6 mb-8">
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-flashlight-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Power Distribution</h4>
-                    <p class="text-sm text-gray-600">LT & HT systems</p>
-                  </div>
+          <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-primary text-center mb-4">
+              Service Overview
+            </h2>
+            <p class="text-gray-600 mb-16 text-center text-lg max-w-3xl mx-auto">
+              We provide comprehensive electrical engineering solutions with innovative technology 
+              and expert design. Our services ensure reliable power distribution and energy 
+              efficiency across all projects.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i class="ri-flashlight-line text-2xl text-primary"></i>
                 </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i
-                      class="ri-battery-2-charge-line text-xl text-primary"
-                    ></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Power Backup</h4>
-                    <p class="text-sm text-gray-600">UPS & generators</p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-lightbulb-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Lighting Systems</h4>
-                    <p class="text-sm text-gray-600">
-                      Energy efficient solutions
-                    </p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-dashboard-3-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Energy Management</h4>
-                    <p class="text-sm text-gray-600">Load optimization</p>
-                  </div>
-                </div>
+                <h4 class="font-bold text-xl mb-3 text-center">Power Distribution</h4>
+                <p class="text-gray-600 text-center">Complete LT & HT systems design and implementation</p>
               </div>
-            </div>
-            <div>
-              <div class="bg-white shadow-xl !rounded-lg overflow-hidden">
-                <div id="performanceChart" class="h-[400px]"></div>
+              <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i class="ri-battery-2-charge-line text-2xl text-primary"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3 text-center">Power Backup</h4>
+                <p class="text-gray-600 text-center">Reliable UPS and generator solutions</p>
+              </div>
+              <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i class="ri-lightbulb-line text-2xl text-primary"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3 text-center">Lighting Systems</h4>
+                <p class="text-gray-600 text-center">Energy-efficient lighting design and controls</p>
+              </div>
+              <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i class="ri-dashboard-3-line text-2xl text-primary"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3 text-center">Energy Management</h4>
+                <p class="text-gray-600 text-center">Smart monitoring and optimization systems</p>
               </div>
             </div>
           </div>

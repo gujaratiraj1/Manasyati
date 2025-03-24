@@ -64,27 +64,21 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
-theme: {
-extend: {
-colors: {
-primary: '#1a3c6e',
-secondary: '#465b6e'
-},
-borderRadius: {
-'none': '0px',
-'sm': '4px',
-DEFAULT: '8px',
-'md': '12px',
-'lg': '16px',
-'xl': '20px',
-'2xl': '24px',
-'3xl': '32px',
-'full': '9999px',
-'button': '8px'
-}
-}
-}
-}
+  theme: {
+    extend: {
+      colors: {
+        primary: '#2E7D32',    // Green
+        secondary: '#FFC107',  // Turmeric
+        tertiary: '#673AB7',   // Purple
+        accent: '#FFD700',     // Gold
+        'green-light': '#4CAF50',
+        'turmeric-light': '#FFE082',
+        'purple-light': '#9575CD',
+        'gold-light': '#FFE57F'
+      }
+    }
+  }
+};
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,8 +86,150 @@ DEFAULT: '8px',
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
-.service-card:hover { transform: translateY(-5px); }
+.nav-link:hover { 
+  color: #FFC107; 
+  background: linear-gradient(45deg, #2E7D32, #FFC107);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.service-card { transition: all 0.3s ease; }
+.service-card:hover { 
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.15);
+  border: 1px solid rgba(103, 58, 183, 0.1);
+}
+
+.bg-primary.bg-opacity-70 {
+  background: linear-gradient(45deg, rgba(46, 125, 50, 0.85), rgba(255, 193, 7, 0.85));
+}
+
+.bg-primary.bg-opacity-10 {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+button.bg-primary, 
+.bg-primary {
+  background: linear-gradient(45deg, #2E7D32, #FFC107);
+}
+
+button.hover\:bg-opacity-90:hover {
+  background: linear-gradient(45deg, #673AB7, #FFD700);
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #2E7D32, #FFC107, #673AB7, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.btn-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px #FFD700, 0 0 10px #FFC107, 0 0 15px #2E7D32;
+  }
+  to {
+    box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
+  }
+}
+
+/* Hero Animations */
+.slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .7;
+  }
+}
+
+/* Counter animation */
+.counter {
+  transition: all 0.3s ease;
+}
+
+/* Wave animation */
+.waves path {
+  animation: wave 3s ease-in-out infinite alternate;
+}
+
+@keyframes wave {
+  0% { d: path("M0,96L48,112C96,128,192,160,288,160..."); }
+  100% { d: path("M0,160L48,144C96,128,192,96,288,96..."); }
+}
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200;
+
+  const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+    
+    const updateCount = () => {
+      const inc = target / speed;
+      if (count < target) {
+        count = Math.ceil(count + inc);
+        counter.innerText = count;
+        setTimeout(updateCount, 1);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    
+    updateCount();
+  };
+
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, {
+    threshold: 0.5
+  });
+
+  counters.forEach(counter => observer.observe(counter));
+});
+</script>
 </head>
 <body class="bg-white font-['Open_Sans']">
 <header class="fixed w-full bg-white shadow-sm z-50">
@@ -109,9 +245,9 @@ DEFAULT: '8px',
 </a>
 </div>
 <nav class="flex items-center justify-between h-20">
-<a href="/" class="h-12">
-<img src="image/4a3751037ca9aab7f366bebb15affb03.jpeg" alt="Manasyati Engineering Services" class="h-full">
-</a>
+  <a href="index.html" class="h-16">
+  <img src="img_res/LOGO.png" alt="Manasyati Engineering Services" class="h-full w-auto object-contain">
+  </a>
 <div class="flex items-center space-x-8">
 <a href="index.html" data-readdy="true" class="nav-link hover:text-primary">Home</a>
 <a href="About Manasyati Engineering.html" class="nav-link hover:text-primary">About Us</a>
@@ -125,364 +261,261 @@ DEFAULT: '8px',
 </div>
 </header>
 <main class="pt-30">
-<section class="relative h-[400px] flex items-center" style="background-image: url('img_res/002cd63e992bfced3477ef4b3d8a7ed1.jpg'); background-size: cover; background-position: center;">
-<div class="absolute inset-0 bg-primary bg-opacity-70"></div>
-<div class="container mx-auto px-4 relative z-10">
-<div class="text-white">
-<div class="flex items-center text-sm mb-4">
-<a href="index.html" data-readdy="true" class="hover:text-opacity-80">Home</a>
-<i class="ri-arrow-right-s-line mx-2"></i>
-<span>Services</span>
-</div>
-<h1 class="text-4xl font-['Roboto'] font-bold mb-4">Our Engineering Services</h1>
-<p class="text-xl opacity-90 max-w-2xl">Comprehensive MEP solutions tailored to meet the evolving needs of modern construction projects</p>
-</div>
-</div>
+<section class="relative h-[600px] flex items-center overflow-hidden" style="background-image: url('img_res/002cd63e992bfced3477ef4b3d8a7ed1.jpg'); background-size: cover; background-position: center;">
+  <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+  <div class="absolute inset-0" id="particles-js"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="text-white hero-text">
+        <div class="overflow-hidden mb-4">
+          <h1 class="text-5xl md:text-6xl font-bold font-['Roboto'] leading-tight slide-up">
+            Our <span class="text-secondary animate-pulse">Engineering</span> Services
+          </h1>
+        </div>
+        <p class="text-xl mb-8 opacity-90 fade-in-up max-w-2xl">
+          Comprehensive MEP solutions tailored to meet the evolving needs of modern construction projects
+        </p>
+      </div>
+      <div class="hidden lg:flex lg:justify-end" data-aos="fade-left">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="stat-card bg-white/10 backdrop-blur p-6 rounded-lg hover:transform hover:scale-105 transition-all">
+              <h3 class="text-4xl font-bold text-white counter" data-target="7">0</h3>
+              <span class="text-2xl text-white">+</span>
+              <p class="text-white/80">Core Services</p>
+            </div>
+            <div class="stat-card bg-white/10 backdrop-blur p-6 rounded-lg translate-x-4 hover:transform hover:scale-105 transition-all">
+              <h3 class="text-4xl font-bold text-white counter" data-target="100">0</h3>
+              <span class="text-2xl text-white">%</span>
+              <p class="text-white/80">Client Satisfaction</p>
+            </div>
+          </div>
+          <div class="space-y-4 mt-8">
+            <div class="stat-card bg-white/10 backdrop-blur p-6 rounded-lg translate-x-4 hover:transform hover:scale-105 transition-all">
+              <h3 class="text-4xl font-bold text-white counter" data-target="50">0</h3>
+              <span class="text-2xl text-white">+</span>
+              <p class="text-white/80">Projects Completed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" class="waves" preserveAspectRatio="none">
+      <path fill="#f9fafb" fill-opacity="1" d="M0,32L1440,64L1440,100L0,100Z"></path>
+    </svg>
+  </div>
 </section>
+
+<!-- Services Section -->
 <section class="py-20">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-3 gap-8">
-<div class="service-card bg-white p-8 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-water-flash-line text-2xl text-primary"></i>
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- Public Health Engineering -->
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+  <img src="img_res/PEB.webp" alt="Public Health Engineering" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">Public Health Engineering</h3>
+  <p class="text-gray-600 mb-4">
+    Water supply, plumbing, sewage treatment, drainage systems
+  </p>
+  <div class="space-y-4 mb-8">
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Water supply & distribution systems</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Drainage & sewerage networks</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Rainwater harvesting systems</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Water treatment & recycling</span>
+    </div>
+  </div>
+  <a href="Public Health Engineering Services - Manasyati Engineering.html" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
 </div>
-<h3 class="text-2xl font-['Roboto'] font-bold mb-4">Public Health Engineering</h3>
-<p class="text-gray-600 mb-6">Comprehensive water supply, drainage, and sewage treatment solutions for commercial and residential projects.</p>
-<div class="space-y-4 mb-8">
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Water supply & distribution systems</span>
+
+<!-- Fire Fighting Systems -->
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+  <img src="img_res/FSE.webp" alt="Firefighting Systems" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">Firefighting Systems</h3>
+  <p class="text-gray-600 mb-4">
+    Hydrant, sprinkler systems, fire alarms and NFPA solutions
+  </p>
+  <div class="space-y-4 mb-8">
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Fire hydrant systems</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Sprinkler installations</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Fire alarm & detection</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Emergency response systems</span>
+    </div>
+  </div>
+  <a href="Fire Safety Engineering Services - Manasyati Engineering.html" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
 </div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Drainage & sewerage networks</span>
+
+<!-- Life Safety & Security -->
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+  <img src="img_res/LSS.webp" alt="Life Safety & Security" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">Life Safety & Security</h3>
+  <p class="text-gray-600 mb-4">
+    Access control, emergency systems, and public address solutions
+  </p>
+  <div class="space-y-4 mb-8">
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Access control systems</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">CCTV surveillance</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Emergency lighting</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Public address systems</span>
+    </div>
+  </div>
+  <a href="Life Safety & Security - Manasyati Engineering Services.html" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
 </div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Rainwater harvesting systems</span>
+
+<!-- Electrical Engineering -->
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+  <img src="img_res/EES.webp" alt="Electrical Engineering" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">Electrical Engineering</h3>
+  <p class="text-gray-600 mb-4">
+    Power distribution, UPS, lighting and load management
+  </p>
+  <div class="space-y-4 mb-8">
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Power distribution systems</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Lighting design</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">UPS & backup power</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Energy management</span>
+    </div>
+  </div>
+  <a href="Electrical Design Services - Manasyati Engineering.html" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
 </div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Water treatment & recycling</span>
+
+<!-- Communication Systems -->
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+  <img src="img_res/CMS.webp" alt="Communication Systems" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">Communication Systems</h3>
+  <p class="text-gray-600 mb-4">
+    FTTH, DTH, CCTV, boom barriers and EPABX solutions
+  </p>
+  <div class="space-y-4 mb-8">
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">FTTH networks</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Structured cabling</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">EPABX systems</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Digital signage</span>
+    </div>
+  </div>
+  <a href="Communication Systems - Manasyati Engineering Services.html" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
 </div>
+
+<!-- HVAC & IBMS -->
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
+  <img src="img_res/HVAC.webp" alt="HVAC & IBMS" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">HVAC & IBMS</h3>
+  <p class="text-gray-600 mb-4">
+    Air conditioning, ventilation and building automation
+  </p>
+  <div class="space-y-4 mb-8">
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Air conditioning design</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Ventilation systems</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Building automation</span>
+    </div>
+    <div class="flex items-start">
+      <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+      <span class="text-gray-600">Energy optimization</span>
+    </div>
+  </div>
+  <a href="HVAC & IBMS - Manasyati Engineering Services.html" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
 </div>
-<div class="border-t pt-6">
-<h4 class="font-semibold mb-2">Recent Projects</h4>
-<ul class="text-gray-600 space-y-2">
-<li>Tech Park - 500,000 sq ft</li>
-<li>Residential Complex - 200 units</li>
-<li>Hospital Building - 300 beds</li>
-</ul>
-</div>
-<button class="mt-8 w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90">Request Consultation</button>
-</div>
-<div class="service-card bg-white p-8 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-fire-line text-2xl text-primary"></i>
-</div>
-<h3 class="text-2xl font-['Roboto'] font-bold mb-4">Firefighting Systems</h3>
-<p class="text-gray-600 mb-6">State-of-the-art fire protection solutions compliant with international safety standards.</p>
-<div class="space-y-4 mb-8">
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Fire hydrant systems</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Sprinkler installations</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Fire alarm & detection</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Emergency response systems</span>
-</div>
-</div>
-<div class="border-t pt-6">
-<h4 class="font-semibold mb-2">Recent Projects</h4>
-<ul class="text-gray-600 space-y-2">
-<li>Shopping Mall - 1M sq ft</li>
-<li>Office Tower - 30 floors</li>
-<li>Data Center - Tier 4</li>
-</ul>
-</div>
-<button class="mt-8 w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90">Request Consultation</button>
-</div>
-<div class="service-card bg-white p-8 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-shield-keyhole-line text-2xl text-primary"></i>
-</div>
-<h3 class="text-2xl font-['Roboto'] font-bold mb-4">Life Safety & Security</h3>
-<p class="text-gray-600 mb-6">Integrated security and safety solutions for complete building protection.</p>
-<div class="space-y-4 mb-8">
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Access control systems</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">CCTV surveillance</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Emergency lighting</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Public address systems</span>
-</div>
-</div>
-<div class="border-t pt-6">
-<h4 class="font-semibold mb-2">Recent Projects</h4>
-<ul class="text-gray-600 space-y-2">
-<li>Bank Headquarters</li>
-<li>Government Complex</li>
-<li>Educational Campus</li>
-</ul>
-</div>
-<button class="mt-8 w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90">Request Consultation</button>
-</div>
-<div class="service-card bg-white p-8 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-flashlight-line text-2xl text-primary"></i>
-</div>
-<h3 class="text-2xl font-['Roboto'] font-bold mb-4">Electrical Engineering</h3>
-<p class="text-gray-600 mb-6">Complete electrical design and power distribution solutions for modern buildings.</p>
-<div class="space-y-4 mb-8">
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Power distribution systems</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Lighting design</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">UPS & backup power</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Energy management</span>
-</div>
-</div>
-<div class="border-t pt-6">
-<h4 class="font-semibold mb-2">Recent Projects</h4>
-<ul class="text-gray-600 space-y-2">
-<li>Industrial Plant</li>
-<li>Smart City Infrastructure</li>
-<li>Healthcare Facility</li>
-</ul>
-</div>
-<button class="mt-8 w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90">Request Consultation</button>
-</div>
-<div class="service-card bg-white p-8 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-base-station-line text-2xl text-primary"></i>
-</div>
-<h3 class="text-2xl font-['Roboto'] font-bold mb-4">Communication Systems</h3>
-<p class="text-gray-600 mb-6">Advanced communication infrastructure for modern buildings and facilities.</p>
-<div class="space-y-4 mb-8">
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">FTTH networks</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Structured cabling</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">EPABX systems</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Digital signage</span>
-</div>
-</div>
-<div class="border-t pt-6">
-<h4 class="font-semibold mb-2">Recent Projects</h4>
-<ul class="text-gray-600 space-y-2">
-<li>Corporate Campus</li>
-<li>Retail Complex</li>
-<li>Smart Homes</li>
-</ul>
-</div>
-<button class="mt-8 w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90">Request Consultation</button>
-</div>
-<div class="service-card bg-white p-8 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-temp-hot-line text-2xl text-primary"></i>
-</div>
-<h3 class="text-2xl font-['Roboto'] font-bold mb-4">HVAC & IBMS</h3>
-<p class="text-gray-600 mb-6">Integrated building management and climate control solutions.</p>
-<div class="space-y-4 mb-8">
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Air conditioning design</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Ventilation systems</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Building automation</span>
-</div>
-<div class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-<span class="text-gray-600">Energy optimization</span>
-</div>
-</div>
-<div class="border-t pt-6">
-<h4 class="font-semibold mb-2">Recent Projects</h4>
-<ul class="text-gray-600 space-y-2">
-<li>Hotel Complex</li>
-<li>Convention Center</li>
-<li>Research Facility</li>
-</ul>
-</div>
-<button class="mt-8 w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90">Request Consultation</button>
-</div>
-</div>
-</div>
+
+    </div>
+  </div>
 </section>
-<section class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">Our Service Process</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">We follow a systematic approach to ensure quality and efficiency in every project</p>
-</div>
-<div class="grid grid-cols-4 gap-8">
-<div class="text-center">
-<div class="w-20 h-20 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
-<i class="ri-discuss-line text-3xl text-primary"></i>
-</div>
-<h3 class="text-xl font-['Roboto'] font-bold mb-4">Initial Consultation</h3>
-<p class="text-gray-600">Understanding project requirements and objectives</p>
-</div>
-<div class="text-center">
-<div class="w-20 h-20 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
-<i class="ri-draft-line text-3xl text-primary"></i>
-</div>
-<h3 class="text-xl font-['Roboto'] font-bold mb-4">Design Development</h3>
-<p class="text-gray-600">Creating detailed engineering solutions</p>
-</div>
-<div class="text-center">
-<div class="w-20 h-20 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
-<i class="ri-tools-line text-3xl text-primary"></i>
-</div>
-<h3 class="text-xl font-['Roboto'] font-bold mb-4">Implementation</h3>
-<p class="text-gray-600">Executing designs with precision</p>
-</div>
-<div class="text-center">
-<div class="w-20 h-20 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
-<i class="ri-shield-check-line text-3xl text-primary"></i>
-</div>
-<h3 class="text-xl font-['Roboto'] font-bold mb-4">Quality Assurance</h3>
-<p class="text-gray-600">Ensuring standards compliance</p>
-</div>
-</div>
-</div>
-</section>
-<section class="py-20">
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">Featured Case Studies</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Explore our successful project implementations across various sectors</p>
-</div>
-<div class="grid grid-cols-3 gap-8">
-<div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-<img src="img_res/978c9dd7381a245f6713e40ecbcf8618.jpg" alt="Tech Park" class="w-full h-48 object-cover">
-<div class="p-6">
-<h3 class="text-xl font-['Roboto'] font-bold mb-2">Tech Park MEP Integration</h3>
-<p class="text-gray-600 mb-4">Complete MEP solution for a 500,000 sq ft technology park</p>
-<div class="space-y-2 mb-4">
-<div class="flex items-center text-sm">
-<span class="font-semibold w-24">Location:</span>
-<span class="text-gray-600">Hyderabad</span>
-</div>
-<div class="flex items-center text-sm">
-<span class="font-semibold w-24">Duration:</span>
-<span class="text-gray-600">18 months</span>
-</div>
-<div class="flex items-center text-sm">
-<span class="font-semibold w-24">Value:</span>
-<span class="text-gray-600">₹45 Cr</span>
-</div>
-</div>
-<button class="text-primary font-semibold flex items-center">
-View Case Study
-<i class="ri-arrow-right-line ml-2"></i>
-</button>
-</div>
-</div>
-<div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-<img src="img_res/dbaa23012861b733ebf471c9b2cc2671.jpg" alt="Healthcare Facility" class="w-full h-48 object-cover">
-<div class="p-6">
-<h3 class="text-xl font-['Roboto'] font-bold mb-2">Healthcare Facility Systems</h3>
-<p class="text-gray-600 mb-4">Advanced MEP design for 300-bed super specialty hospital</p>
-<div class="space-y-2 mb-4">
-<div class="flex items-center text-sm">
-<span class="font-semibold w-24">Location:</span>
-<span class="text-gray-600">Chennai</span>
-</div>
-<div class="flex items-center text-sm">
-<span class="font-semibold w-24">Duration:</span>
-<span class="text-gray-600">24 months</span>
-</div>
-<div class="flex items-center text-sm">
-<span class="font-semibold w-24">Value:</span>
-<span class="text-gray-600">₹65 Cr</span>
-</div>
-</div>
-<button class="text-primary font-semibold flex items-center">
-View Case Study
-<i class="ri-arrow-right-line ml-2"></i>
-</button>
-</div>
-</div>
-<div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-<img src="img_res/53a52c6737d69b5b2f24120500f643ae.jpg" alt="Hotel Complex" class="w-full h-48 object-cover">
-<div class="p-6">
-<h3 class="text-xl font-['Roboto'] font-bold mb-2">Hotel Complex MEP</h3>
-<p class="text-gray-600 mb-4">Integrated MEP solutions for 5-star luxury hotel</p>
-<div class="space-y-2 mb-4">
-<div class="flex items-center text-sm">
-<span class="font-semibold w-24">Location:</span>
-<span class="text-gray-600">Bangalore</span>
-</div>
-<div class="flex items-center text-sm">
-<span class="font-semibold w-24">Duration:</span>
-<span class="text-gray-600">15 months</span>
-</div>
-<div class="flex items-center text-sm">
-<span class="font-semibold w-24">Value:</span>
-<span class="text-gray-600">₹35 Cr</span>
-</div>
-</div>
-<button class="text-primary font-semibold flex items-center">
-View Case Study
-<i class="ri-arrow-right-line ml-2"></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
+
+<!-- Call to Action Section -->
 <section class="py-20 bg-primary text-white">
-<div class="container mx-auto px-4 text-center">
-<h2 class="text-3xl font-['Roboto'] font-bold mb-6">Ready to Start Your Project?</h2>
-<p class="text-xl mb-8 opacity-90">Contact us today for a free consultation and quote</p>
-<div class="flex justify-center space-x-4">
-<button onclick="openContactModal()" class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90">Contact Us</button>
-<button class="border-2 border-white px-8 py-3 !rounded-button font-semibold hover:bg-white hover:text-primary">Download Brochure</button>
-</div>
-</div>
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-['Roboto'] font-bold mb-6">Ready to Start Your Project?</h2>
+    <p class="text-xl mb-8 opacity-90">Contact us today for a free consultation and quote</p>
+    <div class="flex justify-center space-x-4">
+      <button onclick="openContactModal()" class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90">Contact Us</button>
+      <button class="border-2 border-white px-8 py-3 !rounded-button font-semibold hover:bg-white hover:text-primary">Download Brochure</button>
+    </div>
+  </div>
 </section>
-</main>
+
+<!-- Footer -->
 <footer class="bg-gray-900 text-white py-16">
 <div class="container mx-auto px-4">
 <div class="grid grid-cols-4 gap-8">
@@ -490,19 +523,11 @@ View Case Study
 <a href="/" class="h-12 mb-6 block">
 <img src="Index_files/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
 </a>
-<p class="text-gray-400 mb-6">
-Leading MEP design services provider in Hyderabad, bridging the gap between evolving construction needs and consultancy services since March 2024
-</p>
+<p class="text-gray-400 mb-6">Leading MEP design services provider in Hyderabad, bridging the gap between evolving construction needs and consultancy services since March 2024</p>
 <div class="flex space-x-4">
-<a href="#" class="hover:text-primary">
-<i class="ri-linkedin-fill text-xl"></i>
-</a>
-<a href="#" class="hover:text-primary">
-<i class="ri-twitter-fill text-xl"></i>
-</a>
-<a href="#" class="hover:text-primary">
-<i class="ri-facebook-fill text-xl"></i>
-</a>
+<a href="#" class="hover:text-primary"><i class="ri-facebook-fill text-xl"></i></a>
+<a href="#" class="hover:text-primary"><i class="ri-twitter-fill text-xl"></i></a>
+<a href="#" class="hover:text-primary"><i class="ri-linkedin-fill text-xl"></i></a>
 </div>
 </div>
 <div>
@@ -550,4 +575,48 @@ Leading MEP design services provider in Hyderabad, bridging the gap between evol
 </div>
 </div>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+
+  // Counter animation
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200;
+
+  const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+    
+    const updateCount = () => {
+      const inc = target / speed;
+      if (count < target) {
+        count = Math.ceil(count + inc);
+        counter.innerText = count;
+        setTimeout(updateCount, 1);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    
+    updateCount();
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  counters.forEach(counter => observer.observe(counter));
+});
+</script>
+</body>
 </html>

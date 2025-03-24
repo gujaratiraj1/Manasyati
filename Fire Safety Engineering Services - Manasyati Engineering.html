@@ -37,23 +37,17 @@
         theme: {
           extend: {
             colors: {
-              primary: "#1a3c6e",
-              secondary: "#465b6e",
-            },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
-          },
-        },
+              primary: '#2E7D32',    // Green
+              secondary: '#FFC107',  // Turmeric
+              tertiary: '#673AB7',   // Purple
+              accent: '#FFD700',     // Gold
+              'green-light': '#4CAF50',
+              'turmeric-light': '#FFE082',
+              'purple-light': '#9575CD',
+              'gold-light': '#FFE57F'
+            }
+          }
+        }
       };
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -66,9 +60,39 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
     <style>
       :where([class^="ri-"])::before { content: "\f3c2"; }
+      /* Additional green theme styles */
+      .bg-primary.bg-opacity-70 {
+        background: linear-gradient(45deg, rgba(46, 125, 50, 0.85), rgba(255, 193, 7, 0.85));
+      }
+      .bg-primary.bg-opacity-10 {
+        background-color: rgba(76, 175, 80, 0.1);
+      }
+      .hover\:bg-opacity-90:hover {
+        background-color: rgba(46, 125, 50, 0.9);
+      }
+      .text-primary {
+        color: #2E7D32;
+      }
+      button.bg-primary, 
+      .bg-primary {
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
+      }
+      button.hover\:bg-opacity-90:hover {
+        background: linear-gradient(45deg, #673AB7, #FFD700);
+      }
+      .btn-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+      @keyframes glow {
+        from {
+          box-shadow: 0 0 5px #FFD700, 0 0 10px #FFC107, 0 0 15px #2E7D32;
+        }
+        to {
+          box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
+        }
+      }
     </style>
   </head>
   <body class="bg-white font-['Open_Sans']">
@@ -110,7 +134,7 @@
         class="relative h-[500px] flex items-center"
         style="background-image: url('img_res/b08036320ea77e22cacc01ed93e8f118.jpg'); background-size: cover; background-position: center;"
       >
-        <div class="absolute inset-0 bg-primary bg-opacity-70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
         <div class="container mx-auto px-4 relative z-10">
           <div class="max-w-3xl">
             <h1 class="text-5xl font-bold text-white mb-6">
@@ -123,76 +147,54 @@
             </p>
             <button
               onclick="openQuoteModal()"
-              class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
+              class="btn-glow bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
             >
               Request a Quote
             </button>
           </div>
         </div>
       </section>
-      <section class="py-16">
+      <section class="py-24 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="grid grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 class="text-3xl font-bold text-primary mb-6">
-                Service Overview
-              </h2>
-              <p class="text-gray-600 mb-6">
-                We provide customized firefighting solutions with end-to-end
-                support, ensuring safety and reliability. Our comprehensive fire
-                safety systems are designed to protect lives and assets while
-                meeting all regulatory requirements.
-              </p>
-              <div class="grid grid-cols-2 gap-6 mb-8">
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-fire-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Fire Protection</h4>
-                    <p class="text-sm text-gray-600">NFPA certified systems</p>
-                  </div>
+          <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-primary text-center mb-4">
+              Service Overview
+            </h2>
+            <p class="text-gray-600 mb-16 text-center text-lg max-w-3xl mx-auto">
+              We provide customized firefighting solutions with end-to-end
+              support, ensuring safety and reliability. Our comprehensive fire
+              safety systems are designed to protect lives and assets while
+              meeting all regulatory requirements.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- Service Cards -->
+              <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i class="ri-fire-line text-2xl text-primary"></i>
                 </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-alarm-warning-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Detection</h4>
-                    <p class="text-sm text-gray-600">Advanced monitoring</p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-shield-check-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Compliance</h4>
-                    <p class="text-sm text-gray-600">NBC & IS standards</p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-24-hours-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Emergency Response</h4>
-                    <p class="text-sm text-gray-600">24/7 support</p>
-                  </div>
-                </div>
+                <h4 class="font-bold text-xl mb-3 text-center">Fire Protection</h4>
+                <p class="text-gray-600 text-center">NFPA certified systems for complete building safety</p>
               </div>
-            </div>
-            <div>
-              <div class="bg-white shadow-xl !rounded-lg overflow-hidden">
-                <div id="performanceChart" class="h-[400px]"></div>
+              <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i class="ri-alarm-warning-line text-2xl text-primary"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3 text-center">Detection</h4>
+                <p class="text-gray-600 text-center">Advanced monitoring systems for early warning</p>
+              </div>
+              <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i class="ri-shield-check-line text-2xl text-primary"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3 text-center">Compliance</h4>
+                <p class="text-gray-600 text-center">Full adherence to NBC & IS standards</p>
+              </div>
+              <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i class="ri-24-hours-line text-2xl text-primary"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3 text-center">Emergency Response</h4>
+                <p class="text-gray-600 text-center">24/7 support and rapid assistance</p>
               </div>
             </div>
           </div>
@@ -560,48 +562,6 @@
         </div>
       </div>
       <script>
-        const chartData = {
-          xAxis: {
-            type: "category",
-            data: ["2020", "2021", "2022", "2023", "2024"],
-            axisLabel: { color: "#1f2937" },
-          },
-          yAxis: {
-            type: "value",
-            axisLabel: { color: "#1f2937" },
-          },
-          grid: { top: 20, right: 20, bottom: 20, left: 40 },
-          series: [
-            {
-              name: "Water Savings",
-              type: "line",
-              smooth: true,
-              data: [20, 32, 41, 54, 68],
-              itemStyle: { color: "rgba(87, 181, 231, 1)" },
-              areaStyle: {
-                color: {
-                  type: "linear",
-                  x: 0,
-                  y: 0,
-                  x2: 0,
-                  y2: 1,
-                  colorStops: [
-                    {
-                      offset: 0,
-                      color: "rgba(87, 181, 231, 0.3)",
-                    },
-                    {
-                      offset: 1,
-                      color: "rgba(87, 181, 231, 0.1)",
-                    },
-                  ],
-                },
-              },
-            },
-          ],
-        };
-        const chart = echarts.init(document.getElementById("performanceChart"));
-        chart.setOption({ ...chartData, animation: false });
         function openConsultationModal() {
           document.getElementById("consultationModal").classList.remove("hidden");
           document.getElementById("consultationModal").classList.add("flex");

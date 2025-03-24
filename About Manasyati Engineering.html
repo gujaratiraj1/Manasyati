@@ -22,21 +22,30 @@
       tailwind.config = {
         theme: {
           extend: {
-            colors: { primary: "#2563eb", secondary: "#64748b" },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "4px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "4px",
+            colors: {
+              primary: '#1a3c6e',
+              secondary: '#465b6e',
+              accent: '#f59e0b'
             },
-          },
-        },
+            fontFamily: {
+              sans: ['Open Sans', 'sans-serif'],
+              heading: ['Roboto', 'sans-serif'],
+              display: ['Montserrat', 'sans-serif']
+            },
+            borderRadius: {
+              'none': '0px',
+              'sm': '4px',
+              DEFAULT: '8px',
+              'md': '12px',
+              'lg': '16px',
+              'xl': '20px',
+              '2xl': '24px',
+              '3xl': '32px',
+              'full': '9999px',
+              'button': '8px'
+            }
+          }
+        }
       };
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
@@ -52,15 +61,121 @@
     />
     <style>
       :where([class^="ri-"])::before { content: "\f3c2"; }
-      .nav-link:hover { color: #1a3c6e; }
+      .nav-link:hover { 
+        color: #FFC107; 
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
       .timeline-item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      left: 15px;
-      top: 30px;
-      bottom: -30px;
-      width: 2px;
-      background: #1a3c6e;
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 30px;
+        bottom: -30px;
+        width: 2px;
+        background: #2E7D32;
+      }
+      
+      /* Add animations */
+      .fade-in-up {
+        animation: fadeInUp 1s ease-out;
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .bg-primary.bg-opacity-70 {
+        background: linear-gradient(45deg, rgba(46, 125, 50, 0.85), rgba(255, 193, 7, 0.85));
+      }
+      
+      .bg-primary.bg-opacity-10 {
+        background-color: rgba(76, 175, 80, 0.1);
+      }
+      
+      button.bg-primary, 
+      .bg-primary {
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
+      }
+      
+      button.hover\:bg-opacity-90:hover {
+        background: linear-gradient(45deg, #673AB7, #FFD700);
+      }
+      
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255, 193, 7, 0.15);
+        border: 1px solid rgba(103, 58, 183, 0.1);
+      }
+      
+      .client-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(103, 58, 183, 0.15);
+        border: 1px solid rgba(255, 215, 0, 0.1);
+      }
+
+      .gradient-text {
+        background: linear-gradient(45deg, #2E7D32, #FFC107, #673AB7, #FFD700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Hero section animations */
+      .fade-in-up {
+        animation: fadeInUp 1s ease-out;
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .slide-up {
+        animation: slideUp 0.8s ease-out forwards;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .waves path {
+        animation: wave 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes wave {
+        0% { d: path("M0,96L48,112C96,128,192,160,288,160..."); }
+        100% { d: path("M0,160L48,144C96,128,192,96,288,96..."); }
+      }
+
+      @keyframes textBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+      
+      .text-blink {
+        animation: textBlink 2s ease-in-out infinite;
+        color: #FFC107;
       }
     </style>
   </head>
@@ -83,7 +198,7 @@
           </a>
         </div>
         <nav class="flex items-center justify-between h-20">
-          <a href="index.html" class="h-12">
+          <a href="index.html" class="h-16">
             <img
               src="Index_files/LOGO.png"
               alt="Manasyati Engineering Services"
@@ -114,22 +229,30 @@
     </header>
     <main class="pt-30">
       <section
-        class="relative h-[500px] flex items-center"
+        class="relative h-[500px] flex items-center overflow-hidden"
         style="background-image: url('img_res/a56e283c39d4ff04f52248d77a0de29d.jpg'); background-size: cover; background-position: center;"
       >
-        <div class="absolute inset-0 bg-primary bg-opacity-70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#2E7D32]/90 to-[#4CAF50]/70"></div>
+        <div class="absolute inset-0" id="particles-js"></div>
         <div class="container mx-auto px-4 relative z-10">
           <div class="max-w-3xl">
-            <h1
-              class="text-5xl font-bold font-['Roboto'] text-white leading-tight mb-6"
-            >
-              Engineering Excellence Through Innovation & Expertise
-            </h1>
-            <p class="text-xl text-white opacity-90">
+            <div class="overflow-hidden mb-4">
+              <h1 class="text-5xl md:text-6xl font-bold font-['Roboto'] leading-tight slide-up">
+                Engineering <span class="text-blink">Excellence</span> Through 
+                <span class="text-blink">Innovation</span> & <span class="text-blink">Expertise</span>
+              </h1>
+            </div>
+            <p class="text-xl text-white opacity-90 fade-in-up">
               Delivering comprehensive MEP solutions with a commitment to
               quality and innovation since 2024
             </p>
           </div>
+        </div>
+        <!-- Simplified wave design -->
+        <div class="absolute bottom-0 left-0 right-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" class="waves" preserveAspectRatio="none">
+            <path fill="#f9fafb" fill-opacity="1" d="M0,32L1440,64L1440,100L0,100Z"></path>
+          </svg>
         </div>
       </section>
       <section class="py-20">
@@ -157,7 +280,7 @@
                 <div
                   class="text-center p-4 bg-primary bg-opacity-5 !rounded-lg"
                 >
-                  <div class="text-3xl font-bold text-primary mb-2">50+</div>
+                  <div class="text-3xl font-bold text-primary mb-2">25+</div>
                   <div class="text-gray-600">Clients Served</div>
                 </div>
                 <div
@@ -169,7 +292,7 @@
                 <div
                   class="text-center p-4 bg-primary bg-opacity-5 !rounded-lg"
                 >
-                  <div class="text-3xl font-bold text-primary mb-2">25+</div>
+                  <div class="text-3xl font-bold text-primary mb-2">15+</div>
                   <div class="text-gray-600">Expert Engineers</div>
                 </div>
               </div>
@@ -305,7 +428,7 @@
               <img
                 src="img_res/Ramana.png"
                 alt="CEO"
-                class="w-full h-64 object-cover object-top"
+                class="w-full h-64 object-contain object-center"
               />
               <div class="p-6">
                 <h3 class="text-xl font-['Roboto'] font-bold mb-2">
@@ -329,9 +452,9 @@
             </div>
             <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
               <img
-                src="img_res/b94c00190603322b4e551452b349b3dd.jpg"
-                alt="CTO"
-                class="w-full h-64 object-cover object-top"
+                src="img_res/Sowjanya.jpg"
+                alt="Director"
+                class="w-full h-64 object-contain object-center"
               />
               <div class="p-6">
                 <h3 class="text-xl font-['Roboto'] font-bold mb-2">
@@ -729,6 +852,22 @@
       };
       chart.setOption(option);
       window.addEventListener("resize", () => chart.resize());
+    </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80 },
+          color: { value: '#ffffff' },
+          shape: { type: 'circle' },
+          opacity: { value: 0.5 },
+          size: { value: 3 },
+          move: {
+            enable: true,
+            speed: 2
+          }
+        }
+      });
     </script>
     <script type="application/ld+json">
     {

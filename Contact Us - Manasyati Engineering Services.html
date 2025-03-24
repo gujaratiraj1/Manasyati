@@ -27,23 +27,17 @@
         theme: {
           extend: {
             colors: {
-              primary: "#1a3c6e",
-              secondary: "#465b6e",
-            },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
-          },
-        },
+              primary: '#2E7D32',    // Green
+              secondary: '#FFC107',  // Turmeric
+              tertiary: '#673AB7',   // Purple
+              accent: '#FFD700',     // Gold
+              'green-light': '#4CAF50',
+              'turmeric-light': '#FFE082',
+              'purple-light': '#9575CD',
+              'gold-light': '#FFE57F'
+            }
+          }
+        }
       };
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,15 +52,40 @@
     />
     <style>
       :where([class^="ri-"])::before { content: "\f3c2"; }
-      .nav-link:hover { color: #1a3c6e; }
-      input[type="number"]::-webkit-inner-spin-button,
-      input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
+      .nav-link:hover { 
+        color: #FFC107; 
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
-      .tab-active { background-color: #1a3c6e; color: white; }
-      .tab-content { display: none; }
-      .tab-content.active { display: block; }
+      .tab-active { 
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
+        color: white;
+      }
+      .bg-primary.bg-opacity-70 {
+        background: linear-gradient(45deg, rgba(46, 125, 50, 0.85), rgba(255, 193, 7, 0.85));
+      }
+      .bg-primary.bg-opacity-10 {
+        background-color: rgba(76, 175, 80, 0.1);
+      }
+      button.bg-primary, 
+      .bg-primary {
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
+      }
+      button.hover\:bg-opacity-90:hover {
+        background: linear-gradient(45deg, #673AB7, #FFD700);
+      }
+      .btn-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+      @keyframes glow {
+        from {
+          box-shadow: 0 0 5px #FFD700, 0 0 10px #FFC107, 0 0 15px #2E7D32;
+        }
+        to {
+          box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
+        }
+      }
     </style>
     <script type="application/ld+json">
     {
@@ -113,7 +132,7 @@
           </a>
         </div>
         <nav class="flex items-center justify-between h-20">
-          <a href="index.html" class="h-12">
+          <a href="index.html" class="h-16">
             <img src="Index_files/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
             </a>
           <div class="flex items-center space-x-8">
@@ -139,29 +158,39 @@
     </header>
 
     <main class="pt-30">
-      <section
-        class="relative h-[400px] flex items-center"
-        style="background-image: url('https://public.readdy.ai/ai/img_res/f89d2c1b3e4a5d6f7g8h9i0j.jpg'); background-size: cover; background-position: center;"
-      >
-        <div class="absolute inset-0 bg-primary bg-opacity-70"></div>
+      <section class="relative h-[600px] flex items-center overflow-hidden" style="background-image: url('https://public.readdy.ai/ai/img_res/f89d2c1b3e4a5d6f7g8h9i0j.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/70"></div>
         <div class="container mx-auto px-4 relative z-10">
-          <div class="text-center text-white">
-            <nav class="text-sm mb-4">
-              <a
-                href="https://readdy.ai/home/8a8d1c8e-78a7-44b0-a607-8dab25e19839/44c32bd6-396b-48d8-bbb9-a769ead666ce"
-                data-readdy="true"
-                class="hover:text-gray-200"
-                >Home</a
-              >
-              <span class="mx-2">/</span>
-              <span>Contact</span>
-            </nav>
-            <h1 class="text-5xl font-bold font-['Roboto'] mb-4">Contact Us</h1>
-            <p class="text-xl opacity-90 max-w-2xl mx-auto">
-              Get in touch with our expert team for professional MEP engineering
-              solutions
-            </p>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-white">
+              <div class="text-sm mb-4 flex items-center">
+                <a href="index.html" class="hover:underline">Home</a>
+                <span class="mx-2">></span>
+                <span>Contact</span>
+              </div>
+              <div class="overflow-hidden mb-4">
+                <h1 class="text-5xl md:text-6xl font-bold font-['Roboto'] leading-tight slide-up">
+                  Contact Us
+                </h1>
+              </div>
+              <p class="text-xl mb-8 opacity-90 max-w-2xl fade-in-up">
+                Get in touch with our expert team for professional MEP engineering solutions
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <button onclick="scrollToForm()" class="btn-glow bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap transform hover:scale-105 transition-all">
+                  Send Message
+                </button>
+                <a href="#contact-info" class="border-2 border-white px-8 py-3 !rounded-button font-semibold hover:bg-white hover:text-primary whitespace-nowrap transition-all">
+                  View Contact Info
+                </a>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" class="waves" preserveAspectRatio="none">
+            <path fill="#f9fafb" fill-opacity="1" d="M0,32L1440,64L1440,100L0,100Z"></path>
+          </svg>
         </div>
       </section>
 
@@ -217,52 +246,82 @@
                 </h2>
                 <div class="flex space-x-4 mb-6">
                   <button
-                    class="flex-1 py-2 !rounded-button text-center tab-btn tab-active"
-                    data-tab="general"
+                    type="button"
+                    class="flex-1 py-2 !rounded-button text-center tab-btn" 
+                    onclick="switchTab('general')"
                   >
                     General Inquiry
                   </button>
                   <button
+                    type="button"
                     class="flex-1 py-2 !rounded-button text-center tab-btn"
-                    data-tab="career"
+                    onclick="switchTab('career')"
                   >
                     Career
                   </button>
                   <button
+                    type="button"
                     class="flex-1 py-2 !rounded-button text-center tab-btn"
-                    data-tab="project"
+                    onclick="switchTab('project')"
                   >
                     Project
                   </button>
                 </div>
 
                 <div id="general" class="tab-content active">
-                  <form class="space-y-4">
-                    <input
-                      type="text"
-                      placeholder="Full Name"
-                      class="w-full px-4 py-2 border !rounded-button"
-                    />
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      class="w-full px-4 py-2 border !rounded-button"
-                    />
-                    <input
-                      type="tel"
-                      placeholder="Phone Number"
-                      class="w-full px-4 py-2 border !rounded-button"
-                    />
-                    <textarea
-                      placeholder="Your Message"
-                      rows="4"
-                      class="w-full px-4 py-2 border !rounded-button"
-                    ></textarea>
+                  <form id="contactForm" class="space-y-4" onsubmit="return handleFormSubmit(event)">
+                    <div>
+                      <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Full Name"
+                        required
+                        class="w-full px-4 py-2 border !rounded-button focus:outline-none focus:border-primary"
+                      />
+                      <span class="text-red-500 text-sm hidden error-message"></span>
+                    </div>
+                    <div>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email" 
+                        placeholder="Email Address"
+                        required
+                        class="w-full px-4 py-2 border !rounded-button focus:outline-none focus:border-primary"
+                      />
+                      <span class="text-red-500 text-sm hidden error-message"></span>
+                    </div>
+                    <div>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Phone Number"
+                        required
+                        pattern="[0-9]{10}"
+                        class="w-full px-4 py-2 border !rounded-button focus:outline-none focus:border-primary"
+                      />
+                      <span class="text-red-500 text-sm hidden error-message"></span>
+                    </div>
+                    <div>
+                      <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Your Message"
+                        rows="4"
+                        required
+                        class="w-full px-4 py-2 border !rounded-button focus:outline-none focus:border-primary"
+                      ></textarea>
+                      <span class="text-red-500 text-sm hidden error-message"></span>
+                    </div>
                     <button
                       type="submit"
-                      class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90"
+                      id="submitBtn"
+                      class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90 flex items-center justify-center gap-2"
                     >
-                      Send Message
+                      <span>Send Message</span>
+                      <div class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                     </button>
                   </form>
                 </div>
@@ -533,26 +592,127 @@ Leading MEP design services provider in Hyderabad, bridging the gap between evol
 </div>
 </footer>
 
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+      <div class="bg-white !rounded-lg p-8 max-w-md w-full mx-4">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 !rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="ri-check-line text-3xl text-green-500"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+          <p class="text-gray-600 mb-6">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+          <button onclick="closeSuccessModal()" class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const tabs = document.querySelectorAll(".tab-btn");
-        const contents = document.querySelectorAll(".tab-content");
-
-        tabs.forEach((tab) => {
-          tab.addEventListener("click", () => {
-            tabs.forEach((t) => t.classList.remove("tab-active"));
-            tab.classList.add("tab-active");
-
-            const tabId = tab.getAttribute("data-tab");
-            contents.forEach((content) => {
-              content.classList.remove("active");
-              if (content.id === tabId) {
-                content.classList.add("active");
-              }
-            });
-          });
+      // Function to switch between tabs
+      function switchTab(tabId) {
+        // Hide all tab contents
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.style.display = 'none';
         });
+        
+        // Show selected tab content
+        document.getElementById(tabId).style.display = 'block';
+        
+        // Update tab button styles
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.classList.remove('tab-active');
+          if (btn.innerText.toLowerCase().includes(tabId.toLowerCase())) {
+            btn.classList.add('tab-active');
+          }
+        });
+      }
+
+      // Initialize with General Inquiry tab active
+      document.addEventListener('DOMContentLoaded', function() {
+        switchTab('general');
       });
+
+      // Form submission handler
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        // Reset error messages
+        document.querySelectorAll('.error-message').forEach(msg => msg.classList.add('hidden'));
+        
+        const form = event.target;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const spinner = submitBtn.querySelector('.animate-spin');
+        const btnText = submitBtn.querySelector('span');
+        
+        // Validate form fields
+        let isValid = true;
+        const formData = new FormData(form);
+        
+        for (let [key, value] of formData.entries()) {
+          const input = form.querySelector(`[name="${key}"]`);
+          if (!value.trim()) {
+            showError(input, `${key.charAt(0).toUpperCase() + key.slice(1)} is required`);
+            isValid = false;
+          } else if (key === 'email' && !isValidEmail(value)) {
+            showError(input, 'Please enter a valid email');
+            isValid = false;
+          } else if (key === 'phone' && !isValidPhone(value)) {
+            showError(input, 'Please enter a valid 10-digit phone number');
+            isValid = false;
+          }
+        }
+        
+        if (!isValid) return false;
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        btnText.textContent = 'Sending...';
+        spinner.classList.remove('hidden');
+        
+        // Simulate API call
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          btnText.textContent = 'Send Message';
+          spinner.classList.add('hidden');
+          
+          // Show success message
+          const successModal = document.getElementById('successModal');
+          successModal.classList.remove('hidden');
+          successModal.classList.add('flex');
+          
+          // Reset form
+          form.reset();
+        }, 2000);
+        
+        return false;
+      }
+
+      // Helper functions
+      function showError(input, message) {
+        const errorElement = input.nextElementSibling;
+        errorElement.textContent = message;
+        errorElement.classList.remove('hidden');
+      }
+      
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+      
+      function isValidPhone(phone) {
+        return /^[0-9]{10}$/.test(phone);
+      }
+      
+      function closeSuccessModal() {
+        const modal = document.getElementById('successModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+
+      // Smooth scroll to form when "Send Message" is clicked
+      function scrollToForm() {
+        const form = document.querySelector('#contactForm');
+        form.scrollIntoView({ behavior: 'smooth' });
+      }
     </script>
   </body>
 </html>

@@ -29,23 +29,17 @@
         theme: {
           extend: {
             colors: {
-              primary: "#1a3c6e",
-              secondary: "#465b6e",
-            },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
-          },
-        },
+              primary: '#2E7D32',    // Green
+              secondary: '#FFC107',  // Turmeric
+              tertiary: '#673AB7',   // Purple
+              accent: '#FFD700',     // Gold
+              'green-light': '#4CAF50',
+              'turmeric-light': '#FFE082',
+              'purple-light': '#9575CD',
+              'gold-light': '#FFE57F'
+            }
+          }
+        }
       };
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,14 +55,53 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
     <style>
       :where([class^="ri-"])::before { content: "\f3c2"; }
-      .nav-link:hover { color: #1a3c6e; }
+      .nav-link:hover { 
+        color: #FFC107; 
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
       .project-card:hover { transform: translateY(-5px); }
       .project-filter.active {
-        background-color: #1a3c6e;
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
         color: white;
       }
       .project-filter:not(.active):hover {
-        background-color: rgba(26, 60, 110, 0.1);
+        background-color: rgba(46, 125, 50, 0.1);
+      }
+      
+      /* Additional green theme styles */
+      .bg-primary.bg-opacity-70 {
+        background: linear-gradient(45deg, rgba(46, 125, 50, 0.85), rgba(255, 193, 7, 0.85));
+      }
+      .bg-primary.bg-opacity-10 {
+        background-color: rgba(76, 175, 80, 0.1);
+      }
+      .hover\:bg-opacity-90:hover {
+        background-color: rgba(46, 125, 50, 0.9);
+      }
+      .text-primary {
+        color: #2E7D32;
+      }
+      button.bg-primary, 
+      .bg-primary {
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
+      }
+      button.hover\:bg-opacity-90:hover {
+        background: linear-gradient(45deg, #673AB7, #FFD700);
+      }
+      
+      .btn-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+      
+      @keyframes glow {
+        from {
+          box-shadow: 0 0 5px #FFD700, 0 0 10px #FFC107, 0 0 15px #2E7D32;
+        }
+        to {
+          box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
+        }
       }
     </style>
   </head>
@@ -91,24 +124,14 @@
           </a>
         </div>
         <nav class="flex items-center justify-between h-20">
-          <a href="index.html" class="h-12">
+          <a href="index.html" class="h-16">
             <img src="Index_files/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
           </a>
           <div class="flex items-center space-x-8">
             <a href="index.html" class="nav-link">Home</a>
-            <a
-              href="About Manasyati Engineering.html"
-              data-readdy="true"
-              class="nav-link"
-              >About Us</a
-            >
+            <a href="About Manasyati Engineering.html" class="nav-link">About Us</a>
             <a href="Service Details - Manasyati Engineering.html" class="nav-link">Services</a>
-            <a
-              href="#"
-              data-readdy="true"
-              class="nav-link text-primary font-semibold"
-              >Projects</a
-            >
+            <a href="#" data-readdy="true" class="nav-link text-primary font-semibold">Projects</a>
             <a href="Industries Manasyati Engineering Services.html" class="nav-link">Industries</a>
             <a href="Contact Us - Manasyati Engineering Services.html" class="nav-link">Contact</a>
             <button
@@ -123,26 +146,41 @@
 
     <main class="pt-30">
       <section
-        class="relative h-[400px] flex items-center"
+        class="relative h-[600px] flex items-center overflow-hidden"
         style="background-image: url('https://public.readdy.ai/ai/img_res/d840007b54d0d1159c718a14e7a0b3cd.jpg'); background-size: cover; background-position: center;"
       >
-        <div class="absolute inset-0 bg-primary bg-opacity-70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/70"></div>
         <div class="container mx-auto px-4 relative z-10">
-          <div class="text-white pt-[100px]">
-            <div class="text-sm mb-4 flex items-center">
-              <a href="index.html" class="hover:underline">Home</a>
-              <span class="mx-2">></span>
-              <span>Projects</span>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-white">
+              <div class="text-sm mb-4 flex items-center">
+                <a href="index.html" class="hover:underline">Home</a>
+                <span class="mx-2">></span>
+                <span>Projects</span>
+              </div>
+              <div class="overflow-hidden mb-4">
+                <h1 class="text-5xl md:text-6xl font-bold font-['Roboto'] leading-tight slide-up">
+                  Our Projects
+                </h1>
+              </div>
+              <p class="text-xl mb-8 opacity-90 max-w-2xl fade-in-up">
+                Discover our portfolio of innovative engineering solutions across various sectors, showcasing our expertise in MEP design and implementation
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <button onclick="openQuoteModal()" class="btn-glow bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap transform hover:scale-105 transition-all">
+                  Get Started
+                </button>
+                <a href="#project-grid" class="border-2 border-white px-8 py-3 !rounded-button font-semibold hover:bg-white hover:text-primary whitespace-nowrap transition-all">
+                  View Projects
+                </a>
+              </div>
             </div>
-            <h1 class="text-5xl font-bold font-['Roboto'] mb-4">
-              Our Projects
-            </h1>
-            <p class="text-xl opacity-90 max-w-2xl">
-              Discover our portfolio of innovative engineering solutions across
-              various sectors, showcasing our expertise in MEP design and
-              implementation
-            </p>
           </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" class="waves" preserveAspectRatio="none">
+            <path fill="#f9fafb" fill-opacity="1" d="M0,32L1440,64L1440,100L0,100Z"></path>
+          </svg>
         </div>
       </section>
 
@@ -765,22 +803,22 @@ Leading MEP design services provider in Hyderabad, bridging the gap between evol
               {
                 value: 40,
                 name: "Commercial",
-                itemStyle: { color: "rgba(87, 181, 231, 1)" },
+                itemStyle: { color: "#4CAF50" },
               },
               {
                 value: 25,
                 name: "Healthcare",
-                itemStyle: { color: "rgba(141, 211, 199, 1)" },
+                itemStyle: { color: "#FFC107" },
               },
               {
                 value: 20,
                 name: "Residential",
-                itemStyle: { color: "rgba(251, 191, 114, 1)" },
+                itemStyle: { color: "#673AB7" },
               },
               {
                 value: 15,
                 name: "Industrial",
-                itemStyle: { color: "rgba(252, 141, 98, 1)" },
+                itemStyle: { color: "#FFD700" },
               },
             ],
           },
@@ -823,7 +861,7 @@ Leading MEP design services provider in Hyderabad, bridging the gap between evol
             smooth: true,
             data: [3, 5, 8, 11, 15],
             itemStyle: {
-              color: "#1a3c6e",
+              color: "#2E7D32",
             },
             areaStyle: {
               color: {
@@ -835,11 +873,11 @@ Leading MEP design services provider in Hyderabad, bridging the gap between evol
                 colorStops: [
                   {
                     offset: 0,
-                    color: "rgba(26, 60, 110, 0.3)",
+                    color: "rgba(46, 125, 50, 0.3)",
                   },
                   {
                     offset: 1,
-                    color: "rgba(26, 60, 110, 0.05)",
+                    color: "rgba(46, 125, 50, 0.05)",
                   },
                 ],
               },

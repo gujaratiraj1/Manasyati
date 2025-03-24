@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manasyati Engineering Services - Leading MEP Design Solutions in Hyderabad</title>
+<link rel="icon" type="image/png" href="img_res/LOGO.png">
 <meta name="description" content="Manasyati Engineering Services provides comprehensive MEP design solutions including Electrical, PHE, Fire & Safety, Security, Automation, and HVAC services in Hyderabad.">
 <meta name="keywords" content="MEP design, engineering services, electrical engineering, PHE, fire safety, HVAC, Hyderabad">
 <meta name="author" content="Manasyati Engineering Services">
@@ -15,40 +16,121 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
-theme: {
-extend: {
-colors: {
-primary: '#1a3c6e',
-secondary: '#465b6e'
-},
-borderRadius: {
-'none': '0px',
-'sm': '4px',
-DEFAULT: '8px',
-'md': '12px',
-'lg': '16px',
-'xl': '20px',
-'2xl': '24px',
-'3xl': '32px',
-'full': '9999px',
-'button': '8px'
-}
-}
-}
+  theme: {
+    extend: {
+      colors: {
+        primary: '#2E7D32',    // Green
+        secondary: '#FFC107',  // Turmeric
+        tertiary: '#673AB7',   // Purple
+        accent: '#FFD700',     // Gold
+        'green-light': '#4CAF50',
+        'turmeric-light': '#FFE082',
+        'purple-light': '#9575CD',
+        'gold-light': '#FFE57F'
+      }
+    }
+  }
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
-.nav-link:hover { color: #1a3c6e; }
-.service-card:hover { transform: translateY(-5px); }
+.nav-link:hover { 
+  color: #FFC107; 
+  background: linear-gradient(45deg, #2E7D32, #FFC107);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.service-card:hover { 
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.15);
+  border: 1px solid rgba(103, 58, 183, 0.1);
+}
+.service-card {
+  transition: all 0.3s ease;
+}
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
 -webkit-appearance: none;
 margin: 0;
+}
+/* Additional green theme styles */
+.bg-primary.bg-opacity-70 {
+  background: linear-gradient(45deg, rgba(46, 125, 50, 0.85), rgba(255, 193, 7, 0.85));
+}
+.bg-primary.bg-opacity-10 {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+.hover\:bg-opacity-90:hover {
+  background-color: rgba(46, 125, 50, 0.9);
+}
+.text-primary {
+  color: #2E7D32;
+}
+button.bg-primary, 
+.bg-primary {
+  background: linear-gradient(45deg, #2E7D32, #FFC107);
+}
+button.hover\:bg-opacity-90:hover {
+  background: linear-gradient(45deg, #673AB7, #FFD700);
+}
+.floating-nav {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.floating-nav.scrolled {
+  padding: 0.5rem 0;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.hero-text {
+  animation: slideIn 1s ease-out;
+}
+
+.client-card {
+  transition: all 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(103, 58, 183, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card {
+  overflow: hidden;
+}
+
+.service-card img {
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.1);
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #2E7D32, #FFC107, #673AB7, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 </style>
 <script type="application/ld+json">
@@ -94,6 +176,18 @@ margin: 0;
 </script>
 </head>
 <body class="bg-white font-['Open_Sans']">
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('header');
+    nav.classList.toggle('floating-nav', window.scrollY > 0);
+    nav.classList.toggle('scrolled', window.scrollY > 100);
+  });
+</script>
 <header class="fixed w-full bg-white shadow-sm z-50">
 <div class="container mx-auto px-4">
 <div class="h-10 flex items-center justify-end space-x-6 text-sm text-gray-600 border-b">
@@ -107,8 +201,8 @@ margin: 0;
 </a>
 </div>
 <nav class="flex items-center justify-between h-20">
-<a href="index.html" class="h-12">
-<img src="Index_files/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
+<a href="index.html" class="h-16"> <!-- Changed from h-12 to h-16 -->
+<img src="img_res/LOGO.png" alt="Manasyati Engineering Services" class="h-full w-auto object-contain">
 </a>
 <div class="flex items-center space-x-8">
 <a href="/" class="nav-link" onclick="event.preventDefault(); if(window.location.pathname === '/') { window.scrollTo({ top: 0, behavior: 'smooth' }); } else { window.location.href = 'index.html'; }"></a>
@@ -123,403 +217,533 @@ margin: 0;
 </div>
 </header>
 <main class="pt-30">
-<section class="relative h-[600px] flex items-center" style="background-image: url('Index_files/df88c3049a6787841e6587541dd0df1f.jpg'); background-size: cover; background-position: center;">
-<div class="absolute inset-0 bg-primary bg-opacity-70"></div>
-<div class="container mx-auto px-4 relative z-10">
-<div class="grid grid-cols-2 gap-12 items-center">
-<div class="text-white">
-<h1 class="text-5xl font-bold font-['Roboto'] leading-tight mb-6">
-Engineering Excellence for Tomorrow's Infrastructure
-</h1>
-<p class="text-xl mb-8 opacity-90">
-Leading MEP design services in Hyderabad, delivering innovative solutions for modern construction challenges
-</p>
-<button onclick="openConsultationModal()" class="bg-white text-primary px-8 py-3 !rounded-button text-lg font-semibold hover:bg-opacity-90 whitespace-nowrap">
-Schedule Consultation
-</button>
-<div id="consultationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-<div class="bg-white !rounded-lg p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
-<div class="flex justify-between items-center mb-6">
-<h3 class="text-2xl font-bold text-gray-900">Schedule a Consultation</h3>
-<button onclick="closeConsultationModal()" class="text-gray-500 hover:text-gray-700">
-<i class="ri-close-line text-2xl"></i>
-</button>
-</div>
-<form id="consultationForm" class="space-y-6">
-<div class="grid grid-cols-2 gap-6">
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-<input type="text" required class="w-full px-4 py-2 border !rounded-button" id="consultName">
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-<input type="email" required class="w-full px-4 py-2 border !rounded-button" id="consultEmail">
-</div>
-</div>
-<div class="grid grid-cols-2 gap-6">
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-<input type="tel" required pattern="[0-9]{10}" class="w-full px-4 py-2 border !rounded-button" id="consultPhone">
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Service Category</label>
-<select required class="w-full px-4 py-2 border !rounded-button" id="consultService">
-<option value="">Select Service</option>
-<option value="phe">Public Health Engineering</option>
-<option value="firefighting">Firefighting Systems</option>
-<option value="safety">Life Safety & Security</option>
-<option value="electrical">Electrical Engineering</option>
-<option value="communication">Communication Systems</option>
-<option value="hvac">HVAC & IBMS</option>
-<option value="allied">Allied Services</option>
-</select>
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
-<input type="date" required class="w-full px-4 py-2 border !rounded-button" id="consultDate" min="">
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Preferred Time Slot</label>
-<div class="grid grid-cols-4 gap-3" id="timeSlots">
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Project Description</label>
-<textarea required class="w-full px-4 py-2 border !rounded-button h-32 resize-none" id="consultDescription" placeholder="Please briefly describe your project requirements"></textarea>
-</div>
-<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap flex items-center justify-center">
-<span>Submit Request</span>
-<div class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-</button>
-</form>
-</div>
-</div>
-<script>
-function openConsultationModal() {
-const modal = document.getElementById('consultationModal');
-modal.classList.remove('hidden');
-modal.classList.add('flex');
-// Set minimum date to today
-const today = new Date().toISOString().split('T')[0];
-document.getElementById('consultDate').min = today;
-// Generate time slots
-generateTimeSlots();
-}
-function closeConsultationModal() {
-const modal = document.getElementById('consultationModal');
-modal.classList.add('hidden');
-modal.classList.remove('flex');
-}
-function generateTimeSlots() {
-const timeSlotsContainer = document.getElementById('timeSlots');
-timeSlotsContainer.innerHTML = '';
-const timeSlots = [
-'09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM',
-'02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM'
-];
-timeSlots.forEach(time => {
-const slot = document.createElement('button');
-slot.type = 'button';
-slot.className = 'px-4 py-2 border !rounded-button text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors';
-slot.textContent = time;
-slot.onclick = function() {
-document.querySelectorAll('#timeSlots button').forEach(btn => {
-btn.classList.remove('bg-primary', 'text-white');
-btn.classList.add('text-gray-700');
-});
-this.classList.remove('text-gray-700');
-this.classList.add('bg-primary', 'text-white');
-};
-timeSlotsContainer.appendChild(slot);
-});
-}
-document.getElementById('consultationForm').addEventListener('submit', async function(e) {
-e.preventDefault();
-const submitBtn = this.querySelector('button[type="submit"]');
-const btnText = submitBtn.querySelector('span');
-const spinner = submitBtn.querySelector('div');
-// Show loading state
-btnText.textContent = 'Submitting...';
-spinner.classList.remove('hidden');
-submitBtn.disabled = true;
-try {
-// Simulate API call
-await new Promise(resolve => setTimeout(resolve, 2000));
-// Show success message
-closeConsultationModal();
-const successDialog = document.createElement('div');
-successDialog.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
-successDialog.innerHTML = `
-<div class="bg-white !rounded-lg p-8 max-w-md w-full mx-4">
-<div class="text-center">
-<div class="w-16 h-16 bg-green-100 !rounded-full flex items-center justify-center mx-auto mb-4">
-<i class="ri-check-line text-3xl text-green-500"></i>
-</div>
-<h3 class="text-2xl font-bold text-gray-900 mb-2">Consultation Scheduled!</h3>
-<p class="text-gray-600 mb-6">Your consultation request has been successfully submitted. We will confirm your appointment shortly via email.</p>
-<button onclick="this.closest('.fixed').remove()" class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90">Close</button>
-</div>
-</div>
-`;
-document.body.appendChild(successDialog);
-// Reset form
-e.target.reset();
-} catch (error) {
-console.error('Submission failed:', error);
-} finally {
-// Reset button state
-btnText.textContent = 'Submit Request';
-spinner.classList.add('hidden');
-submitBtn.disabled = false;
-}
-});
-</script>
-</div>
-</div>
-</div>
+<!-- Update the hero section to rectangular format -->
+<section class="relative h-[600px] flex items-center overflow-hidden" style="background-image: url('Index_files/df88c3049a6787841e6587541dd0df1f.jpg'); background-size: cover; background-position: center;">
+  <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+  <div class="absolute inset-0" id="particles-js"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="text-white hero-text">
+        <div class="overflow-hidden mb-4">
+          <h1 class="text-5xl md:text-6xl font-bold font-['Roboto'] leading-tight slide-up">
+            Engineering <span class="text-secondary animate-pulse">Excellence</span> for Tomorrow's Infrastructure
+          </h1>
+        </div>
+        <p class="text-xl mb-8 opacity-90 fade-in-up">
+          Leading MEP design services in Hyderabad, delivering innovative solutions for modern construction challenges
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button onclick="openQuoteModal()" class="btn-glow bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap transform hover:scale-105 transition-all">
+            Get Started
+          </button>
+          <a href="Service Details - Manasyati Engineering.html" class="border-2 border-white px-8 py-3 !rounded-button font-semibold hover:bg-white hover:text-primary whitespace-nowrap transition-all">
+            Explore Services
+          </a>
+        </div>
+      </div>
+      <div class="hidden lg:flex lg:justify-end" data-aos="fade-left">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="stat-card bg-white/10 backdrop-blur p-6 rounded-lg hover:transform hover:scale-105 transition-all">
+              <h3 class="text-4xl font-bold text-white counter" data-target="20">0</h3>
+              <p class="text-white/80">Years Experience</p>
+            </div>
+            <div class="stat-card bg-white/10 backdrop-blur p-6 rounded-lg translate-x-4 hover:transform hover:scale-105 transition-all">
+              <h3 class="text-4xl font-bold text-white counter" data-target="16">0</h3>
+              <span class="text-2xl text-white">+</span>
+              <p class="text-white/80">Expert Engineers</p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="stat-card bg-white/10 backdrop-blur p-6 rounded-lg translate-x-4 hover:transform hover:scale-105 transition-all">
+              <h3 class="text-4xl font-bold text-white counter" data-target="30">0</h3>
+              <span class="text-2xl text-white">+</span>
+              <p class="text-white/80">Projects Completed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Simplified wave design -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" class="waves" preserveAspectRatio="none">
+      <path fill="#f9fafb" fill-opacity="1" d="M0,32L1440,64L1440,100L0,100Z"></path>
+    </svg>
+  </div>
 </section>
-<section class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">Our Services</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">
-Comprehensive MEP design solutions tailored to meet the diverse needs of modern construction projects
-</p>
-</div>
-<div class="grid grid-cols-4 gap-6">
-<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-water-flash-line text-2xl text-primary"></i>
-</div>
-<h3 class="text-xl font-['Roboto'] font-bold mb-4">Public Health Engineering</h3>
-<p class="text-gray-600 mb-4">
-Water supply, plumbing, sewage treatment, drainage systems
-</p>
-<a href="Public Health Engineering Services - Manasyati Engineering.html" data-readdy="true" class="text-primary font-semibold flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-fire-line text-2xl text-primary"></i>
-</div>
-<h3 class="text-xl font-['Roboto'] font-bold mb-4">Firefighting Systems</h3>
-<p class="text-gray-600 mb-4">
-Hydrant, sprinkler systems, fire alarms and NFPA solutions
-</p>
-<a href="Fire Safety Engineering Services - Manasyati Engineering.html" data-readdy="true" class="text-primary font-semibold flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-shield-keyhole-line text-2xl text-primary"></i>
-</div>
-<h3 class="text-xl font-['Roboto'] font-bold mb-4">Life Safety & Security</h3>
-<p class="text-gray-600 mb-4">
-Access control, emergency systems, and public address solutions
-</p>
-<a href="Life Safety & Security - Manasyati Engineering Services.html" data-readdy="true" class="text-primary font-semibold flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-flashlight-line text-2xl text-primary"></i>
-</div>
-<h3 class="text-xl font-['Roboto'] font-bold mb-4">Electrical Engineering</h3>
-<p class="text-gray-600 mb-4">
-Power distribution, UPS, lighting and load management
-</p>
-<a href="Electrical Design Services - Manasyati Engineering.html" data-readdy="true" class="text-primary font-semibold flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-base-station-line text-2xl text-primary"></i>
-</div>
-<h3 class="text-xl font-['Roboto'] font-bold mb-4">Communication Systems</h3>
-<p class="text-gray-600 mb-4">
-FTTH, DTH, CCTV, boom barriers and EPABX solutions
-</p>
-<a href="Communication Systems - Manasyati Engineering Services.html" data-readdy="true" class="text-primary font-semibold flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-temp-hot-line text-2xl text-primary"></i>
-</div>
-<h3 class="text-xl font-['Roboto'] font-bold mb-4">HVAC & IBMS</h3>
-<p class="text-gray-600 mb-4">
-Air conditioning, ventilation and building automation
-</p>
-<a href="HVAC & IBMS - Manasyati Engineering Services.html" data-readdy="true" class="text-primary font-semibold flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300">
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-<i class="ri-gas-station-line text-2xl text-primary"></i>
-</div>
-<h3 class="text-xl font-['Roboto'] font-bold mb-4">Allied Services</h3>
-<p class="text-gray-600 mb-4">
-LPG reticulation, waste management and tank design
-</p>
-<a href="Allied Services - Manasyati Engineering Services.html" data-readdy="true" class="text-primary font-semibold flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-</div>
-</div>
-</section>
-<section class="py-20">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-2 gap-12 items-center">
-<div>
-<img src="Index_files/84b2709e8d331a9713087a92e7cf91aa.jpg" alt="About Us" class="!rounded-lg shadow-xl">
-</div>
-<div>
-<h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-6">About Manasyati Engineering</h2>
-<p class="text-gray-600 mb-6">
-Founded in March 2024, Manasyati Engineering Services specializes in comprehensive MEP design solutions including Electrical, PHE, Fire & Safety, Security, Automation, and HVAC services. Our multi-disciplinary approach ensures a one-stop solution, prioritizing client requirements with agile, responsive, and innovative strategies.
-</p>
-<p class="text-gray-600 mb-6">
-At Manasyati, we are committed to delivering creative, high-quality, and forward-thinking engineering solutions. We continuously refine our practice based on client feedback and industry advancements, ensuring excellence in every project.
-</p>
-<div class="grid grid-cols-3 gap-6 mb-8">
-<div class="text-center">
-<div class="text-3xl font-bold text-primary mb-2">20+</div>
-<div class="text-gray-600">Projects Initiated</div>
-</div>
-<div class="text-center">
-<div class="text-3xl font-bold text-primary mb-2">15+</div>
-<div class="text-gray-600">Expert Engineers</div>
-</div>
-<div class="text-center">
-<div class="text-3xl font-bold text-primary mb-2">6+</div>
-<div class="text-gray-600">Service Categories</div>
-</div>
-</div>
-<a href="Comprehensive About Us - Manasyati Engineering.html" data-readdy="true" class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap inline-block">
-Learn More About Us
-</a>
-</div>
-</div>
-</div>
-</section>
-<section class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">Featured Projects</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">
-Explore our portfolio of successful projects across various industries
-</p>
-</div>
-<div class="grid grid-cols-3 gap-8">
-<div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-<img src="Index_files/8e348efcb2f12c59700830d1ecd82b06.jpg" alt="Project 1" class="w-full h-48 object-cover">
-<div class="p-6">
-<h3 class="text-xl font-['Roboto'] font-bold mb-2">Tech Park MEP Design</h3>
-<p class="text-gray-600 mb-4">Complete MEP solution for a 500,000 sq ft tech park</p>
-<button class="text-primary font-semibold flex items-center">
-View Details
-<i class="ri-arrow-right-line ml-2"></i>
-</button>
-</div>
-</div>
-<div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-<img src="img_res/6a49b0c7959c77e3fa0988ec8da42ec9.jpg" alt="Project 2" class="w-full h-48 object-cover">
-<div class="p-6">
-<h3 class="text-xl font-['Roboto'] font-bold mb-2">Healthcare Facility</h3>
-<p class="text-gray-600 mb-4">Advanced MEP systems for 300-bed hospital</p>
-<button class="text-primary font-semibold flex items-center">
-View Details
-<i class="ri-arrow-right-line ml-2"></i>
-</button>
-</div>
-</div>
-<div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-<img src="Index_files/d2b94aa2bd2ac1e6364f7c33cd50b9e9.jpg" alt="Project 3" class="w-full h-48 object-cover">
-<div class="p-6">
-<h3 class="text-xl font-['Roboto'] font-bold mb-2">Luxury Hotel Complex</h3>
-<p class="text-gray-600 mb-4">Integrated MEP design for 5-star hotel</p>
-<button class="text-primary font-semibold flex items-center">
-View Details
-<i class="ri-arrow-right-line ml-2"></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-20">
+
+<!-- Enhanced Services Section -->
+<section class="py-20 bg-gray-50 relative overflow-hidden" id="services">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">Our Valued Clients</h2>
-      <p class="text-gray-600 max-w-3xl mx-auto">
-        Manasyati Engineering Services has collaborated with leading developers, architects, and businesses across various sectors, delivering comprehensive MEP solutions for residential, commercial, industrial, healthcare, and infrastructure projects.
+    <div class="text-center mb-16 relative">
+      <span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[120px] font-bold text-gray-100 opacity-50 pointer-events-none">Services</span>
+      <h2 class="text-4xl font-['Roboto'] font-bold text-primary mb-4 relative">
+        Our Services
+        <div class="h-1 w-20 bg-primary mx-auto mt-4"></div>
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Comprehensive MEP design solutions tailored to meet the diverse needs of modern construction projects
       </p>
     </div>
-    <div class="grid grid-cols-4 gap-8">
-      <div class="bg-white p-8 !rounded-lg shadow-lg">
-        <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-          <i class="ri-building-2-line text-2xl text-primary"></i>
+    
+    <!-- Enhanced service cards grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Service cards with enhanced hover effects -->
+      <div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+  <img src="img_res/PEB.webp" alt="Public Health Engineering" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">Public Health Engineering</h3>
+  <p class="text-gray-600 mb-4">
+    Water supply, plumbing, sewage treatment, drainage systems
+  </p>
+  <a href="Public Health Engineering Services - Manasyati Engineering.html" data-readdy="true" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
+</div>
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+  <img src="img_res/FSE.webp" alt="Firefighting Systems" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">Firefighting Systems</h3>
+  <p class="text-gray-600 mb-4">
+    Hydrant, sprinkler systems, fire alarms and NFPA solutions
+  </p>
+  <a href="Fire Safety Engineering Services - Manasyati Engineering.html" data-readdy="true" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
+</div>
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+  <img src="img_res/LSS.webp" alt="Life Safety & Security" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">Life Safety & Security</h3>
+  <p class="text-gray-600 mb-4">
+    Access control, emergency systems, and public address solutions
+  </p>
+  <a href="Life Safety & Security - Manasyati Engineering Services.html" data-readdy="true" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
+</div>
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+  <img src="img_res/EES.webp" alt="Electrical Engineering" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">Electrical Engineering</h3>
+  <p class="text-gray-600 mb-4">
+    Power distribution, UPS, lighting and load management
+  </p>
+  <a href="Electrical Design Services - Manasyati Engineering.html" data-readdy="true" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
+</div>
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+  <img src="img_res/CMS.webp" alt="Communication Systems" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">Communication Systems</h3>
+  <p class="text-gray-600 mb-4">
+    FTTH, DTH, CCTV, boom barriers and EPABX solutions
+  </p>
+  <a href="Communication Systems - Manasyati Engineering Services.html" data-readdy="true" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
+</div>
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+  <img src="img_res/HVAC.webp" alt="HVAC & IBMS" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">HVAC & IBMS</h3>
+  <p class="text-gray-600 mb-4">
+    Air conditioning, ventilation and building automation
+  </p>
+  <a href="HVAC & IBMS - Manasyati Engineering Services.html" data-readdy="true" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
+</div>
+<div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+  <img src="img_res/alied.webp" alt="Allied Services" class="w-full h-40 object-cover !rounded-lg mb-6">
+  <h3 class="text-xl font-['Roboto'] font-bold mb-4">Allied Services</h3>
+  <p class="text-gray-600 mb-4">
+    LPG reticulation, waste management and tank design
+  </p>
+  <a href="Allied Services - Manasyati Engineering Services.html" data-readdy="true" class="text-primary font-semibold flex items-center">
+    Learn More
+    <i class="ri-arrow-right-line ml-2"></i>
+  </a>
+</div>
+    </div>
+  </div>
+  
+  <!-- Background decorations -->
+  <div class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-5 rounded-full transform translate-x-32 -translate-y-32"></div>
+  <div class="absolute bottom-0 left-0 w-48 h-48 bg-secondary opacity-5 rounded-full transform -translate-x-24 translate-y-24"></div>
+</section>
+
+<!-- Enhanced Clients Section -->
+<section class="py-20 relative overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <span class="block text-primary text-sm font-semibold tracking-wider mb-2">TRUSTED BY INDUSTRY LEADERS</span>
+      <h2 class="text-4xl font-['Roboto'] font-bold text-gray-900 mb-4">
+        Our Valued Clients
+        <div class="h-1 w-20 bg-primary mx-auto mt-4"></div>
+      </h2>
+    </div>
+    
+    <!-- Enhanced client logos marquee -->
+    <div class="overflow-hidden">
+      <div class="flex animate-scroll">
+        <!-- First set of logos -->
+        <div class="flex space-x-8 min-w-max">
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/1.jpg" alt="Client 1" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/2.jpg" alt="Client 2" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/3.jpg" alt="Client 3" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/4.jpg" alt="Client 4" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/5.jpg" alt="Client 5" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/6.jpg" alt="Client 6" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/7.jpg" alt="Client 7" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/8.jpg" alt="Client 8" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/9.jpg" alt="Client 9" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/10.jpg" alt="Client 10" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/11.jpg" alt="Client 11" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/12.jpg" alt="Client 12" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/13.jpg" alt="Client 13" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/14.jpg" alt="Client 14" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/15.jpg" alt="Client 15" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/16.jpg" alt="Client 16" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/17.jpg" alt="Client 17" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/18.png" alt="Client 18" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/19.jpg" alt="Client 19" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/20.jpg" alt="Client 20" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/21.jpg" alt="Client 21" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/22.jpg" alt="Client 22" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/23.jpg" alt="Client 23" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/24.jpg" alt="Client 24" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
         </div>
-        <h3 class="text-xl font-['Roboto'] font-bold mb-4">Real Estate & Developers</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li>Gahan Developers</li>
-          <li>Ambe Developers</li>
-          <li>EIPL Developers</li>
-          <li>Meenakshi Builders</li>
-          <li>Varni Developers</li>
-          <li>Urban Yards</li>
-        </ul>
+        <!-- Duplicate set for seamless loop -->
+        <div class="flex space-x-8 min-w-max">
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/1.jpg" alt="Client 1" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/2.jpg" alt="Client 2" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/3.jpg" alt="Client 3" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/4.jpg" alt="Client 4" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/5.jpg" alt="Client 5" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/6.jpg" alt="Client 6" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/7.jpg" alt="Client 7" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/8.jpg" alt="Client 8" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/9.jpg" alt="Client 9" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/10.jpg" alt="Client 10" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/11.jpg" alt="Client 11" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/12.jpg" alt="Client 12" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/13.jpg" alt="Client 13" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/14.jpg" alt="Client 14" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/15.jpg" alt="Client 15" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/16.jpg" alt="Client 16" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/17.jpg" alt="Client 17" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/18.png" alt="Client 18" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/19.jpg" alt="Client 19" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/20.jpg" alt="Client 20" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/21.jpg" alt="Client 21" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/22.jpg" alt="Client 22" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/23.jpg" alt="Client 23" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/24.jpg" alt="Client 24" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+        </div>
       </div>
-      <div class="bg-white p-8 !rounded-lg shadow-lg">
-        <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-          <i class="ri-store-2-line text-2xl text-primary"></i>
-        </div>
-        <h3 class="text-xl font-['Roboto'] font-bold mb-4">Commercial & Industrial</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li>Meenakshi Eco Park</li>
-          <li>Bhavya Constructions</li>
-          <li>Abhinandana Developers</li>
-          <li>GMR Commercial Building</li>
-        </ul>
+    </div>
+
+    <!-- Update animation styles -->
+    <style>
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+
+      .animate-scroll {
+        animation: scroll 60s linear infinite;
+        display: flex;
+      }
+
+      .animate-scroll:hover {
+        animation-play-state: paused;
+      }
+    </style>
+  </div>
+</section>
+
+<!-- Add new styles -->
+<style>
+/* Animations */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+  display: flex;
+  width: fit-content;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+.btn-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px #FFD700, 0 0 10px #FFC107, 0 0 15px #2E7D32;
+  }
+  to {
+    box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Counter animation */
+.counter {
+  transition: all 0.3s ease;
+}
+
+/* Wave animation */
+.waves path {
+  animation: wave 3s ease-in-out infinite alternate;
+}
+
+@keyframes wave {
+  0% { d: path("M0,96L48,112C96,128,192,160,288,160..."); }
+  100% { d: path("M0,160L48,144C96,128,192,96,288,96..."); }
+}
+</style>
+
+<!-- Add counter animation script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200;
+
+  const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+    
+    const updateCount = () => {
+      const inc = target / speed;
+      if (count < target) {
+        count = Math.ceil(count + inc);
+        counter.innerText = count;
+        setTimeout(updateCount, 1);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    
+    updateCount();
+  };
+
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, {
+    threshold: 0.5
+  });
+
+  counters.forEach(counter => observer.observe(counter));
+});
+</script>
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">Our Valued Clients</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto">
+        Manasyati Engineering Services has collaborated with leading developers, architects, and businesses across various sectors.
+      </p>
+    </div>
+    
+    <!-- Enhanced Client Logos Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 max-w-7xl mx-auto">
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/1.jpg" alt="Client 1" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
       </div>
-      <div class="bg-white p-8 !rounded-lg shadow-lg">
-        <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-          <i class="ri-hotel-line text-2xl text-primary"></i>
-        </div>
-        <h3 class="text-xl font-['Roboto'] font-bold mb-4">Hospitality & Institutional</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li>Boutique Hotels</li>
-          <li>IRA Hotel (Kamat Group)</li>
-          <li>PGF Prayer Hall (Church)</li>
-        </ul>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/2.jpg" alt="Client 2" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
       </div>
-      <div class="bg-white p-8 !rounded-lg shadow-lg">
-        <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-6">
-          <i class="ri-hospital-line text-2xl text-primary"></i>
-        </div>
-        <h3 class="text-xl font-['Roboto'] font-bold mb-4">Healthcare & Infrastructure</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li>Reach Hospital (Bachupally)</li>
-          <li>Plotted Developments</li>
-          <li>Magadha Developers</li>
-          <li>Aaryamitra Developers</li>
-          <li>Greenko – Gummitham Village</li>
-        </ul>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/3.jpg" alt="Client 3" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/4.jpg" alt="Client 4" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/5.jpg" alt="Client 5" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/6.jpg" alt="Client 6" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/7.jpg" alt="Client 7" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/8.jpg" alt="Client 8" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/9.jpg" alt="Client 9" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/10.jpg" alt="Client 10" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/11.jpg" alt="Client 11" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/12.jpg" alt="Client 12" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/13.jpg" alt="Client 13" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/14.jpg" alt="Client 14" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/15.jpg" alt="Client 15" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/16.jpg" alt="Client 16" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/17.jpg" alt="Client 17" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/18.png" alt="Client 18" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/19.jpg" alt="Client 19" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/20.jpg" alt="Client 20" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/21.jpg" alt="Client 21" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/22.jpg" alt="Client 22" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/23.jpg" alt="Client 23" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+      </div>
+      <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center" data-aos="fade-up">
+        <img src="ourclients/24.jpg" alt="Client 24" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
       </div>
     </div>
   </div>
@@ -726,7 +950,7 @@ function closeQuoteModal() {
 <div class="grid grid-cols-4 gap-8">
 <div>
 <a href="/" class="h-12 mb-6 block">
-<img src="Index_files/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
+<img src="img_res/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
 </a>
 <p class="text-gray-400 mb-6">
 Leading MEP design services provider in Hyderabad, bridging the gap between evolving construction needs and consultancy services since March 2024
