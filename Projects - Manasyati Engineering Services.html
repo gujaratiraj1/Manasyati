@@ -213,6 +213,17 @@
               >
                 Industrial
               </button>
+              <button
+                class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
+              >
+                Hotel
+              </button>
+              <!-- Add new Assembly category button -->
+              <button
+                class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
+              >
+                Assembly
+              </button>
             </div>
             <div class="flex items-center space-x-4">
               <div class="relative">
@@ -241,59 +252,98 @@
           </div>
 
           <div class="grid grid-cols-3 gap-8">
-            <div
-              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
-            >
-              <img
-                src="https://public.readdy.ai/ai/img_res/caf335e5cf1d9ab52e5f1a061d89a884.jpg"
-                alt="Tech Park"
-                class="w-full h-[250px] object-cover"
-              />
+            <!-- Meenakshi Eco Park Tower 1 -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="commercial_res/MEENAKSHI ECO PARK.jpg" alt="Meenakshi Eco Park" class="w-full h-[250px] object-cover"/>
               <div class="p-6">
                 <div class="flex items-center justify-between mb-4">
-                  <span
-                    class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full"
-                    >Commercial</span
-                  >
-                  <span
-                    class="text-green-600 text-sm font-semibold flex items-center"
-                  >
-                    <i class="ri-checkbox-circle-line mr-1"></i>
-                    Completed
+                  <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full">Commercial</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
                   </span>
                 </div>
-                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
-                  Hyderabad Tech Park
-                </h3>
-                <p class="text-gray-600 mb-4">
-                  Comprehensive MEP design for 500,000 sq ft commercial space
-                  including HVAC, electrical, and plumbing systems
-                </p>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Meenakshi Eco Park Tower 1</h3>
+                <p class="text-gray-600 mb-4">3 Basements + Ground + 24 floors commercial complex with PHE & Fire services spanning 28.76 lakh sq ft</p>
                 <div class="grid grid-cols-2 gap-4 mb-6">
-                  <div>
-                    <span class="text-gray-500 text-sm">Location</span>
-                    <p class="font-semibold">HITEC City, Hyderabad</p>
-                  </div>
-                  <div>
-                    <span class="text-gray-500 text-sm">Duration</span>
-                    <p class="font-semibold">18 months</p>
-                  </div>
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Meenakshi Builders</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Chakrapani & Sons</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">28.76 Lacks SFT</p></div>
                 </div>
-                <button
-                  class="w-full bg-primary text-white py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
-                  onclick="showProjectDetails('tech-park')"
-                >
-                  View Details
-                </button>
               </div>
             </div>
 
+            <!-- Sangisetti Commercial Building -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="commercial_res/Commerical Building Sangeetha.jpg" alt="Commercial Building Sangisetti" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full">Commercial</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Commercial Building (Sangisetti)</h3>
+                <p class="text-gray-600 mb-4">1B + G + 5 floors commercial complex with comprehensive MEP services spanning 1 lakh sq ft</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Mr. Sangisetti</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Deepa Architect</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">1 Lacks SFT</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- GMR Commercial Building -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="commercial_res/GMR.jpg" alt="GMR Commercial Building" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full">Commercial</span>
+                  <span class="text-blue-600 text-sm font-semibold flex items-center">
+                    <i class="ri-time-line mr-1"></i>
+                    Ongoing
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">GMR Commercial Building</h3>
+                <p class="text-gray-600 mb-4">1B + G + 5 floors commercial complex with comprehensive MEP services spanning 1 lakh sq ft</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Mr. G M Reddy</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Aleven Concepts Architect</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Ananthapuram</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">1 Lacks SFT</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bhavya Commercial Building -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="commercial_res/Commerical Building Bhavya.jpg" alt="Bhavya Commercial Building" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full">Commercial</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Commercial Building</h3>
+                <p class="text-gray-600 mb-4">2B + G + 5 floors commercial complex with comprehensive MEP services spanning 1.8 lakh sq ft</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Bhavya Constructions</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">B Design Studio</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">1.8 Lacks SFT</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hospital Project -->
             <div
               class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
             >
               <img
-                src="https://public.readdy.ai/ai/img_res/36f102445d78279fd17575b7e835917f.jpg"
-                alt="Hospital"
+                src="hospital_res/reach.jpg"
+                alt="Reach Hospital"
                 class="w-full h-[250px] object-cover"
               />
               <div class="p-6">
@@ -303,35 +353,36 @@
                     >Healthcare</span
                   >
                   <span
-                    class="text-blue-600 text-sm font-semibold flex items-center"
+                    class="text-green-600 text-sm font-semibold flex items-center"
                   >
-                    <i class="ri-time-line mr-1"></i>
-                    Ongoing
+                    <i class="ri-checkbox-circle-line mr-1"></i>
+                    Completed
                   </span>
                 </div>
                 <h3 class="text-xl font-['Roboto'] font-bold mb-2">
-                  Apollo Medical Center
+                  Proposed Hospital @ Bachupally
                 </h3>
                 <p class="text-gray-600 mb-4">
-                  State-of-the-art MEP systems for 300-bed hospital including
-                  medical gas, HVAC, and electrical infrastructure
+                  B + G + 5 floors hospital with comprehensive MEP services spanning 12,000 sq ft
                 </p>
                 <div class="grid grid-cols-2 gap-4 mb-6">
                   <div>
-                    <span class="text-gray-500 text-sm">Location</span>
-                    <p class="font-semibold">Jubilee Hills, Hyderabad</p>
+                    <span class="text-gray-500 text-sm">Client</span>
+                    <p class="font-semibold">Reach Hospital</p>
                   </div>
                   <div>
-                    <span class="text-gray-500 text-sm">Duration</span>
-                    <p class="font-semibold">24 months</p>
+                    <span class="text-gray-500 text-sm">Architect</span>
+                    <p class="font-semibold">AR Design Studio Architect</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Area</span>
+                    <p class="font-semibold">12,000 SFT</p>
                   </div>
                 </div>
-                <button
-                  class="w-full bg-primary text-white py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
-                  onclick="showProjectDetails('hospital')"
-                >
-                  View Details
-                </button>
               </div>
             </div>
 
@@ -339,7 +390,7 @@
               class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
             >
               <img
-                src="https://public.readdy.ai/ai/img_res/270f897c4ee33c4ae0594e1f53612d76.jpg"
+                src="project_res/Res1_orchid_gahan.jpg"
                 alt="Residential"
                 class="w-full h-[250px] object-cover"
               />
@@ -357,28 +408,29 @@
                   </span>
                 </div>
                 <h3 class="text-xl font-['Roboto'] font-bold mb-2">
-                  Prestige Smart Homes
+                  Residential Apartment (Orchid)
                 </h3>
                 <p class="text-gray-600 mb-4">
-                  Smart home automation and MEP systems for 200-unit luxury
-                  residential complex
+                  G + 5 floors residential complex with comprehensive MEP services spanning 3 lakh sq ft
                 </p>
                 <div class="grid grid-cols-2 gap-4 mb-6">
                   <div>
-                    <span class="text-gray-500 text-sm">Location</span>
-                    <p class="font-semibold">Gachibowli, Hyderabad</p>
+                    <span class="text-gray-500 text-sm">Client</span>
+                    <p class="font-semibold">Gahan Developers</p>
                   </div>
                   <div>
-                    <span class="text-gray-500 text-sm">Duration</span>
-                    <p class="font-semibold">15 months</p>
+                    <span class="text-gray-500 text-sm">Architect</span>
+                    <p class="font-semibold">Fluid Grid</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Area</span>
+                    <p class="font-semibold">3 Lacks SFT</p>
                   </div>
                 </div>
-                <button
-                  class="w-full bg-primary text-white py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
-                  onclick="showProjectDetails('residential')"
-                >
-                  View Details
-                </button>
               </div>
             </div>
 
@@ -386,54 +438,7 @@
               class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
             >
               <img
-                src="https://public.readdy.ai/ai/img_res/ce7af8320e7ce605f9ac9847bba51ded.jpg"
-                alt="Mall"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <div class="flex items-center justify-between mb-4">
-                  <span
-                    class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full"
-                    >Commercial</span
-                  >
-                  <span
-                    class="text-blue-600 text-sm font-semibold flex items-center"
-                  >
-                    <i class="ri-time-line mr-1"></i>
-                    Ongoing
-                  </span>
-                </div>
-                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
-                  Inorbit Mall Expansion
-                </h3>
-                <p class="text-gray-600 mb-4">
-                  MEP upgrade and expansion project for existing mall including
-                  new HVAC and fire safety systems
-                </p>
-                <div class="grid grid-cols-2 gap-4 mb-6">
-                  <div>
-                    <span class="text-gray-500 text-sm">Location</span>
-                    <p class="font-semibold">Madhapur, Hyderabad</p>
-                  </div>
-                  <div>
-                    <span class="text-gray-500 text-sm">Duration</span>
-                    <p class="font-semibold">12 months</p>
-                  </div>
-                </div>
-                <button
-                  class="w-full bg-primary text-white py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
-                  onclick="showProjectDetails('mall')"
-                >
-                  View Details
-                </button>
-              </div>
-            </div>
-
-            <div
-              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
-            >
-              <img
-                src="https://public.readdy.ai/ai/img_res/539fb162f764692c6e96f50fa370ca17.jpg"
+                src="indus_res/Ripple.png"
                 alt="Industrial"
                 class="w-full h-[250px] object-cover"
               />
@@ -451,44 +456,46 @@
                   </span>
                 </div>
                 <h3 class="text-xl font-['Roboto'] font-bold mb-2">
-                  Pharma Manufacturing Facility
+                  Ripple Engineering Workshop
                 </h3>
                 <p class="text-gray-600 mb-4">
-                  Specialized MEP design for pharmaceutical manufacturing
-                  including clean room and HVAC systems
+                  G + 1 floors industrial facility with comprehensive MEP services spanning 1,50,000 sq ft
                 </p>
                 <div class="grid grid-cols-2 gap-4 mb-6">
                   <div>
-                    <span class="text-gray-500 text-sm">Location</span>
-                    <p class="font-semibold">Genome Valley, Hyderabad</p>
+                    <span class="text-gray-500 text-sm">Client</span>
+                    <p class="font-semibold">Ripple</p>
                   </div>
                   <div>
-                    <span class="text-gray-500 text-sm">Duration</span>
-                    <p class="font-semibold">20 months</p>
+                    <span class="text-gray-500 text-sm">Architect</span>
+                    <p class="font-semibold">Hydezign</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Area</span>
+                    <p class="font-semibold">1,50,000 SFT</p>
                   </div>
                 </div>
-                <button
-                  class="w-full bg-primary text-white py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
-                  onclick="showProjectDetails('industrial')"
-                >
-                  View Details
-                </button>
               </div>
             </div>
 
+            <!-- Add new card here -->
             <div
               class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
             >
               <img
-                src="https://public.readdy.ai/ai/img_res/1bb063c4ae24198633e3261dabd293af.jpg"
-                alt="Hotel"
+                src="project_res/Res2_AMBE1.png"
+                alt="Ambe Mansions"
                 class="w-full h-[250px] object-cover"
               />
               <div class="p-6">
                 <div class="flex items-center justify-between mb-4">
                   <span
-                    class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full"
-                    >Commercial</span
+                    class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full"
+                    >Residential</span
                   >
                   <span
                     class="text-green-600 text-sm font-semibold flex items-center"
@@ -498,30 +505,609 @@
                   </span>
                 </div>
                 <h3 class="text-xl font-['Roboto'] font-bold mb-2">
-                  Marriott Hotel
+                  Residential Apartment (Ambe Mansions)
                 </h3>
                 <p class="text-gray-600 mb-4">
-                  Complete MEP solutions for 5-star hotel including smart
-                  building management systems
+                  2B + G + 12 floors residential complex with comprehensive MEP services spanning 8,00,000 sq ft
                 </p>
                 <div class="grid grid-cols-2 gap-4 mb-6">
                   <div>
-                    <span class="text-gray-500 text-sm">Location</span>
-                    <p class="font-semibold">Financial District, Hyderabad</p>
+                    <span class="text-gray-500 text-sm">Client</span>
+                    <p class="font-semibold">Ambe Developers</p>
                   </div>
                   <div>
-                    <span class="text-gray-500 text-sm">Duration</span>
-                    <p class="font-semibold">22 months</p>
+                    <span class="text-gray-500 text-sm">Architect</span>
+                    <p class="font-semibold">BK Thati Associates</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Area</span>
+                    <p class="font-semibold">8,00,000 SFT</p>
                   </div>
                 </div>
-                <button
-                  class="w-full bg-primary text-white py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
-                  onclick="showProjectDetails('hotel')"
-                >
-                  View Details
-                </button>
               </div>
             </div>
+
+            <!-- Add new card here -->
+            <div
+              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
+            >
+              <img
+                src="project_res/Res3_EIPL.jpg"
+                alt="EIPL Residential"
+                class="w-full h-[250px] object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full"
+                    >Residential</span
+                  >
+                  <span
+                    class="text-green-600 text-sm font-semibold flex items-center"
+                  >
+                    <i class="ri-checkbox-circle-line mr-1"></i>
+                    Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
+                  Residential Apartment (EIPL)
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  B+G + 14 floors residential complex with comprehensive MEP and BIM services spanning 20 lakh sq ft
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <span class="text-gray-500 text-sm">Client</span>
+                    <p class="font-semibold">EIPL Developers</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Architect</span>
+                    <p class="font-semibold">FHD</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Mankhal</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Area</span>
+                    <p class="font-semibold">20 Lacks SFT</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add new Meenakshi Towers card -->
+            <div
+              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
+            >
+              <img
+                src="project_res/Res4_Meenakshi_ResTower.jpg"
+                alt="Meenakshi Residential Towers"
+                class="w-full h-[250px] object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full"
+                    >Residential</span
+                  >
+                  <span
+                    class="text-green-600 text-sm font-semibold flex items-center"
+                  >
+                    <i class="ri-checkbox-circle-line mr-1"></i>
+                    Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
+                  Residential Towers (Meenakshi)
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  4B + G + 45 floors premium residential complex with PHE & Fire services review consulting spanning 28.52 lakh sq ft
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <span class="text-gray-500 text-sm">Client</span>
+                    <p class="font-semibold">Meenakshi Builders</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Architect</span>
+                    <p class="font-semibold">Arch. Dialogue</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Area</span>
+                    <p class="font-semibold">28.52 Lacks SFT</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add new Meenakshi Residential Towers card -->
+            <div
+              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
+            >
+              <img
+                src="project_res/Res5_Meenaksh_ResTower2.jpg"
+                alt="Meenakshi Residential Towers"
+                class="w-full h-[250px] object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full"
+                    >Residential</span
+                  >
+                  <span
+                    class="text-green-600 text-sm font-semibold flex items-center"
+                  >
+                    <i class="ri-checkbox-circle-line mr-1"></i>
+                    Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
+                  Residential Towers (Meenakshi)
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  3B + G + 35 floors residential complex with PHE & Fire services review consulting spanning 7.45 lakh sq ft
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <span class="text-gray-500 text-sm">Client</span>
+                    <p class="font-semibold">Meenakshi Builders</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Architect</span>
+                    <p class="font-semibold">Silpa Architects</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Area</span>
+                    <p class="font-semibold">7.45 Lacks SFT</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add new Krishna Reddy Residential card -->
+            <div
+              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
+            >
+              <img
+                src="project_res/Res6_Res_Krishna.jpg"
+                alt="Krishna Reddy Residential"
+                class="w-full h-[250px] object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full"
+                    >Residential</span
+                  >
+                  <span
+                    class="text-green-600 text-sm font-semibold flex items-center"
+                  >
+                    <i class="ri-checkbox-circle-line mr-1"></i>
+                    Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
+                  Residential Apartment
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Residential apartment complex with comprehensive MEP services spanning 18,000 sq ft
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <span class="text-gray-500 text-sm">Client</span>
+                    <p class="font-semibold">Mr. Krishna Reddy</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Architect</span>
+                    <p class="font-semibold">Royal Civil Associates</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Kakinada</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Area</span>
+                    <p class="font-semibold">18,000 SFT</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add new Pallam Raju Residential card -->
+            <div
+              class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300"
+            >
+              <img
+                src="project_res/Res7_Raju.jpg"
+                alt="Pallam Raju Residential"
+                class="w-full h-[250px] object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full"
+                    >Residential</span
+                  >
+                  <span
+                    class="text-green-600 text-sm font-semibold flex items-center"
+                  >
+                    <i class="ri-checkbox-circle-line mr-1"></i>
+                    Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
+                  Residential Apartment
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  G + 4 floors residential complex with comprehensive MEP services spanning 60,000 sq ft
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <span class="text-gray-500 text-sm">Client</span>
+                    <p class="font-semibold">Pallam Raju</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Architect</span>
+                    <p class="font-semibold">Leela Associates</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Location</span>
+                    <p class="font-semibold">Kakinada</p>
+                  </div>
+                  <div>
+                    <span class="text-gray-500 text-sm">Area</span>
+                    <p class="font-semibold">60,000 SFT</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Serene Project card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="project_res/Res8_Sri_varishanava1.jpg" alt="Serene Project" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full">Residential</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Serene</h3>
+                <p class="text-gray-600 mb-4">1B + Stilt + 5 floors residential complex with comprehensive MEP services spanning 1.5 lakh sq ft</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Sri Vaishnava Builders Pvt Ltd</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Varma Consultants</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">1.5 Lacks SFT</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Urban Yards Project card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="project_res/Res9_Res_Urban.jpg" alt="Urban Yards Residential" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full">Residential</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Residential Apartment</h3>
+                <p class="text-gray-600 mb-4">2B + G + 20 floors residential complex with MEP services spanning 20,26,900 sq ft</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Urban Yards</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Ravi Kumbham Architects</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">20,26,900 SFT</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Varni Villas Project card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="project_res/Res10_ResVillas_Varni.jpg" alt="Varni Villas" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full">Residential</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Residential Villas & Infra Development</h3>
+                <p class="text-gray-600 mb-4">G + 2 floors villa development with MEP services across 20 acres</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Varni Developers</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">FHD</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Kadapa</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">20 Acres</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Raichandani Project card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="project_res/Res11_Villa_Raichandani.jpg" alt="Raichandani Villas" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full">Residential</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Villa Development @ Karimnagar</h3>
+                <p class="text-gray-600 mb-4">Villa & infrastructure development with MEP services across 15 acres</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Raichandani Developers</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Tree Design Architects</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Karimnagar</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">15 Acres</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add EIPL Villa Project card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="project_res/Res12_Villa_EIPL.jpg.png" alt="EIPL Villas" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full">Residential</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Villa Development @ Thukkuguda</h3>
+                <p class="text-gray-600 mb-4">Villa & infrastructure development with MEP services across 22 acres</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">EIPL Group</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">FHD</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">22 Acres</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Venkat Residence card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="project_res/Res13_venkat.jpg" alt="Venkat Residence" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full">Residential</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Residential Bungalow</h3>
+                <p class="text-gray-600 mb-4">Ground + 2 floors bungalow with MEP services spanning 10,000 sq ft</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Mr. Venkat</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Anagha Architects</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Palvancha, Khammam</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">10,000 SFT</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Gelli Residence card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="project_res/Res14_Villa_GELLI.jpg" alt="Gelli Residence" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full">Residential</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Gelli Residence</h3>
+                <p class="text-gray-600 mb-4">Ground + 2 floors residence with MEP services spanning 10,000 sq ft</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Mr. Niraj Gelli</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">FHD Architects</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">10,000 SFT</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Satyajeeth Residence card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="project_res/Res15_Satya.jpg" alt="Satyajeeth Residence" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full">Residential</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Satyajeeth Residence</h3>
+                <p class="text-gray-600 mb-4">Ground floor residence with MEP services across 2 acres</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Mr. Satyajeeth</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Tanmayee Reddy Design Studio</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">2 Acre</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Dr. Meena Residence card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="project_res/Res16_Meena.jpg" alt="Dr. Meena Residence" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 !rounded-full">Residential</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Dr. Meena Residence @ Miryalaguda</h3>
+                <p class="text-gray-600 mb-4">Villa development with comprehensive MEP services across 0.5 acres</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Dr. Meena Chakravarthy</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Hydezign Studio</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Miryalaguda</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">0.5 Acres</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Boutique Hotel card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="hotel_res/hotel_bout_squares.jpg" alt="Boutique Hotel" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 !rounded-full">Hotel</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Boutique Hotel</h3>
+                <p class="text-gray-600 mb-4">B + G + 5 floors hotel with comprehensive MEP services spanning 50,000 sq ft</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Boutique Hotels</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Squares Design Studio</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">50,000 SFT</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add IRA Hotel card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="hotel_res/hotel_IRA_kamat.jpg" alt="IRA Hotel" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 !rounded-full">Hotel</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">IRA Hotel</h3>
+                <p class="text-gray-600 mb-4">B + G + 6 floors hotel with comprehensive MEP services spanning 50,000 sq ft</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Kamat Group</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Roots & Crafts</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">50,000 SFT</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Kanchi & Whistling Brew Cafe card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <div class="relative h-[250px]">
+                <div class="absolute inset-0 flex">
+                  <img src="hotel_res/Hotel_kanchi_1.jpg" alt="Kanchi 1" class="w-1/3 object-cover"/>
+                  <img src="hotel_res/Hotel_kanchi_2.jpg" alt="Kanchi 2" class="w-1/3 object-cover"/>
+                  <img src="hotel_res/Hotel_kanchi_3.jpg" alt="Kanchi 3" class="w-1/3 object-cover"/>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 !rounded-full">Hotel</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Kanchi & Whistling Brew Cafe</h3>
+                <p class="text-gray-600 mb-4">Ground floor cafe with comprehensive MEP services spanning 10,000 sq ft</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Ritual Speciality Food</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Roots & Crafts</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">10,000 SFT</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Mandapam & Resort card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <img src="hotel_res/hotel_resort.jpg" alt="Mandapam & Resort" class="w-full h-[250px] object-cover"/>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 !rounded-full">Hotel</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Mandapam & Resort @ Thukkuguda</h3>
+                <p class="text-gray-600 mb-4">G + 2 floors resort with comprehensive MEP services spanning 2,00,000 sq ft</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Mr. Shanthanu</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Dhananjay & Shravani Architects</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">2,00,000 SFT</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PGF Prayer Hall card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <div class="relative h-[250px]">
+                <div class="absolute inset-0 flex">
+                  <img src="ass_res/PGF1.jpg" alt="PGF Prayer Hall 1" class="w-1/3 object-cover"/>
+                  <img src="ass_res/PGF2.jpg" alt="PGF Prayer Hall 2" class="w-1/3 object-cover"/>
+                  <img src="ass_res/PGF3.jpg" alt="PGF Prayer Hall 3" class="w-1/3 object-cover"/>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 !rounded-full">Assembly</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">PGF Prayer Hall (Church)</h3>
+                <p class="text-gray-600 mb-4">G + 1 floor assembly building with comprehensive MEP services across 4.5 acres</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Peniel Gospel Fellowship</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Eluru</p></div>
+                  <div><span class="text-gray-500 text-sm">Services</span><p class="font-semibold">MEP</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">4.5 Acres</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Annadana Satram card -->
+            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
+              <div class="relative h-[250px]">
+                <div class="absolute inset-0 flex">
+                  <img src="ass_res/satram.jpg" alt="Annadana Satram 1" class="w-1/2 object-cover"/>
+                  <img src="ass_res/satram2.jpg" alt="Annadana Satram 2" class="w-1/2 object-cover"/>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 !rounded-full">Assembly</span>
+                  <span class="text-green-600 text-sm font-semibold flex items-center">
+                    <i class="ri-checkbox-circle-line mr-1"></i>Completed
+                  </span>
+                </div>
+                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Annadana Satram, Q Complex @ Annavaram</h3>
+                <p class="text-gray-600 mb-4">G + 2 floors assembly complex with comprehensive MEP services spanning 2,00,000 sq ft</p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Annavaram Temple Trust</p></div>
+                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">B K Thati Associates</p></div>
+                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Annavaram</p></div>
+                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">2,00,000 SFT</p></div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -662,90 +1248,6 @@ Leading MEP design services provider in Hyderabad, bridging the gap between evol
       });
 
       const projectData = {
-        "tech-park": {
-          title: "Hyderabad Tech Park",
-          content: `
-            <div class="grid grid-cols-2 gap-8 mb-8">
-              <img src="https://public.readdy.ai/ai/img_res/cdabe361238006c163505e2424cd822b.jpg" class="w-full h-[300px] object-cover !rounded-lg" alt="Tech Park Interior">
-              <div>
-                <h4 class="text-xl font-bold mb-4">Project Overview</h4>
-                <p class="text-gray-600 mb-4">A state-of-the-art commercial complex featuring advanced MEP systems designed for optimal efficiency and sustainability.</p>
-                <div class="grid grid-cols-2 gap-4">
-                  <div>
-                    <span class="text-gray-500 text-sm">Client</span>
-                    <p class="font-semibold">TechSpace Developers</p>
-                  </div>
-                  <div>
-                    <span class="text-gray-500 text-sm">Location</span>
-                    <p class="font-semibold">HITEC City, Hyderabad</p>
-                  </div>
-                  <div>
-                    <span class="text-gray-500 text-sm">Area</span>
-                    <p class="font-semibold">500,000 sq ft</p>
-                  </div>
-                  <div>
-                    <span class="text-gray-500 text-sm">Completion</span>
-                    <p class="font-semibold">December 2024</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid grid-cols-3 gap-6 mb-8">
-              <div class="bg-gray-50 p-6 !rounded-lg">
-                <h4 class="font-bold mb-2">Scope of Work</h4>
-                <ul class="text-gray-600 space-y-2">
-                  <li>• HVAC System Design</li>
-                  <li>• Electrical Infrastructure</li>
-                  <li>• Plumbing Systems</li>
-                  <li>• Fire Safety Integration</li>
-                  <li>• Building Automation</li>
-                </ul>
-              </div>
-              <div class="bg-gray-50 p-6 !rounded-lg">
-                <h4 class="font-bold mb-2">Challenges</h4>
-                <ul class="text-gray-600 space-y-2">
-                  <li>• Complex Integration Requirements</li>
-                  <li>• Energy Efficiency Targets</li>
-                  <li>• Space Optimization</li>
-                  <li>• Timeline Management</li>
-                </ul>
-              </div>
-              <div class="bg-gray-50 p-6 !rounded-lg">
-                <h4 class="font-bold mb-2">Solutions</h4>
-                <ul class="text-gray-600 space-y-2">
-                  <li>• Smart Building Management</li>
-                  <li>• Energy Recovery Systems</li>
-                  <li>• Modular MEP Design</li>
-                  <li>• Phased Implementation</li>
-                </ul>
-              </div>
-            </div>
-            <div class="bg-primary bg-opacity-5 p-6 !rounded-lg mb-8">
-              <h4 class="font-bold mb-4">Key Achievements</h4>
-              <div class="grid grid-cols-4 gap-6 text-center">
-                <div>
-                  <div class="text-2xl font-bold text-primary mb-2">30%</div>
-                  <p class="text-gray-600">Energy Savings</p>
-                </div>
-                <div>
-                  <div class="text-2xl font-bold text-primary mb-2">LEED</div>
-                  <p class="text-gray-600">Gold Certified</p>
-                </div>
-                <div>
-                  <div class="text-2xl font-bold text-primary mb-2">99.9%</div>
-                  <p class="text-gray-600">Uptime</p>
-                </div>
-                <div>
-                  <div class="text-2xl font-bold text-primary mb-2">18mo</div>
-                  <p class="text-gray-600">Completion Time</p>
-                </div>
-              </div>
-            </div>
-            <div class="flex justify-end">
-              <button class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap">Download Case Study</button>
-            </div>
-          `,
-        },
       };
 
       function showProjectDetails(projectId) {

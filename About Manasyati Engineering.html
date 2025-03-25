@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Manasyati Engineering Services | Leading MEP Consultancy in Hyderabad</title>
-    <meta name="description" content="Learn about Manasyati Engineering Services - Hyderabad's premier MEP consultancy firm specializing in electrical, HVAC, and fire safety engineering since 2024. Discover our expertise, values, and leadership team.">
+    <meta name="description" content="Leading MEP engineering consultancy in Hyderabad specializing in electrical, HVAC, and fire safety engineering solutions." />
     <meta name="keywords" content="Manasyati Engineering, MEP consultancy, engineering services Hyderabad, electrical design, HVAC systems, fire safety engineering, B. Venkata Ramana, T. Sowjanya">
     
     <!-- Open Graph Tags -->
@@ -23,26 +23,14 @@
         theme: {
           extend: {
             colors: {
-              primary: '#1a3c6e',
-              secondary: '#465b6e',
-              accent: '#f59e0b'
-            },
-            fontFamily: {
-              sans: ['Open Sans', 'sans-serif'],
-              heading: ['Roboto', 'sans-serif'],
-              display: ['Montserrat', 'sans-serif']
-            },
-            borderRadius: {
-              'none': '0px',
-              'sm': '4px',
-              DEFAULT: '8px',
-              'md': '12px',
-              'lg': '16px',
-              'xl': '20px',
-              '2xl': '24px',
-              '3xl': '32px',
-              'full': '9999px',
-              'button': '8px'
+              primary: '#2E7D32',    // Green
+              secondary: '#FFC107',  // Turmeric
+              tertiary: '#673AB7',   // Purple
+              accent: '#FFD700',     // Gold
+              'green-light': '#4CAF50',
+              'turmeric-light': '#FFE082',
+              'purple-light': '#9575CD',
+              'gold-light': '#FFE57F'
             }
           }
         }
@@ -168,6 +156,8 @@
         100% { d: path("M0,160L48,144C96,128,192,96,288,96..."); }
       }
     </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/js/hero.js"></script>
   </head>
   <body class="bg-white font-['Open_Sans']">
     <header class="fixed w-full bg-white shadow-sm z-50">
@@ -217,7 +207,9 @@
         </nav>
       </div>
     </header>
-    <main class="pt-30">
+    <main class="pt-20">
+      <div id="hero-container"></div>
+      
       <section
         class="relative h-[500px] flex items-center overflow-hidden"
         style="background-image: url('img_res/a56e283c39d4ff04f52248d77a0de29d.jpg'); background-size: cover; background-position: center;"
@@ -885,6 +877,14 @@
         "https://twitter.com/manasyati"
       ]
     }
+    </script>
+    <script>
+      // Initialize hero with page-specific content
+      loadHero(
+        'About Manasyati Engineering',
+        'Excellence Through Innovation',
+        'Leading MEP design services provider in Hyderabad, delivering comprehensive engineering solutions since 2024.'
+      );
     </script>
   </body>
 </html>

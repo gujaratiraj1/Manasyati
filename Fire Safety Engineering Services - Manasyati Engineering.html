@@ -93,6 +93,42 @@
           box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
         }
       }
+      /* Color theme consistency */
+      :root {
+        --color-primary: #2E7D32;
+        --color-secondary: #FFC107;
+        --color-tertiary: #673AB7;
+        --color-accent: #FFD700;
+      }
+
+      .bg-primary.bg-opacity-70 {
+        background: linear-gradient(45deg, rgba(46, 125, 50, 0.85), rgba(255, 193, 7, 0.85));
+      }
+
+      .bg-primary {
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
+      }
+
+      button.hover\:bg-opacity-90:hover {
+        background: linear-gradient(45deg, #673AB7, #FFD700);
+      }
+
+      .text-primary {
+        color: #2E7D32;
+      }
+
+      .btn-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          box-shadow: 0 0 5px #FFD700, 0 0 10px #FFC107, 0 0 15px #2E7D32;
+        }
+        to {
+          box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
+        }
+      }
     </style>
   </head>
   <body class="bg-white font-['Open_Sans']">
@@ -156,7 +192,7 @@
       </section>
       <section class="py-24 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="max-w-5xl mx-auto">
+          <div class="max-w-7xl mx-auto"> <!-- Changed from max-w-5xl -->
             <h2 class="text-4xl font-bold text-primary text-center mb-4">
               Service Overview
             </h2>
@@ -166,314 +202,140 @@
               safety systems are designed to protect lives and assets while
               meeting all regulatory requirements.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 gap-12"> <!-- Changed to single column with larger gap -->
               <!-- Service Cards -->
               <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
-                  <i class="ri-fire-line text-2xl text-primary"></i>
+                <div class="flex flex-col md:flex-row gap-8"> <!-- Added flex layout -->
+                  <div class="w-full md:w-1/2 h-[400px] overflow-hidden !rounded-lg"> <!-- Increased height and adjusted width -->
+                    <img src="img_res/FSE_Fire.webp" alt="Fire Protection" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <div class="w-full md:w-1/2 flex flex-col justify-center"> <!-- Added content alignment -->
+                    <h4 class="font-bold text-2xl mb-4 text-primary">Fire Protection</h4>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">NFPA certified systems for complete building safety with comprehensive protection measures including automatic detection and suppression systems.</p>
+                    <div class="mt-4">
+                      <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                      <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Internal & external hydrants</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Automated sprinklers</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Manual sprinkler systems</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Coverage optimization</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <h4 class="font-bold text-xl mb-3 text-center">Fire Protection</h4>
-                <p class="text-gray-600 text-center">NFPA certified systems for complete building safety</p>
               </div>
+              
               <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
-                  <i class="ri-alarm-warning-line text-2xl text-primary"></i>
+                <div class="flex flex-col md:flex-row-reverse gap-8"> <!-- Added reverse layout -->
+                  <div class="w-full md:w-1/2 h-[400px] overflow-hidden !rounded-lg">
+                    <img src="img_res/FSE_Smoke.webp" alt="Detection" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <div class="w-full md:w-1/2 flex flex-col justify-center">
+                    <h4 class="font-bold text-2xl mb-4 text-primary">Detection</h4>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">Advanced monitoring systems for early warning with state-of-the-art smoke and heat detection technology for rapid response.</p>
+                    <div class="mt-4">
+                      <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                      <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Smoke detectors</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Heat detectors</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Gas detectors</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Real-time monitoring</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <h4 class="font-bold text-xl mb-3 text-center">Detection</h4>
-                <p class="text-gray-600 text-center">Advanced monitoring systems for early warning</p>
               </div>
+
               <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
-                  <i class="ri-shield-check-line text-2xl text-primary"></i>
+                <div class="flex flex-col md:flex-row gap-8">
+                  <div class="w-full md:w-1/2 h-[400px] overflow-hidden !rounded-lg">
+                    <img src="img_res/FSE_comp.webp" alt="Compliance" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <div class="w-full md:w-1/2 flex flex-col justify-center">
+                    <h4 class="font-bold text-2xl mb-4 text-primary">Compliance</h4>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">Full adherence to NBC & IS standards ensuring your facility meets all safety regulations and compliance requirements.</p>
+                    <div class="mt-4">
+                      <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                      <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>FM-200 systems</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>CO2 suppression</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Novec 1230 systems</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Sensitive area protection</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <h4 class="font-bold text-xl mb-3 text-center">Compliance</h4>
-                <p class="text-gray-600 text-center">Full adherence to NBC & IS standards</p>
               </div>
+
               <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
-                  <i class="ri-24-hours-line text-2xl text-primary"></i>
-                </div>
-                <h4 class="font-bold text-xl mb-3 text-center">Emergency Response</h4>
-                <p class="text-gray-600 text-center">24/7 support and rapid assistance</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-primary text-center mb-12">
-            Key Features & Specifications
-          </h2>
-          <div class="grid grid-cols-2 gap-8">
-            <div class="bg-white p-8 !rounded-lg shadow-lg">
-              <div class="flex items-start space-x-6">
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-fire-line text-2xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-4">
-                    Hydrant & Sprinkler Systems
-                  </h3>
-                  <ul class="space-y-3 text-gray-600">
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Internal & external hydrants</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Automated sprinklers</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Manual sprinkler systems</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Coverage optimization</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white p-8 !rounded-lg shadow-lg">
-              <div class="flex items-start space-x-6">
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-alarm-warning-line text-2xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-4">Fire Alarm & Detection</h3>
-                  <ul class="space-y-3 text-gray-600">
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Smoke detectors</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Heat detectors</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Gas detectors</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Real-time monitoring</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white p-8 !rounded-lg shadow-lg">
-              <div class="flex items-start space-x-6">
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-gas-station-line text-2xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-4">
-                    Gas Suppression Systems
-                  </h3>
-                  <ul class="space-y-3 text-gray-600">
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>FM-200 systems</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>CO2 suppression</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Novec 1230 systems</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Sensitive area protection</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white p-8 !rounded-lg shadow-lg">
-              <div class="flex items-start space-x-6">
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-door-line text-2xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-4">Emergency & Evacuation</h3>
-                  <ul class="space-y-3 text-gray-600">
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Public Address systems</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Fire escape pressurization</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Emergency lighting</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Evacuation planning</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-16">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-primary text-center mb-12">
-            Featured Case Studies
-          </h2>
-          <div class="grid grid-cols-3 gap-8">
-            <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://public.readdy.ai/ai/img_res/24658a7ea4740fe42b46dcadf00bce1b.jpg"
-                alt="Hospital Project"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Multi-Specialty Hospital</h3>
-                <p class="text-gray-600 mb-4">
-                  Complete PHE solution for 500-bed hospital including medical
-                  gas systems
-                </p>
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Project Duration</span>
-                    <span class="font-semibold">18 months</span>
+                <div class="flex flex-col md:flex-row-reverse gap-8">
+                  <div class="w-full md:w-1/2 h-[400px] overflow-hidden !rounded-lg">
+                    <img src="img_res/Fire_Emer.webp" alt="Emergency Response" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                   </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Water Savings</span>
-                    <span class="font-semibold">45% reduction</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">System Capacity</span>
-                    <span class="font-semibold">500,000 L/day</span>
+                  <div class="w-full md:w-1/2 flex flex-col justify-center">
+                    <h4 class="font-bold text-2xl mb-4 text-primary">Emergency Response</h4>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">24/7 support and rapid assistance with trained emergency response teams ready to handle any fire safety situation.</p>
+                    <div class="mt-4">
+                      <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                      <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Public Address systems</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Fire escape pressurization</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Emergency lighting</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                          <i class="ri-checkbox-circle-line text-primary"></i>
+                          <span>Evacuation planning</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://public.readdy.ai/ai/img_res/dd052efa5320dd61c6ae085503ff5f8e.jpg"
-                alt="Residential Project"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">
-                  Luxury Residential Complex
-                </h3>
-                <p class="text-gray-600 mb-4">
-                  Integrated water management for 1200-unit premium housing
-                  project
-                </p>
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Project Duration</span>
-                    <span class="font-semibold">24 months</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Water Recycling</span>
-                    <span class="font-semibold">80% efficiency</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Daily Capacity</span>
-                    <span class="font-semibold">800,000 L/day</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://public.readdy.ai/ai/img_res/8a16819d2a06e3cbd322af22dd1c80a1.jpg"
-                alt="Commercial Project"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Tech Park Development</h3>
-                <p class="text-gray-600 mb-4">
-                  LEED Platinum certified water systems for IT campus
-                </p>
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Project Duration</span>
-                    <span class="font-semibold">15 months</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Energy Savings</span>
-                    <span class="font-semibold">35% reduction</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Area Covered</span>
-                    <span class="font-semibold">1.2M sq ft</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-primary mb-12">
-              Get Started with Our PHE Services
-            </h2>
-            <div class="grid grid-cols-3 gap-8 text-center mb-12">
-              <div>
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4"
-                >
-                  <i class="ri-discuss-line text-2xl text-primary"></i>
-                </div>
-                <h3 class="font-bold mb-2">Consultation</h3>
-                <p class="text-gray-600 text-sm">
-                  Initial discussion of your project requirements
-                </p>
-              </div>
-              <div>
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4"
-                >
-                  <i class="ri-file-list-3-line text-2xl text-primary"></i>
-                </div>
-                <h3 class="font-bold mb-2">Proposal</h3>
-                <p class="text-gray-600 text-sm">
-                  Detailed solution design and quotation
-                </p>
-              </div>
-              <div>
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4"
-                >
-                  <i class="ri-install-line text-2xl text-primary"></i>
-                </div>
-                <h3 class="font-bold mb-2">Implementation</h3>
-                <p class="text-gray-600 text-sm">
-                  Expert execution and project delivery
-                </p>
-              </div>
-            </div>
-            <button
-              onclick="openConsultationModal()"
-              class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
-            >
-              Schedule a Consultation
-            </button>
           </div>
         </div>
       </section>
