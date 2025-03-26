@@ -57,23 +57,17 @@
         theme: {
           extend: {
             colors: {
-              primary: "#1a3c6e",
-              secondary: "#465b6e",
-            },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
-          },
-        },
+              primary: '#2E7D32',    // Green
+              secondary: '#FFC107',  // Turmeric
+              tertiary: '#673AB7',   // Purple
+              accent: '#FFD700',     // Gold
+              'green-light': '#4CAF50',
+              'turmeric-light': '#FFE082',
+              'purple-light': '#9575CD',
+              'gold-light': '#FFE57F'
+            }
+          }
+        }
       };
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -89,6 +83,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
     <style>
       :where([class^="ri-"])::before { content: "\f3c2"; }
+      /* Additional green theme styles */
+      .bg-primary.bg-opacity-70 {
+        background: linear-gradient(45deg, rgba(46, 125, 50, 0.85), rgba(255, 193, 7, 0.85));
+      }
+      .bg-primary.bg-opacity-10 {
+        background-color: rgba(76, 175, 80, 0.1);
+      }
+      .hover\:bg-opacity-90:hover {
+        background-color: rgba(46, 125, 50, 0.9);
+      }
+      .text-primary {
+        color: #2E7D32;
+      }
+      button.bg-primary, 
+      .bg-primary {
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
+      }
+      button.hover\:bg-opacity-90:hover {
+        background: linear-gradient(45deg, #673AB7, #FFD700);
+      }
+      .btn-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+      @keyframes glow {
+        from {
+          box-shadow: 0 0 5px #FFD700, 0 0 10px #FFC107, 0 0 15px #2E7D32;
+        }
+        to {
+          box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
+        }
+      }
     </style>
   </head>
   <body class="bg-white font-['Open_Sans']">
@@ -100,7 +125,6 @@
             data-readdy="true"
             class="flex items-center space-x-4"
           >
-            <img src="image\4a3751037ca9aab7f366bebb15affb03.jpeg" alt="Manasyati Logo" class="h-12">
             <i class="ri-arrow-left-line text-xl"></i>
             <span>Back to Services</span>
           </a>
@@ -127,105 +151,88 @@
       </div>
     </header>
     <main class="pt-20">
-      <section
-        class="relative h-[500px] flex items-center"
-        style="background-image: url('https://public.readdy.ai/ai/img_res/b08036320ea77e22cacc01ed93e8f118.jpg'); background-size: cover; background-position: center;"
-      >
+      <section class="relative h-[500px] flex items-center"
+        style="background-image: url('https://public.readdy.ai/ai/img_res/b08036320ea77e22cacc01ed93e8f118.jpg'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-primary bg-opacity-70"></div>
         <div class="container mx-auto px-4 relative z-10">
           <div class="max-w-3xl">
-            <h1 class="text-5xl font-bold text-white mb-6">Allied Services</h1>
+            <h1 class="text-5xl font-bold text-white mb-6">Allied Engineering Services</h1>
             <p class="text-xl text-white opacity-90 mb-8">
-              At Manasyati Engineering Services, we offer specialized allied
-              services that enhance safety, sustainability, and operational
-              efficiency across various sectors.
+              Comprehensive allied engineering solutions including LPG reticulation, waste management, and specialized building systems for modern infrastructure needs.
             </p>
-            <button
-              onclick="openQuoteModal()"
-              class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
-            >
+            <button onclick="openQuoteModal()" 
+              class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap">
               Request a Quote
             </button>
           </div>
         </div>
       </section>
+
       <section class="py-16">
         <div class="container mx-auto px-4">
-          <div class="grid grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 class="text-3xl font-bold text-primary mb-6">
-                Service Overview
-              </h2>
-              <p class="text-gray-600 mb-6">
-                We provide customized communication solutions tailored for
-                residential, commercial, and industrial projects, ensuring
-                seamless connectivity and enhanced security. Our comprehensive
-                systems are designed to deliver reliable data transmission,
-                security monitoring, and voice communication networks.
-              </p>
-              <div class="grid grid-cols-2 gap-6 mb-8">
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-gas-station-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">LPG Reticulation</h4>
-                    <p class="text-sm text-gray-600">
-                      Safe gas distribution systems
-                    </p>
-                  </div>
+          <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-primary mb-8">Service Overview</h2>
+            <p class="text-gray-600 mb-12 text-lg">
+              We provide specialized allied engineering services that complement core MEP systems, ensuring comprehensive infrastructure solutions for modern buildings and facilities.
+            </p>
+            <div class="grid grid-cols-4 gap-6 max-w-7xl mx-auto">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
+                >
+                  <i class="ri-gas-station-line text-xl text-primary"></i>
                 </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-recycle-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Waste Management</h4>
-                    <p class="text-sm text-gray-600">
-                      Efficient disposal solutions
-                    </p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-drop-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Water Systems</h4>
-                    <p class="text-sm text-gray-600">
-                      Rainwater & wastewater management
-                    </p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-temp-hot-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Hot Water Systems</h4>
-                    <p class="text-sm text-gray-600">
-                      Energy-efficient heating
-                    </p>
-                  </div>
+                <div>
+                  <h4 class="font-bold">LPG Reticulation</h4>
+                  <p class="text-sm text-gray-600">
+                    Safe gas distribution systems
+                  </p>
                 </div>
               </div>
-            </div>
-            <div>
-              <div class="bg-white shadow-xl !rounded-lg overflow-hidden">
-                <div id="performanceChart" class="h-[400px]"></div>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
+                >
+                  <i class="ri-recycle-line text-xl text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold">Waste Management</h4>
+                  <p class="text-sm text-gray-600">
+                    Efficient disposal solutions
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
+                >
+                  <i class="ri-drop-line text-xl text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold">Water Systems</h4>
+                  <p class="text-sm text-gray-600">
+                    Rainwater & wastewater management
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
+                >
+                  <i class="ri-temp-hot-line text-xl text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold">Hot Water Systems</h4>
+                  <p class="text-sm text-gray-600">
+                    Energy-efficient heating
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <h2 class="text-3xl font-bold text-primary text-center mb-12">
@@ -357,100 +364,6 @@
                       <span>Industrial heating</span>
                     </li>
                   </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-16">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-primary text-center mb-12">
-            Featured Case Studies
-          </h2>
-          <div class="grid grid-cols-3 gap-8">
-            <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://public.readdy.ai/ai/img_res/24658a7ea4740fe42b46dcadf00bce1b.jpg"
-                alt="Hospital Project"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Multi-Specialty Hospital</h3>
-                <p class="text-gray-600 mb-4">
-                  Complete PHE solution for 500-bed hospital including medical
-                  gas systems
-                </p>
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Project Duration</span>
-                    <span class="font-semibold">18 months</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Water Savings</span>
-                    <span class="font-semibold">45% reduction</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">System Capacity</span>
-                    <span class="font-semibold">500,000 L/day</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://public.readdy.ai/ai/img_res/dd052efa5320dd61c6ae085503ff5f8e.jpg"
-                alt="Residential Project"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">
-                  Luxury Residential Complex
-                </h3>
-                <p class="text-gray-600 mb-4">
-                  Integrated water management for 1200-unit premium housing
-                  project
-                </p>
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Project Duration</span>
-                    <span class="font-semibold">24 months</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Water Recycling</span>
-                    <span class="font-semibold">80% efficiency</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Daily Capacity</span>
-                    <span class="font-semibold">800,000 L/day</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://public.readdy.ai/ai/img_res/8a16819d2a06e3cbd322af22dd1c80a1.jpg"
-                alt="Commercial Project"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Tech Park Development</h3>
-                <p class="text-gray-600 mb-4">
-                  LEED Platinum certified water systems for IT campus
-                </p>
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Project Duration</span>
-                    <span class="font-semibold">15 months</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Energy Savings</span>
-                    <span class="font-semibold">35% reduction</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Area Covered</span>
-                    <span class="font-semibold">1.2M sq ft</span>
-                  </div>
                 </div>
               </div>
             </div>

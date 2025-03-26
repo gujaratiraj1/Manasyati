@@ -57,23 +57,17 @@
         theme: {
           extend: {
             colors: {
-              primary: "#1a3c6e",
-              secondary: "#465b6e",
-            },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
-          },
-        },
+              primary: '#2E7D32',    // Green
+              secondary: '#FFC107',  // Turmeric
+              tertiary: '#673AB7',   // Purple
+              accent: '#FFD700',     // Gold
+              'green-light': '#4CAF50',
+              'turmeric-light': '#FFE082',
+              'purple-light': '#9575CD',
+              'gold-light': '#FFE57F'
+            }
+          }
+        }
       };
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -89,6 +83,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
     <style>
       :where([class^="ri-"])::before { content: "\f3c2"; }
+      /* Green theme styles */
+      .bg-primary.bg-opacity-70 {
+        background: linear-gradient(45deg, rgba(46, 125, 50, 0.85), rgba(255, 193, 7, 0.85));
+      }
+      .bg-primary.bg-opacity-10 {
+        background-color: rgba(76, 175, 80, 0.1);
+      }
+      .hover\:bg-opacity-90:hover {
+        background-color: rgba(46, 125, 50, 0.9);
+      }
+      .text-primary {
+        color: #2E7D32;
+      }
+      button.bg-primary, 
+      .bg-primary {
+        background: linear-gradient(45deg, #2E7D32, #FFC107);
+      }
+      button.hover\:bg-opacity-90:hover {
+        background: linear-gradient(45deg, #673AB7, #FFD700);
+      }
+      .btn-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+      @keyframes glow {
+        from {
+          box-shadow: 0 0 5px #FFD700, 0 0 10px #FFC107, 0 0 15px #2E7D32;
+        }
+        to {
+          box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
+        }
+      }
     </style>
   </head>
   <body class="bg-white font-['Open_Sans']">
@@ -152,71 +177,63 @@
       </section>
       <section class="py-16">
         <div class="container mx-auto px-4">
-          <div class="grid grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 class="text-3xl font-bold text-primary mb-6">
-                Service Overview
-              </h2>
-              <p class="text-gray-600 mb-6">
-                We provide customized firefighting solutions with end-to-end
-                support, ensuring safety and reliability. Our comprehensive fire
-                safety systems are designed to protect lives and assets while
-                meeting all regulatory requirements.
-              </p>
-              <div class="grid grid-cols-2 gap-6 mb-8">
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-wifi-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">FTTH Systems</h4>
-                    <p class="text-sm text-gray-600">
-                      High-speed fiber networks
-                    </p>
-                  </div>
+          <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-primary mb-8">
+              Service Overview
+            </h2>
+            <p class="text-gray-600 mb-12 text-lg max-w-3xl mx-auto">
+              We provide customized communication solutions with end-to-end
+              support, ensuring seamless connectivity and reliability. Our comprehensive 
+              systems are designed to enhance efficiency while meeting all modern requirements.
+            </p>
+            <div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8">
+              <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div
+                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-wifi-line text-2xl text-primary"></i>
                 </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-tv-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Multi-DTH Systems</h4>
-                    <p class="text-sm text-gray-600">
-                      Satellite TV distribution
-                    </p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-camera-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">CCTV Surveillance</h4>
-                    <p class="text-sm text-gray-600">Security monitoring</p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-door-lock-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Access Control</h4>
-                    <p class="text-sm text-gray-600">Entry management</p>
-                  </div>
+                <div class="text-center">
+                  <h4 class="font-bold text-lg mb-2">FTTH Systems</h4>
+                  <p class="text-gray-600">
+                    High-speed fiber networks
+                  </p>
                 </div>
               </div>
-            </div>
-            <div>
-              <div class="bg-white shadow-xl !rounded-lg overflow-hidden">
-                <div id="performanceChart" class="h-[400px]"></div>
+              <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div
+                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-tv-line text-2xl text-primary"></i>
+                </div>
+                <div class="text-center">
+                  <h4 class="font-bold text-lg mb-2">Multi-DTH Systems</h4>
+                  <p class="text-gray-600">
+                    Satellite TV distribution
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div
+                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-camera-line text-2xl text-primary"></i>
+                </div>
+                <div class="text-center">
+                  <h4 class="font-bold text-lg mb-2">CCTV Surveillance</h4>
+                  <p class="text-gray-600">Security monitoring</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div
+                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-door-lock-line text-2xl text-primary"></i>
+                </div>
+                <div class="text-center">
+                  <h4 class="font-bold text-lg mb-2">Access Control</h4>
+                  <p class="text-gray-600">Entry management</p>
+                </div>
               </div>
             </div>
           </div>
@@ -345,100 +362,6 @@
                       <span>Video conferencing</span>
                     </li>
                   </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-16">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-primary text-center mb-12">
-            Featured Case Studies
-          </h2>
-          <div class="grid grid-cols-3 gap-8">
-            <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://public.readdy.ai/ai/img_res/24658a7ea4740fe42b46dcadf00bce1b.jpg"
-                alt="Hospital Project"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Multi-Specialty Hospital</h3>
-                <p class="text-gray-600 mb-4">
-                  Complete PHE solution for 500-bed hospital including medical
-                  gas systems
-                </p>
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Project Duration</span>
-                    <span class="font-semibold">18 months</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Water Savings</span>
-                    <span class="font-semibold">45% reduction</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">System Capacity</span>
-                    <span class="font-semibold">500,000 L/day</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://public.readdy.ai/ai/img_res/dd052efa5320dd61c6ae085503ff5f8e.jpg"
-                alt="Residential Project"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">
-                  Luxury Residential Complex
-                </h3>
-                <p class="text-gray-600 mb-4">
-                  Integrated water management for 1200-unit premium housing
-                  project
-                </p>
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Project Duration</span>
-                    <span class="font-semibold">24 months</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Water Recycling</span>
-                    <span class="font-semibold">80% efficiency</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Daily Capacity</span>
-                    <span class="font-semibold">800,000 L/day</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://public.readdy.ai/ai/img_res/8a16819d2a06e3cbd322af22dd1c80a1.jpg"
-                alt="Commercial Project"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Tech Park Development</h3>
-                <p class="text-gray-600 mb-4">
-                  LEED Platinum certified water systems for IT campus
-                </p>
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Project Duration</span>
-                    <span class="font-semibold">15 months</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Energy Savings</span>
-                    <span class="font-semibold">35% reduction</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Area Covered</span>
-                    <span class="font-semibold">1.2M sq ft</span>
-                  </div>
                 </div>
               </div>
             </div>
