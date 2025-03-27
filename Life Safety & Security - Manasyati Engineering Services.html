@@ -89,6 +89,57 @@
           box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
         }
       }
+      /* Update service card styles */
+      .service-card {
+        display: flex;
+        min-height: 400px;
+        overflow: hidden;
+        border-radius: 0.75rem;
+        background: white;
+      }
+
+      .service-card .content-wrapper {
+        flex: 1;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .service-card .image-wrapper {
+        flex: 1;
+        position: relative;
+        min-height: 400px;
+      }
+
+      .service-card .image-wrapper img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Alternate layout for even cards */
+      .service-card:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      @media (max-width: 768px) {
+        .service-card,
+        .service-card:nth-child(even) {
+          flex-direction: column;
+        }
+        
+        .service-card .content-wrapper {
+          order: 2;
+        }
+        
+        .service-card .image-wrapper {
+          order: 1;
+          min-height: 300px;
+        }
+      }
     </style>
   </head>
   <body class="bg-white font-['Open_Sans']">
@@ -150,292 +201,140 @@
           </div>
         </div>
       </section>
-      <section class="py-16">
+      <section class="py-24 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="grid grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 class="text-3xl font-bold text-primary mb-6">
-                Service Overview
-              </h2>
-              <p class="text-gray-600 mb-6">
-                We provide customized firefighting solutions with end-to-end
-                support, ensuring safety and reliability. Our comprehensive fire
-                safety systems are designed to protect lives and assets while
-                meeting all regulatory requirements.
-              </p>
-              <div class="grid grid-cols-2 gap-6 mb-8">
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-shield-keyhole-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Access Control</h4>
-                    <p class="text-sm text-gray-600">
-                      Biometric & RFID systems
-                    </p>
-                  </div>
+          <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-primary text-center mb-4">
+              Service Overview
+            </h2>
+            <p class="text-gray-600 mb-16 text-center text-lg max-w-3xl mx-auto">
+              We provide comprehensive security and life safety solutions with state-of-the-art technology and end-to-end support, ensuring protection and peace of mind for your facility.
+            </p>
+            <div class="grid grid-cols-1 gap-12">
+              <!-- Access Control Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper">
+                  <img src="img_res/LSS_Key_1.webp" alt="Access Control Systems" class="transition-transform duration-300 hover:scale-105">
                 </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-cctv-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Surveillance</h4>
-                    <p class="text-sm text-gray-600">HD monitoring</p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-alarm-warning-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Intrusion Detection</h4>
-                    <p class="text-sm text-gray-600">Motion sensors & alerts</p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-fire-line text-xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Fire Safety</h4>
-                    <p class="text-sm text-gray-600">NFPA/NBC compliance</p>
+                <div class="content-wrapper">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">Access Control Systems</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">Advanced access management solutions with biometric and RFID technology for secure entry control and monitoring.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Biometric authentication</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>RFID card systems</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Visitor management</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Time attendance integration</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <div class="bg-white shadow-xl !rounded-lg overflow-hidden">
-                <div id="performanceChart" class="h-[400px]"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-primary text-center mb-12">
-            Our Security Solutions
-          </h2>
-          <div class="grid grid-cols-2 gap-8">
-            <div class="bg-white p-8 !rounded-lg shadow-lg">
-              <div class="flex items-start space-x-6">
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-fire-line text-2xl text-primary"></i>
+
+              <!-- CCTV & Surveillance Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper">
+                  <img src="img_res/LSS_Key_2.webp" alt="CCTV & Surveillance" class="transition-transform duration-300 hover:scale-105">
                 </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-4">Access Control Systems</h3>
-                  <ul class="space-y-3 text-gray-600">
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Biometric authentication</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>RFID card systems</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Visitor management</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Time attendance integration</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white p-8 !rounded-lg shadow-lg">
-              <div class="flex items-start space-x-6">
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-alarm-warning-line text-2xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-4">CCTV & Surveillance</h3>
-                  <ul class="space-y-3 text-gray-600">
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>HD camera systems</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>24/7 monitoring</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Video analytics</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Cloud storage backup</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white p-8 !rounded-lg shadow-lg">
-              <div class="flex items-start space-x-6">
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-gas-station-line text-2xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-4">Intrusion Detection</h3>
-                  <ul class="space-y-3 text-gray-600">
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Motion sensors</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Perimeter security</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Glass break detection</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Automated alerts</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white p-8 !rounded-lg shadow-lg">
-              <div class="flex items-start space-x-6">
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-door-line text-2xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold mb-4">Public Address System</h3>
-                  <ul class="space-y-3 text-gray-600">
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Emergency broadcasting</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Zone-wise announcements</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Voice evacuation</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                      <i class="ri-checkbox-circle-line text-primary"></i>
-                      <span>Background music</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-16">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-primary text-center mb-12">
-            Featured Case Studies
-          </h2>
-          <div class="grid grid-cols-3 gap-8">
-            <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://public.readdy.ai/ai/img_res/24658a7ea4740fe42b46dcadf00bce1b.jpg"
-                alt="Hospital Project"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Multi-Specialty Hospital</h3>
-                <p class="text-gray-600 mb-4">
-                  Complete PHE solution for 500-bed hospital including medical
-                  gas systems
-                </p>
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Project Duration</span>
-                    <span class="font-semibold">18 months</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Water Savings</span>
-                    <span class="font-semibold">45% reduction</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">System Capacity</span>
-                    <span class="font-semibold">500,000 L/day</span>
+                <div class="content-wrapper">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">CCTV & Surveillance</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">High-definition surveillance systems with advanced video analytics and 24/7 monitoring capabilities.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>HD camera systems</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>24/7 monitoring</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Video analytics</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Cloud storage backup</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://public.readdy.ai/ai/img_res/dd052efa5320dd61c6ae085503ff5f8e.jpg"
-                alt="Residential Project"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">
-                  Luxury Residential Complex
-                </h3>
-                <p class="text-gray-600 mb-4">
-                  Integrated water management for 1200-unit premium housing
-                  project
-                </p>
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Project Duration</span>
-                    <span class="font-semibold">24 months</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Water Recycling</span>
-                    <span class="font-semibold">80% efficiency</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Daily Capacity</span>
-                    <span class="font-semibold">800,000 L/day</span>
+
+              <!-- Intrusion Detection Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper">
+                  <img src="img_res/LSS_Key_3.webp" alt="Intrusion Detection" class="transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="content-wrapper">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">Intrusion Detection</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">Comprehensive perimeter security with motion detection and instant alert systems for immediate threat response.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Motion sensors</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Glass break detection</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Perimeter security</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Automated alerts</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="bg-white !rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="https://public.readdy.ai/ai/img_res/8a16819d2a06e3cbd322af22dd1c80a1.jpg"
-                alt="Commercial Project"
-                class="w-full h-[250px] object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Tech Park Development</h3>
-                <p class="text-gray-600 mb-4">
-                  LEED Platinum certified water systems for IT campus
-                </p>
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Project Duration</span>
-                    <span class="font-semibold">15 months</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Energy Savings</span>
-                    <span class="font-semibold">35% reduction</span>
-                  </div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600">Area Covered</span>
-                    <span class="font-semibold">1.2M sq ft</span>
+
+              <!-- Public Address System Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper">
+                  <img src="img_res/LSS_Key_4.webp" alt="Public Address System" class="transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="content-wrapper">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">Public Address System</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">Integrated emergency communication solutions with zone-wise control for effective mass notification.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Emergency broadcasting</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Zone-wise announcements</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Voice evacuation</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Background music</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -578,48 +477,6 @@
         </div>
       </div>
       <script>
-        const chartData = {
-          xAxis: {
-            type: "category",
-            data: ["2020", "2021", "2022", "2023", "2024"],
-            axisLabel: { color: "#1f2937" },
-          },
-          yAxis: {
-            type: "value",
-            axisLabel: { color: "#1f2937" },
-          },
-          grid: { top: 20, right: 20, bottom: 20, left: 40 },
-          series: [
-            {
-              name: "Water Savings",
-              type: "line",
-              smooth: true,
-              data: [20, 32, 41, 54, 68],
-              itemStyle: { color: "rgba(87, 181, 231, 1)" },
-              areaStyle: {
-                color: {
-                  type: "linear",
-                  x: 0,
-                  y: 0,
-                  x2: 0,
-                  y2: 1,
-                  colorStops: [
-                    {
-                      offset: 0,
-                      color: "rgba(87, 181, 231, 0.3)",
-                    },
-                    {
-                      offset: 1,
-                      color: "rgba(87, 181, 231, 0.1)",
-                    },
-                  ],
-                },
-              },
-            },
-          ],
-        };
-        const chart = echarts.init(document.getElementById("performanceChart"));
-        chart.setOption({ ...chartData, animation: false });
         function openConsultationModal() {
           document.getElementById("consultationModal").classList.remove("hidden");
           document.getElementById("consultationModal").classList.add("flex");

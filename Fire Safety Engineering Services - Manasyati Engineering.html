@@ -129,6 +129,54 @@
           box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
         }
       }
+
+      /* Add service card styles */
+      .service-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.75rem;
+      }
+
+      .service-card .content-wrapper {
+        padding: 2.5rem;
+        background: white;
+        width: 50%;
+      }
+
+      .service-card .image-wrapper {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+      }
+
+      .service-card .image-wrapper.left {
+        left: 0;
+      }
+
+      .service-card .image-wrapper.right {
+        right: 0;
+      }
+
+      .service-card .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media (max-width: 768px) {
+        .service-card .content-wrapper {
+          width: 100%;
+          margin-top: 300px;
+        }
+        
+        .service-card .image-wrapper {
+          width: 100%;
+          height: 300px;
+          position: absolute;
+          top: 0;
+        }
+      }
     </style>
   </head>
   <body class="bg-white font-['Open_Sans']">
@@ -204,134 +252,130 @@
             </p>
             <div class="grid grid-cols-1 gap-12"> <!-- Changed to single column with larger gap -->
               <!-- Service Cards -->
-              <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div class="flex flex-col md:flex-row gap-8"> <!-- Added flex layout -->
-                  <div class="w-full md:w-1/2 h-[400px] overflow-hidden !rounded-lg"> <!-- Increased height and adjusted width -->
-                    <img src="img_res/FSE_Fire.webp" alt="Fire Protection" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                  </div>
-                  <div class="w-full md:w-1/2 flex flex-col justify-center"> <!-- Added content alignment -->
-                    <h4 class="font-bold text-2xl mb-4 text-primary">Fire Protection</h4>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">NFPA certified systems for complete building safety with comprehensive protection measures including automatic detection and suppression systems.</p>
-                    <div class="mt-4">
-                      <h5 class="font-bold text-lg mb-3">Key Features:</h5>
-                      <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Internal & external hydrants</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Automated sprinklers</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Manual sprinkler systems</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Coverage optimization</span>
-                        </li>
-                      </ul>
-                    </div>
+              <!-- Fire Protection Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper left">
+                  <img src="img_res/FSE_Fire.webp" alt="Fire Protection" class="transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="content-wrapper ml-auto">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">Fire Protection</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">NFPA certified systems for complete building safety with comprehensive protection measures including automatic detection and suppression systems.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Internal & external hydrants</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Automated sprinklers</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Manual sprinkler systems</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Coverage optimization</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
               
-              <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div class="flex flex-col md:flex-row-reverse gap-8"> <!-- Added reverse layout -->
-                  <div class="w-full md:w-1/2 h-[400px] overflow-hidden !rounded-lg">
-                    <img src="img_res/FSE_Smoke.webp" alt="Detection" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                  </div>
-                  <div class="w-full md:w-1/2 flex flex-col justify-center">
-                    <h4 class="font-bold text-2xl mb-4 text-primary">Detection</h4>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">Advanced monitoring systems for early warning with state-of-the-art smoke and heat detection technology for rapid response.</p>
-                    <div class="mt-4">
-                      <h5 class="font-bold text-lg mb-3">Key Features:</h5>
-                      <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Smoke detectors</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Heat detectors</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Gas detectors</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Real-time monitoring</span>
-                        </li>
-                      </ul>
-                    </div>
+              <!-- Detection Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper right">
+                  <img src="img_res/FSE_Smoke.webp" alt="Detection" class="transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="content-wrapper">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">Detection</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">Advanced monitoring systems for early warning with state-of-the-art smoke and heat detection technology for rapid response.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Smoke detectors</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Heat detectors</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Gas detectors</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Real-time monitoring</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
 
-              <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div class="flex flex-col md:flex-row gap-8">
-                  <div class="w-full md:w-1/2 h-[400px] overflow-hidden !rounded-lg">
-                    <img src="img_res/FSE_comp.webp" alt="Compliance" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                  </div>
-                  <div class="w-full md:w-1/2 flex flex-col justify-center">
-                    <h4 class="font-bold text-2xl mb-4 text-primary">Compliance</h4>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">Full adherence to NBC & IS standards ensuring your facility meets all safety regulations and compliance requirements.</p>
-                    <div class="mt-4">
-                      <h5 class="font-bold text-lg mb-3">Key Features:</h5>
-                      <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>FM-200 systems</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>CO2 suppression</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Novec 1230 systems</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Sensitive area protection</span>
-                        </li>
-                      </ul>
-                    </div>
+              <!-- Compliance Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper left">
+                  <img src="img_res/FSE_comp.webp" alt="Compliance" class="transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="content-wrapper ml-auto">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">Compliance</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">Full adherence to NBC & IS standards ensuring your facility meets all safety regulations and compliance requirements.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>FM-200 systems</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>CO2 suppression</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Novec 1230 systems</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Sensitive area protection</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
 
-              <div class="bg-white p-8 !rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div class="flex flex-col md:flex-row-reverse gap-8">
-                  <div class="w-full md:w-1/2 h-[400px] overflow-hidden !rounded-lg">
-                    <img src="img_res/Fire_Emer.webp" alt="Emergency Response" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                  </div>
-                  <div class="w-full md:w-1/2 flex flex-col justify-center">
-                    <h4 class="font-bold text-2xl mb-4 text-primary">Emergency Response</h4>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">24/7 support and rapid assistance with trained emergency response teams ready to handle any fire safety situation.</p>
-                    <div class="mt-4">
-                      <h5 class="font-bold text-lg mb-3">Key Features:</h5>
-                      <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Public Address systems</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Fire escape pressurization</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Emergency lighting</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                          <i class="ri-checkbox-circle-line text-primary"></i>
-                          <span>Evacuation planning</span>
-                        </li>
-                      </ul>
-                    </div>
+              <!-- Emergency Response Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper right">
+                  <img src="img_res/Fire_Emer.webp" alt="Emergency Response" class="transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="content-wrapper">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">Emergency Response</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">24/7 support and rapid assistance with trained emergency response teams ready to handle any fire safety situation.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Public Address systems</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Fire escape pressurization</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Emergency lighting</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Evacuation planning</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>

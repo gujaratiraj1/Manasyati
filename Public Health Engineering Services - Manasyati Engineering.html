@@ -60,6 +60,93 @@ button.hover\:bg-opacity-90:hover {
     box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
   }
 }
+/* Add these new styles */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  padding: 0;  /* Remove default padding */
+}
+
+.service-card .content-wrapper {
+  padding: 2rem;  /* Add padding to content area only */
+}
+
+.service-card .image-container {
+  height: 100%;
+  margin: 0;
+  flex: 1;
+}
+
+.service-card .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Adjust layout container */
+.service-card .flex-container {
+  min-height: 500px;
+  display: flex;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    padding: 0;
+  }
+  
+  .service-card .image-container {
+    height: 300px;
+  }
+}
+
+/* Update service card styles */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.service-card .content-wrapper {
+  padding: 2.5rem;
+  background: white;
+  width: 50%;
+}
+
+.service-card .image-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+.service-card .image-wrapper.left {
+  left: 0;
+}
+
+.service-card .image-wrapper.right {
+  right: 0;
+}
+
+.service-card .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .service-card .content-wrapper {
+    width: 100%;
+    margin-top: 300px;
+  }
+  
+  .service-card .image-wrapper {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 0;
+  }
+}
 </style>
 
 <!-- SEO Meta Tags -->
@@ -167,188 +254,144 @@ button.hover\:bg-opacity-90:hover {
 </div>
 </section>
 
-<section class="py-16">
-<div class="container mx-auto px-4">
-  <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-primary mb-8">Service Overview</h2>
-    <p class="text-gray-600 mb-12 text-lg text-justify">
-      Our Public Health Engineering services encompass the complete spectrum of water and waste management solutions for commercial, residential, and industrial projects. We leverage cutting-edge technology and sustainable practices to design efficient systems that meet both current needs and future demands.
-    </p>
-    <div class="grid grid-cols-4 gap-6 max-w-7xl mx-auto">
-      <div class="bg-white p-6 !rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-        <div class="flex flex-col items-center">
-          <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-4">
-            <i class="ri-drop-line text-2xl text-primary"></i>
+<section class="py-24 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold text-primary text-center mb-4">Service Overview</h2>
+      <p class="text-gray-600 mb-16 text-center text-lg max-w-3xl mx-auto">
+        Our Public Health Engineering services encompass the complete spectrum of water and waste management solutions for commercial, residential, and industrial projects. We leverage cutting-edge technology and sustainable practices.
+      </p>
+      <div class="grid grid-cols-1 gap-12">
+        <!-- Water Supply Systems Card -->
+        <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="image-wrapper left">
+            <img src="img_res/PEB_Key_1.webp" alt="Water Supply Systems" class="transition-transform duration-300 hover:scale-105">
           </div>
-          <div class="text-center">
-            <h4 class="font-bold text-lg mb-2">Water Quality</h4>
-            <p class="text-gray-600 text-sm">ISO 9001:2015 certified</p>
+          <div class="content-wrapper ml-auto">
+            <h4 class="font-bold text-2xl mb-4 text-primary">Water Supply Systems</h4>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">Comprehensive water supply solutions incorporating advanced filtration and distribution systems for optimal performance and quality.</p>
+            <div class="mt-4">
+              <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Advanced filtration & purification</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Pressure boosting systems</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Storage tank design</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Distribution network planning</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="bg-white p-6 !rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-        <div class="flex flex-col items-center">
-          <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-4">
-            <i class="ri-recycle-line text-2xl text-primary"></i>
+
+        <!-- Plumbing Solutions Card -->
+        <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="image-wrapper right">
+            <img src="img_res/PEB_Key_2.webp" alt="Plumbing Solutions" class="transition-transform duration-300 hover:scale-105">
           </div>
-          <div class="text-center">
-            <h4 class="font-bold text-lg mb-2">Sustainability</h4>
-            <p class="text-gray-600 text-sm">LEED certified designs</p>
+          <div class="content-wrapper">
+            <h4 class="font-bold text-2xl mb-4 text-primary">Plumbing Solutions</h4>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">Expert plumbing design and implementation with focus on efficiency, sustainability, and long-term reliability.</p>
+            <div class="mt-4">
+              <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Hot & cold water systems</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Fixture selection & layout</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Water conservation features</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Maintenance access planning</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="bg-white p-6 !rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-        <div class="flex flex-col items-center">
-          <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-4">
-            <i class="ri-shield-check-line text-2xl text-primary"></i>
+
+        <!-- Sewage Treatment Card -->
+        <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="image-wrapper left">
+            <img src="img_res/PEB_Key_3.webp" alt="Sewage Treatment" class="transition-transform duration-300 hover:scale-105">
           </div>
-          <div class="text-center">
-            <h4 class="font-bold text-lg mb-2">Compliance</h4>
-            <p class="text-gray-600 text-sm">100% regulatory adherence</p>
+          <div class="content-wrapper ml-auto">
+            <h4 class="font-bold text-2xl mb-4 text-primary">Sewage Treatment</h4>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">State-of-the-art sewage treatment solutions with focus on environmental compliance and water recycling capabilities.</p>
+            <div class="mt-4">
+              <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>STP design & implementation</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Treatment process optimization</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Sludge management</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Water recycling systems</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="bg-white p-6 !rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-        <div class="flex flex-col items-center">
-          <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mb-4">
-            <i class="ri-tools-line text-2xl text-primary"></i>
+
+        <!-- Drainage Systems Card -->
+        <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="image-wrapper right">
+            <img src="./img_res/PEB_Key_4.webp" alt="Drainage Systems" class="transition-transform duration-300 hover:scale-105">
           </div>
-          <div class="text-center">
-            <h4 class="font-bold text-lg mb-2">Maintenance</h4>
-            <p class="text-gray-600 text-sm">24/7 support available</p>
+          <div class="content-wrapper">
+            <h4 class="font-bold text-2xl mb-4 text-primary">Drainage Systems</h4>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">Comprehensive drainage solutions designed to handle various flow conditions while ensuring proper maintenance accessibility.</p>
+            <div class="mt-4">
+              <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Stormwater management</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Gravity flow optimization</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Flood prevention design</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="ri-checkbox-circle-line text-primary"></i>
+                  <span>Maintenance access points</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</section>
-
-<section class="py-16 bg-gray-50">
-<div class="container mx-auto px-4">
-<h2 class="text-3xl font-bold text-primary text-center mb-12">Key Features & Specifications</h2>
-<div class="grid grid-cols-2 gap-8">
-<div class="bg-white p-8 !rounded-lg shadow-lg">
-<div class="flex flex-col space-y-6">
-<img src="./img_res/PBE_Key_1.webp" 
-     alt="Water Supply Systems" 
-     class="w-full h-48 object-cover !rounded-lg"
-     onerror="this.src='./img_res/placeholder.jpg'; this.onerror=null;">
-<div>
-<h3 class="text-xl font-bold mb-4">Water Supply Systems</h3>
-<ul class="space-y-3 text-gray-600">
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Advanced filtration & purification</span>
-</li>
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Pressure boosting systems</span>
-</li>
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Storage tank design</span>
-</li>
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Distribution network planning</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div class="bg-white p-8 !rounded-lg shadow-lg">
-<div class="flex flex-col space-y-6">
-<img src="./img_res/PBE_Key_2.webp" 
-     alt="Plumbing Solutions" 
-     class="w-full h-48 object-cover !rounded-lg"
-     onerror="this.src='./img_res/placeholder.jpg'; this.onerror=null;">
-<div>
-<h3 class="text-xl font-bold mb-4">Plumbing Solutions</h3>
-<ul class="space-y-3 text-gray-600">
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Hot & cold water systems</span>
-</li>
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Fixture selection & layout</span>
-</li>
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Water conservation features</span>
-</li>
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Maintenance access planning</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div class="bg-white p-8 !rounded-lg shadow-lg">
-<div class="flex flex-col space-y-6">
-<img src="./img_res/PBE_Key_3.webp" 
-     alt="Sewage Treatment" 
-     class="w-full h-48 object-cover !rounded-lg"
-     onerror="this.src='./img_res/placeholder.jpg'; this.onerror=null;">
-<div>
-<h3 class="text-xl font-bold mb-4">Sewage Treatment</h3>
-<ul class="space-y-3 text-gray-600">
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>STP design & implementation</span>
-</li>
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Treatment process optimization</span>
-</li>
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Sludge management</span>
-</li>
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Water recycling systems</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div class="bg-white p-8 !rounded-lg shadow-lg">
-<div class="flex flex-col space-y-6">
-<img src="./img_res/PBE_Key_4.webp" 
-     alt="Drainage Systems" 
-     class="w-full h-48 object-cover !rounded-lg"
-     onerror="this.src='./img_res/placeholder.jpg'; this.onerror=null;">
-<div>
-<h3 class="text-xl font-bold mb-4">Drainage Systems</h3>
-<ul class="space-y-3 text-gray-600">
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Stormwater management</span>
-</li>
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Gravity flow optimization</span>
-</li>
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Flood prevention design</span>
-</li>
-<li class="flex items-center space-x-2">
-<i class="ri-checkbox-circle-line text-primary"></i>
-<span>Maintenance access points</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
 
 <section class="py-16">
@@ -403,35 +446,6 @@ button.hover\:bg-opacity-90:hover {
 </div>
 <div class="grid grid-cols-2 gap-6">
 <div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-<input type="tel" required class="w-full px-4 py-2 border !rounded-button">
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Project Type</label>
-<select required class="w-full px-4 py-2 border !rounded-button">
-<option value="">Select Type</option>
-<option value="commercial">Commercial</option>
-<option value="residential">Residential</option>
-<option value="industrial">Industrial</option>
-<option value="healthcare">Healthcare</option>
-</select>
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Project Requirements</label>
-<textarea required class="w-full px-4 py-2 border !rounded-button h-32"></textarea>
-</div>
-<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90">Submit Request</button>
-</form>
-</div>
-</div>
-
-<script>
-function openConsultationModal() {
-document.getElementById('consultationModal').classList.remove('hidden');
-document.getElementById('consultationModal').classList.add('flex');
-}
-
 function closeConsultationModal() {
 document.getElementById('consultationModal').classList.add('hidden');
 document.getElementById('consultationModal').classList.remove('flex');
