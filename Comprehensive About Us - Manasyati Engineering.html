@@ -160,6 +160,11 @@ data-aos="fade-up" data-aos-delay="200">
   }
 }
 </style>
+<script>
+  if (window.location.pathname.endsWith(".html")) {
+    window.history.replaceState(null, "", window.location.pathname.replace(".html", ""));
+  }
+</script>
 </head>
 <body class="bg-white font-['Open_Sans']">
 <header class="fixed w-full bg-white shadow-sm z-50">
@@ -179,7 +184,7 @@ data-aos="fade-up" data-aos-delay="200">
 </div> { transform: translateX(-50%); }
 </header>
 <main class="pt-20">
-<section class="relative h-[600px] flex items-center overflow-hidden" style="background-image: url('img_res/3d9304acf6f699a631eb027853b2ee24.jpg'); background-size: cover; background-position: center;">
+<section class="relative h-[600px] flex items-center overflow-hidden" style="background-image: url('Contact us hero.webp'); background-size: cover; background-position: center;">
   <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
   <div class="absolute inset-0" id="particles-js"></div>
   <div class="container mx-auto px-4 relative z-10">
