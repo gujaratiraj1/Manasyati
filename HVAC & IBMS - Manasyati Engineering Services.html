@@ -86,6 +86,53 @@
           box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
         }
       }
+      /* Add service card styles */
+      .service-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.75rem;
+      }
+
+      .service-card .content-wrapper {
+        padding: 2.5rem;
+        background: white;
+        width: 50%;
+      }
+
+      .service-card .image-wrapper {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+      }
+
+      .service-card .image-wrapper.left {
+        left: 0;
+      }
+
+      .service-card .image-wrapper.right {
+        right: 0;
+      }
+
+      .service-card .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media (max-width: 768px) {
+        .service-card .content-wrapper {
+          width: 100%;
+          margin-top: 300px;
+        }
+        
+        .service-card .image-wrapper {
+          width: 100%;
+          height: 300px;
+          position: absolute;
+          top: 0;
+        }
+      }
     </style>
     <script type="application/ld+json">
     {
@@ -149,48 +196,51 @@
       </div>
     </header>
     <main class="pt-20">
-      <section
-        class="relative h-[500px] flex items-center"
-        style="background-image: url('img_res/HVAC Hero.webp'); background-size: cover; background-position: center;"
-      >
-        <div class="absolute inset-0 bg-primary bg-opacity-70"></div>
-        <div class="container mx-auto px-4 relative z-10">
-          <div class="max-w-3xl">
-            <h1 class="text-5xl font-bold text-white mb-6">
-              HVAC & IBMS Systems
-            </h1>
-            <p class="text-xl text-white opacity-90 mb-8">
-              At Manasyati Engineering Services, we design high-performance HVAC
-              and intelligent building management systems (IBMS) for energy
-              efficiency, comfort, and automation.
+      <section class="relative min-h-screen flex items-center" 
+        style="background-image: url('img_res/hvac.webp'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+        <div class="container mx-auto px-4 relative z-10 py-24">
+          <div class="max-w-3xl mx-auto text-center mb-16">
+            <span class="text-secondary font-semibold text-lg mb-4 block">Excellence in Infrastructure</span>
+            <h1 class="text-6xl font-bold text-white mb-8 leading-tight">HVAC & IBMS Systems</h1>
+            <div class="w-24 h-1 bg-secondary mx-auto mb-8"></div>
+            <p class="text-xl text-white opacity-90 leading-relaxed mb-8">
+              Transforming infrastructure through innovative HVAC and IBMS solutions. We specialize in designing and implementing state-of-the-art systems that ensure sustainable, efficient, and environmentally conscious operations.
             </p>
-            <button
-              onclick="openQuoteModal()"
-              class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
-            >
-              Request a Quote
-            </button>
           </div>
-        </div>
-      </section>
-      <section class="py-16">
-        <div class="container mx-auto px-4">
+
           <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-primary text-center mb-8">
-              Our HVAC & IBMS Solutions
-            </h2>
-            <p class="text-gray-600 mb-12 text-lg text-center max-w-4xl mx-auto">
-              We provide customized solutions tailored for residential, commercial, and industrial projects, ensuring optimal comfort, efficiency, and automation. Our comprehensive systems are designed to deliver reliable performance while maximizing energy savings.
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-white text-center mb-16">
+              <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
+                <i class="ri-shield-check-line text-4xl text-secondary mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">ISO 9001:2015 Certified</h3>
+                <p class="opacity-90">Quality management system for consistent service delivery</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
+                <i class="ri-team-line text-4xl text-secondary mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Expert Team</h3>
+                <p class="opacity-90">Highly qualified professionals with years of industry experience</p>
+              </div>
+            </div>
+
+            <h2 class="text-4xl font-bold text-white text-center mb-6" id="services">Our Comprehensive Services</h2>
+            <p class="text-white opacity-90 mb-16 text-center text-lg max-w-3xl mx-auto">
+              From design to implementation, we deliver end-to-end solutions in HVAC, building management, and industrial systems. Our services are tailored to meet the unique needs of each project while maintaining the highest standards of quality and efficiency.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-              <div class="bg-white p-8 !rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <div class="flex items-start space-x-6">
-                  <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0">
-                    <i class="ri-temp-cold-line text-2xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h3 class="text-xl font-bold mb-4">Air Conditioning & Ventilation</h3>
-                    <ul class="space-y-3 text-gray-600">
+            
+            <div class="grid grid-cols-1 gap-12">
+              <!-- Service cards remain the same, just ensure they're using the same structure -->
+              <!-- Air Conditioning Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper left">
+                  <img src="img_res/HVAC_Key_1.webp" alt="Air Conditioning" class="transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="content-wrapper ml-auto">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">Air Conditioning & Ventilation</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">Advanced cooling and ventilation solutions for optimal indoor comfort and air quality.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
                       <li class="flex items-center space-x-2">
                         <i class="ri-checkbox-circle-line text-primary"></i>
                         <span>Centralized cooling systems</span>
@@ -203,19 +253,26 @@
                         <i class="ri-checkbox-circle-line text-primary"></i>
                         <span>Fresh air systems</span>
                       </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Energy efficiency optimization</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              
-              <div class="bg-white p-8 !rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <div class="flex items-start space-x-6">
-                  <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0">
-                    <i class="ri-dashboard-3-line text-2xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h3 class="text-xl font-bold mb-4">Building Management</h3>
-                    <ul class="space-y-3 text-gray-600">
+
+              <!-- Building Management Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper right">
+                  <img src="img_res/HVAC_Key_2.webp" alt="Building Management" class="transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="content-wrapper">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">Building Management</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">Intelligent building automation systems for enhanced control and monitoring capabilities.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
                       <li class="flex items-center space-x-2">
                         <i class="ri-checkbox-circle-line text-primary"></i>
                         <span>Smart control & automation</span>
@@ -228,44 +285,58 @@
                         <i class="ri-checkbox-circle-line text-primary"></i>
                         <span>Security integration</span>
                       </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="bg-white p-8 !rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <div class="flex items-start space-x-6">
-                  <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0">
-                    <i class="ri-bubble-chart-line text-2xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h3 class="text-xl font-bold mb-4">Industrial Gases</h3>
-                    <ul class="space-y-3 text-gray-600">
                       <li class="flex items-center space-x-2">
                         <i class="ri-checkbox-circle-line text-primary"></i>
-                        <span>Medical & industrial solutions</span>
-                      </li>
-                      <li class="flex items-center space-x-2">
-                        <i class="ri-checkbox-circle-line text-primary"></i>
-                        <span>Oxygen & nitrogen systems</span>
-                      </li>
-                      <li class="flex items-center space-x-2">
-                        <i class="ri-checkbox-circle-line text-primary"></i>
-                        <span>Compressed air systems</span>
+                        <span>Remote management</span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
 
-              <div class="bg-white p-8 !rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <div class="flex items-start space-x-6">
-                  <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0">
-                    <i class="ri-wind-line text-2xl text-primary"></i>
+              <!-- Industrial Gases Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper left">
+                  <img src="img_res/HVAC_Key_3.webp" alt="Industrial Gases" class="transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="content-wrapper ml-auto">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">Industrial Gases</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">Comprehensive gas management solutions for medical and industrial applications.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Medical gas systems</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Industrial gas solutions</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Gas monitoring systems</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Safety compliance</span>
+                      </li>
+                    </ul>
                   </div>
-                  <div>
-                    <h3 class="text-xl font-bold mb-4">Pressurization</h3>
-                    <ul class="space-y-3 text-gray-600">
+                </div>
+              </div>
+
+              <!-- Pressurization Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper right">
+                  <img src="img_res/HVAC_Key_4.webp" alt="Pressurization" class="transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="content-wrapper">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">Pressurization Systems</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">Advanced pressurization solutions for building safety and comfort maintenance.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
                       <li class="flex items-center space-x-2">
                         <i class="ri-checkbox-circle-line text-primary"></i>
                         <span>Stairwell pressurization</span>
@@ -278,19 +349,26 @@
                         <i class="ri-checkbox-circle-line text-primary"></i>
                         <span>Safety systems</span>
                       </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Monitoring controls</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
               </div>
 
-              <div class="bg-white p-8 !rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <div class="flex items-start space-x-6">
-                  <div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center flex-shrink-0">
-                    <i class="ri-temp-hot-line text-2xl text-primary"></i>
-                  </div>
-                  <div>
-                    <h3 class="text-xl font-bold mb-4">Steam Systems</h3>
-                    <ul class="space-y-3 text-gray-600">
+              <!-- Steam Systems Card -->
+              <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="image-wrapper left">
+                  <img src="img_res/HVAC_Key_5.webp" alt="Steam Systems" class="transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="content-wrapper ml-auto">
+                  <h4 class="font-bold text-2xl mb-4 text-primary">Steam Systems</h4>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-6">Efficient steam distribution and management solutions for industrial applications.</p>
+                  <div class="mt-4">
+                    <h5 class="font-bold text-lg mb-3">Key Features:</h5>
+                    <ul class="space-y-2 text-gray-600">
                       <li class="flex items-center space-x-2">
                         <i class="ri-checkbox-circle-line text-primary"></i>
                         <span>Steam distribution</span>
@@ -303,61 +381,15 @@
                         <i class="ri-checkbox-circle-line text-primary"></i>
                         <span>Industrial heating</span>
                       </li>
+                      <li class="flex items-center space-x-2">
+                        <i class="ri-checkbox-circle-line text-primary"></i>
+                        <span>Efficiency optimization</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-primary mb-12">
-              Get Started with Our PHE Services
-            </h2>
-            <div class="grid grid-cols-3 gap-8 text-center mb-12">
-              <div>
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4"
-                >
-                  <i class="ri-discuss-line text-2xl text-primary"></i>
-                </div>
-                <h3 class="font-bold mb-2">Consultation</h3>
-                <p class="text-gray-600 text-sm">
-                  Initial discussion of your project requirements
-                </p>
-              </div>
-              <div>
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4"
-                >
-                  <i class="ri-file-list-3-line text-2xl text-primary"></i>
-                </div>
-                <h3 class="font-bold mb-2">Proposal</h3>
-                <p class="text-gray-600 text-sm">
-                  Detailed solution design and quotation
-                </p>
-              </div>
-              <div>
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4"
-                >
-                  <i class="ri-install-line text-2xl text-primary"></i>
-                </div>
-                <h3 class="font-bold mb-2">Implementation</h3>
-                <p class="text-gray-600 text-sm">
-                  Expert execution and project delivery
-                </p>
-              </div>
-            </div>
-            <button
-              onclick="openConsultationModal()"
-              class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
-            >
-              Schedule a Consultation
-            </button>
           </div>
         </div>
       </section>
@@ -479,72 +511,72 @@
           });
       </script>
     </main>
-   <footer class="bg-gray-900 text-white py-16">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-4 gap-8">
-<div>
-<a href="/" class="h-12 mb-6 block">
-<img src="Index_files/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
-</a>
-<p class="text-gray-400 mb-6">
-Leading MEP design services provider in Hyderabad, bridging the gap between evolving construction needs and consultancy services since March 2024
-</p>
-<div class="flex space-x-4">
-<a href="#" class="hover:text-primary">
-<i class="ri-linkedin-fill text-xl"></i>
-</a>
-<a href="#" class="hover:text-primary">
-<i class="ri-twitter-fill text-xl"></i>
-</a>
-<a href="#" class="hover:text-primary">
-<i class="ri-facebook-fill text-xl"></i>
-</a>
-</div>
-</div>
-<div>
-<h4 class="text-lg font-bold mb-6">Quick Links</h4>
-<ul class="space-y-3">
-<li><a href="About Manasyati Engineering.html" class="text-gray-400 hover:text-white">About Us</a></li>
-<li><a href="Service Details - Manasyati Engineering.html" class="text-gray-400 hover:text-white">Services</a></li>
-<li><a href="Projects - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Projects</a></li>
-<li><a href="Industries Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Industries</a></li>
-<li><a href="Contact Us - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Contact</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-lg font-bold mb-6">Services</h4>
-<ul class="space-y-3">
-<li><a href="Public Health Engineering Services - Manasyati Engineering.html" class="text-gray-400 hover:text-white">Public Health Engineering</a></li>
-<li><a href="Fire Safety Engineering Services - Manasyati Engineering.html" class="text-gray-400 hover:text-white">Firefighting Systems</a></li>
-<li><a href="Life Safety & Security - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Life Safety & Security</a></li>
-<li><a href="Electrical Engineering - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Electrical Engineering</a></li>
-<li><a href="Communication Systems - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Communication Systems</a></li>
-<li><a href="HVAC & IBMS - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">HVAC & IBMS</a></li>
-<li><a href="Allied Services - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Allied Services</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-lg font-bold mb-6">Contact Info</h4>
-<ul class="space-y-3">
-<li class="flex items-center">
-<i class="ri-map-pin-line mr-3"></i>
-<span class="text-gray-400">123 Tech Park, Hyderabad, India</span>
-</li>
-<li class="flex items-center">
-<i class="ri-phone-line mr-3"></i>
-<span class="text-gray-400">+91 730 688 5392</span>
-</li>
-<li class="flex items-center">
-<i class="ri-mail-line mr-3"></i>
-<span class="text-gray-400">ramana@manasyati.com</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-<p>&copy; 2024-2025 Manasyati Engineering Services. All rights reserved.</p>
-</div>
-</div>
-</footer>
-</body>
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-4 gap-8">
+          <div>
+            <a href="/" class="h-12 mb-6 block">
+              <img src="Index_files/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
+            </a>
+            <p class="text-gray-400 mb-6">
+              Leading MEP design services provider in Hyderabad, bridging the gap between evolving construction needs and consultancy services since May 2024
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="hover:text-primary">
+                <i class="ri-linkedin-fill text-xl"></i>
+              </a>
+              <a href="#" class="hover:text-primary">
+                <i class="ri-twitter-fill text-xl"></i>
+              </a>
+              <a href="#" class="hover:text-primary">
+                <i class="ri-facebook-fill text-xl"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+            <ul class="space-y-3">
+              <li><a href="About Manasyati Engineering.html" class="text-gray-400 hover:text-white">About Us</a></li>
+              <li><a href="Service Details - Manasyati Engineering.html" class="text-gray-400 hover:text-white">Services</a></li>
+              <li><a href="Projects - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Projects</a></li>
+              <li><a href="Industries Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Industries</a></li>
+              <li><a href="Contact Us - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold mb-6">Services</h4>
+            <ul class="space-y-3">
+              <li><a href="Public Health Engineering Services - Manasyati Engineering.html" class="text-gray-400 hover:text-white">Public Health Engineering</a></li>
+              <li><a href="Fire Safety Engineering Services - Manasyati Engineering.html" class="text-gray-400 hover:text-white">Firefighting Systems</a></li>
+              <li><a href="Life Safety & Security - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Life Safety & Security</a></li>
+              <li><a href="Electrical Engineering - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Electrical Engineering</a></li>
+              <li><a href="Communication Systems - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Communication Systems</a></li>
+              <li><a href="HVAC & IBMS - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">HVAC & IBMS</a></li>
+              <li><a href="Allied Services - Manasyati Engineering Services.html" class="text-gray-400 hover:text-white">Allied Services</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold mb-6">Contact Info</h4>
+            <ul class="space-y-3">
+              <li class="flex items-center">
+                <i class="ri-map-pin-line mr-3"></i>
+                <span class="text-gray-400">#1-4/CP/218/5/165, Plot NO.165,<br>Central Park Phase II, Kondapur S1. Hyderabad - 500084, India</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-phone-line mr-3"></i>
+                <span class="text-gray-400">+91 730 688 5392</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-mail-line mr-3"></i>
+                <span class="text-gray-400">ramana@manasyati.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+          <p>&copy; 2024-2025 Manasyati Engineering Services. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

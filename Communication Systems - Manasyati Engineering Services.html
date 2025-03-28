@@ -193,31 +193,39 @@
     </header>
 
     <main class="pt-20">
-      <section class="relative h-[500px] flex items-center" style="background-image: url('img_res/CMS Hero.webp'); background-size: cover; background-position: center;">
-        <div class="absolute inset-0 bg-primary bg-opacity-70"></div>
-        <div class="container mx-auto px-4 relative z-10">
-          <div class="max-w-3xl">
-            <h1 class="text-5xl font-bold text-white mb-6">Communication Systems</h1>
-            <p class="text-xl text-white opacity-90 mb-8">
-              At Manasyati Engineering Services, we design advanced communication infrastructure to ensure seamless connectivity, security, and efficiency for modern buildings.
+      <section class="relative min-h-screen flex items-center" 
+        style="background-image: url('img_res/CMS Hero.webp'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+        <div class="container mx-auto px-4 relative z-10 py-24">
+          <div class="max-w-3xl mx-auto text-center mb-16">
+            <span class="text-secondary font-semibold text-lg mb-4 block">Excellence in Infrastructure</span>
+            <h1 class="text-6xl font-bold text-white mb-8 leading-tight">Communication Systems</h1>
+            <div class="w-24 h-1 bg-secondary mx-auto mb-8"></div>
+            <p class="text-xl text-white opacity-90 leading-relaxed mb-8">
+              Advanced communication infrastructure solutions ensuring seamless connectivity, security, and efficiency for modern buildings through innovative technology and expert design.
             </p>
-            <button onclick="openQuoteModal()" class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap">
-              Request a Quote
-            </button>
           </div>
-        </div>
-      </section>
 
-      <section class="py-24 bg-gray-50">
-        <div class="container mx-auto px-4">
           <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold text-primary text-center mb-4">Our Communication Solutions</h2>
-            <p class="text-gray-600 mb-16 text-center text-lg max-w-3xl mx-auto">
-              We provide comprehensive communication infrastructure solutions with innovative technology and expert design. Our systems ensure seamless connectivity and reliable performance across all projects.
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-white text-center mb-16">
+              <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
+                <i class="ri-shield-check-line text-4xl text-secondary mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">ISO 9001:2015 Certified</h3>
+                <p class="opacity-90">Quality management system for consistent service delivery</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
+                <i class="ri-team-line text-4xl text-secondary mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Expert Team</h3>
+                <p class="opacity-90">Highly qualified professionals with years of industry experience</p>
+              </div>
+            </div>
+
+            <h2 class="text-4xl font-bold text-white text-center mb-6" id="services">Our Comprehensive Services</h2>
+            <p class="text-white opacity-90 mb-16 text-center text-lg max-w-3xl mx-auto">
+              We provide comprehensive communication infrastructure solutions with innovative technology and expert design for modern building requirements.
             </p>
             
             <div class="grid grid-cols-1 gap-12">
-              <!-- Service cards with proper structure -->
               <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div class="image-wrapper left">
                   <img src="img_res/CMS_Key_1.webp" alt="FTTH Systems" class="transition-transform duration-300 hover:scale-105">
@@ -346,56 +354,6 @@
         </div>
       </section>
 
-      <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-primary mb-12">
-              Get Started with Our PHE Services
-            </h2>
-            <div class="grid grid-cols-3 gap-8 text-center mb-12">
-              <div>
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4"
-                >
-                  <i class="ri-discuss-line text-2xl text-primary"></i>
-                </div>
-                <h3 class="font-bold mb-2">Consultation</h3>
-                <p class="text-gray-600 text-sm">
-                  Initial discussion of your project requirements
-                </p>
-              </div>
-              <div>
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4"
-                >
-                  <i class="ri-file-list-3-line text-2xl text-primary"></i>
-                </div>
-                <h3 class="font-bold mb-2">Proposal</h3>
-                <p class="text-gray-600 text-sm">
-                  Detailed solution design and quotation
-                </p>
-              </div>
-              <div>
-                <div
-                  class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4"
-                >
-                  <i class="ri-install-line text-2xl text-primary"></i>
-                </div>
-                <h3 class="font-bold mb-2">Implementation</h3>
-                <p class="text-gray-600 text-sm">
-                  Expert execution and project delivery
-                </p>
-              </div>
-            </div>
-            <button
-              onclick="openConsultationModal()"
-              class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap"
-            >
-              Schedule a Consultation
-            </button>
-          </div>
-        </div>
-      </section>
       <div
         id="consultationModal"
         class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
@@ -605,7 +563,7 @@
             <ul class="space-y-3">
               <li class="flex items-center">
                 <i class="ri-map-pin-line mr-3"></i>
-                <span class="text-gray-400">123 Tech Park, Hyderabad, India</span>
+                <span class="text-gray-400">#1-4/CP/218/5/165, Plot NO.165,<br>Central Park Phase II, Kondapur S1. Hyderabad - 500084, India</span>
               </li>
               <li class="flex items-center">
                 <i class="ri-phone-line mr-3"></i>

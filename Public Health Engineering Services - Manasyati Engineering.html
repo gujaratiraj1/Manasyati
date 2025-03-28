@@ -243,27 +243,42 @@ button.hover\:bg-opacity-90:hover {
 </header>
 
 <main class="pt-20">
-<section class="relative h-[500px] flex items-center" style="background-image: url('img_res/b08036320ea77e22cacc01ed93e8f118.jpg'); background-size: cover; background-position: center;">
-<div class="absolute inset-0 bg-primary bg-opacity-70"></div>
-<div class="container mx-auto px-4 relative z-10">
-<div class="max-w-3xl">
-<h1 class="text-5xl font-bold text-white mb-6">Public Health Engineering Services</h1>
-<p class="text-xl text-white opacity-90 mb-8">Comprehensive water management and sanitation solutions for modern infrastructure projects. Expert design and implementation of water supply, plumbing, sewage treatment, and drainage systems.</p>
-<button onclick="openQuoteModal()" class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap">Request a Quote</button>
-</div>
-</div>
-</section>
+  <section class="relative min-h-screen flex items-center" 
+    style="background-image: url('img_res/b08036320ea77e22cacc01ed93e8f118.jpg'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+    <div class="container mx-auto px-4 relative z-10 py-24">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="text-secondary font-semibold text-lg mb-4 block">Excellence in Infrastructure</span>
+        <h1 class="text-6xl font-bold text-white mb-8 leading-tight">Public Health Engineering Services</h1>
+        <div class="w-24 h-1 bg-secondary mx-auto mb-8"></div>
+        <p class="text-xl text-white opacity-90 leading-relaxed mb-8">
+          Transforming infrastructure through innovative water management and sanitation solutions. We specialize in designing and implementing state-of-the-art systems that ensure sustainable, efficient, and environmentally conscious operations.
+        </p>
+        <!-- Removed buttons div here -->
+      </div>
 
-<section class="py-24 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-4xl font-bold text-primary text-center mb-4">Service Overview</h2>
-      <p class="text-gray-600 mb-16 text-center text-lg max-w-3xl mx-auto">
-        Our Public Health Engineering services encompass the complete spectrum of water and waste management solutions for commercial, residential, and industrial projects. We leverage cutting-edge technology and sustainable practices.
-      </p>
-      <div class="grid grid-cols-1 gap-12">
-        <!-- Water Supply Systems Card -->
-        <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-white text-center mb-16">
+          <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
+            <i class="ri-shield-check-line text-4xl text-secondary mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">ISO 9001:2015 Certified</h3>
+            <p class="opacity-90">Quality management system for consistent service delivery</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
+            <i class="ri-team-line text-4xl text-secondary mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Expert Team</h3>
+            <p class="opacity-90">Highly qualified professionals with years of industry experience</p>
+          </div>
+        </div>
+
+        <h2 class="text-4xl font-bold text-white text-center mb-6" id="services">Our Comprehensive Services</h2>
+        <p class="text-white opacity-90 mb-16 text-center text-lg max-w-3xl mx-auto">
+          From design to implementation, we deliver end-to-end solutions in water management, waste treatment, and sustainable infrastructure development. Our services are tailored to meet the unique needs of each project while maintaining the highest standards of quality and efficiency.
+        </p>
+        
+        <div class="grid grid-cols-1 gap-12">
+          <!-- Rest of the service cards remain the same, they already follow the correct structure -->
+          <div class="service-card shadow-lg hover:shadow-2xl transition-all duration-300">
           <div class="image-wrapper left">
             <img src="img_res/PEB_Key_1.webp" alt="Water Supply Systems" class="transition-transform duration-300 hover:scale-105">
           </div>
@@ -389,43 +404,14 @@ button.hover\:bg-opacity-90:hover {
             </div>
           </div>
         </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="py-16">
-<div class="container mx-auto px-4">
-<h2 class="text-3xl font-bold text-primary text-center mb-12">Get Started with Our PHE Services</h2>
-<div class="grid grid-cols-3 gap-8 text-center mb-12">
-<div>
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4">
-<i class="ri-discuss-line text-2xl text-primary"></i>
-</div>
-<h3 class="font-bold mb-2">Consultation</h3>
-<p class="text-gray-600 text-sm">Initial discussion of your project requirements</p>
-</div>
-<div>
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4">
-<i class="ri-file-list-3-line text-2xl text-primary"></i>
-</div>
-<h3 class="font-bold mb-2">Proposal</h3>
-<p class="text-gray-600 text-sm">Detailed solution design and quotation</p>
-</div>
-<div>
-<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-4">
-<i class="ri-install-line text-2xl text-primary"></i>
-</div>
-<h3 class="font-bold mb-2">Implementation</h3>
-<p class="text-gray-600 text-sm">Expert execution and project delivery</p>
-</div>
-</div>
-<button onclick="openConsultationModal()" class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap">Schedule a Consultation</button>
-</div>
-</div>
-</section>
+  <!-- Removed "Get Started with Our PHE Services" section -->
 
-<div id="consultationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div id="consultationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
 <div class="bg-white !rounded-lg p-8 max-w-2xl w-full mx-4">
 <div class="flex justify-between items-center mb-6">
 <h3 class="text-2xl font-bold text-gray-900">Schedule a Consultation</h3>
@@ -487,7 +473,7 @@ e.target.reset();
 <ul class="space-y-3 text-gray-400">
 <li class="flex items-center">
 <i class="ri-map-pin-line mr-3"></i>
-<span>123 Tech Park, Hyderabad, India</span>
+<span>#1-4/CP/218/5/165, Plot NO.165,<br>Central Park Phase II, Kondapur S1. Hyderabad - 500084, India</span>
 </li>
 <li class="flex items-center">
 <i class="ri-phone-line mr-3"></i>
