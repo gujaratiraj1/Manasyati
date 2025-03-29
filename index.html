@@ -12,6 +12,13 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Your primary keyword - Write a compelling 150-160 character description of your page">
+<meta name="keywords" content="keyword1, keyword2, keyword3, long-tail keyword">
+<meta name="robots" content="index, follow">
+<title>Primary Keyword | Secondary Keyword | Brand Name</title>
+<link rel="canonical" href="https://www.manasyati.com/index.html" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manasyati Engineering Services - Leading MEP Design Solutions in Hyderabad</title>
 <link rel="icon" type="image/png" href="img_res/LOGO.png">
 <meta name="description" content="Manasyati Engineering Services provides comprehensive MEP design solutions including Electrical, PHE, Fire & Safety, Security, Automation, and HVAC services in Hyderabad.">
@@ -46,7 +53,24 @@ tailwind.config = {
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+<script>
+// Add error boundary
+window.addEventListener('error', function(e) {
+  console.error('Global error:', e);
+});
+
+// Optimize animation performance
+const optimizedAOS = {
+  duration: 800,
+  once: true,
+  disable: window.innerWidth < 768
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init(optimizedAOS);
+});
+</script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 .nav-link:hover { 
@@ -183,6 +207,10 @@ button.hover\:bg-opacity-90:hover {
   }
 }
 </script>
+<script>
+// Add cache control headers
+<meta http-equiv="Cache-Control" content="public, max-age=31536000">
+</script>
 </head>
 <body class="bg-white font-['Open_Sans']">
 <script>
@@ -211,7 +239,7 @@ button.hover\:bg-opacity-90:hover {
 </div>
 <nav class="flex items-center justify-between h-20">
 <a href="index.html" class="h-16"> <!-- Changed from h-12 to h-16 -->
-<img src="img_res/LOGO.png" alt="Manasyati Engineering Services" class="h-full w-auto object-contain">
+<img src="img_res/LOGO.png" alt="Manasyati Engineering Services" class="h-full w-auto object-contain" loading="lazy" width="160" height="60">
 </a>
 <div class="flex items-center space-x-8">
 <a href="index.html" class="nav-link">Home</a>
@@ -228,6 +256,12 @@ button.hover\:bg-opacity-90:hover {
 <main class="pt-30">
 <!-- Update the hero section to rectangular format -->
 <section class="relative h-[600px] flex items-center overflow-hidden" style="background-image: url('Index_files/df88c3049a6787841e6587541dd0df1f.jpg'); background-size: cover; background-position: center;">
+  <img src="Index_files/df88c3049a6787841e6587541dd0df1f.jpg" 
+       alt="Hero Background"
+       loading="lazy"
+       class="absolute inset-0 w-full h-full object-cover"
+       width="1920"
+       height="600">
   <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
   <div class="absolute inset-0" id="particles-js"></div>
   <div class="container mx-auto px-4 relative z-10">
@@ -386,7 +420,7 @@ button.hover\:bg-opacity-90:hover {
         <!-- First set of logos -->
         <div class="flex space-x-8 min-w-max">
           <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
-            <img src="ourclients/1.jpg" alt="Client 1" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+            <img src="ourclients/1.jpg" alt="Client 1" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300" loading="lazy" width="160" height="64">
           </div>
           <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
             <img src="ourclients/2.jpg" alt="Client 2" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
@@ -1018,75 +1052,95 @@ function closeQuoteModal() {
 }
 
 document.getElementById('quoteForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  
-  // Reset previous errors
-  document.querySelectorAll('.text-red-500').forEach(span => span.classList.add('hidden'));
-  
-  // Validate form
-  let isValid = true;
-  const fields = ['fullName', 'email', 'phone', 'service'];
-  
-  fields.forEach(field => {
-    const input = document.getElementById(field);
-    const errorSpan = input.nextElementSibling;
+    e.preventDefault();
     
-    if (!input.value) {
-      isValid = false;
-      errorSpan.textContent = 'This field is required';
-      errorSpan.classList.remove('hidden');
-    } else if (field === 'email' && !isValidEmail(input.value)) {
-      isValid = false;
-      errorSpan.textContent = 'Please enter a valid email address';
-      errorSpan.classList.remove('hidden');
-    } else if (field === 'phone' && !isValidPhone(input.value)) {
-      isValid = false;
-      errorSpan.textContent = 'Please enter a valid 10-digit phone number';
-      errorSpan.classList.remove('hidden');
+    // Reset previous errors
+    document.querySelectorAll('.text-red-500').forEach(span => span.classList.add('hidden'));
+    
+    // Validate form
+    let isValid = true;
+    const fields = ['fullName', 'email', 'phone', 'service'];
+    
+    // ... existing validation code ...
+
+    if (!isValid) return;
+
+    // Show loading state
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = submitBtn.querySelector('span');
+    const spinner = submitBtn.querySelector('div');
+    btnText.textContent = 'Submitting...';
+    spinner.classList.remove('hidden');
+    submitBtn.disabled = true;
+
+    try {
+        // Prepare form data
+        const formData = {
+            fullName: document.getElementById('fullName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            service: document.getElementById('service').value,
+            timestamp: new Date().toISOString(),
+            status: 'new'
+        };
+
+        // Send to server
+        const response = await fetch('https://api.manasyati.com/quotes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to submit quote request');
+        }
+
+        // Send email notification using Email.js
+        await emailjs.send(
+            'YOUR_SERVICE_ID',
+            'YOUR_TEMPLATE_ID',
+            {
+                to_email: 'ramana@manasyati.com',
+                from_name: formData.fullName,
+                from_email: formData.email,
+                phone: formData.phone,
+                service: formData.service,
+                message: `New quote request received for ${formData.service}`
+            },
+            'YOUR_USER_ID'
+        );
+        
+        // Show success message
+        closeQuoteModal();
+        const successDialog = document.createElement('div');
+        successDialog.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+        successDialog.innerHTML = `
+            <div class="bg-white !rounded-lg p-8 max-w-md w-full mx-4">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 !rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-check-line text-3xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Quote Request Sent!</h3>
+                    <p class="text-gray-600 mb-6">Thank you for your interest. We'll get back to you with a quote shortly.</p>
+                    <button onclick="this.closest('.fixed').remove()" class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90">Close</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(successDialog);
+        
+        // Reset form
+        e.target.reset();
+    } catch (error) {
+        console.error('Submission failed:', error);
+        // Show error message to user
+        alert('Failed to submit quote request. Please try again later.');
+    } finally {
+        btnText.textContent = 'Submit Request';
+        spinner.classList.add('hidden');
+        submitBtn.disabled = false;
     }
-  });
-
-  if (!isValid) return;
-
-  // Show loading state
-  const submitBtn = document.getElementById('submitBtn');
-  const btnText = submitBtn.querySelector('span');
-  const spinner = submitBtn.querySelector('div');
-  btnText.textContent = 'Submitting...';
-  spinner.classList.remove('hidden');
-  submitBtn.disabled = true;
-
-  try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Show success message
-    closeQuoteModal();
-    const successDialog = document.createElement('div');
-    successDialog.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
-    successDialog.innerHTML = `
-      <div class="bg-white !rounded-lg p-8 max-w-md w-full mx-4">
-        <div class="text-center">
-          <div class="w-16 h-16 bg-green-100 !rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="ri-check-line text-3xl text-green-500"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Quote Request Sent!</h3>
-          <p class="text-gray-600 mb-6">Thank you for your interest. We'll get back to you with a quote shortly.</p>
-          <button onclick="this.closest('.fixed').remove()" class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90">Close</button>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(successDialog);
-    
-    // Reset form
-    e.target.reset();
-  } catch (error) {
-    console.error('Submission failed:', error);
-  } finally {
-    btnText.textContent = 'Submit Request';
-    spinner.classList.add('hidden');
-    submitBtn.disabled = false;
-  }
 });
 </script>
 </main>

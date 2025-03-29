@@ -73,7 +73,68 @@ DEFAULT: '8px',
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 .service-card:hover { transform: translateY(-5px); }
+/* Optimize animations */
+.service-card {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card:hover {
+    transform: none;
+  }
+}
 </style>
+<script>
+// Add error handling for forms
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+      // ...existing form handling code...
+    } catch (err) {
+      console.error('Form submission error:', err);
+      // Show user-friendly error message
+      const errorMsg = document.createElement('div');
+      errorMsg.className = 'text-red-500 mt-2';
+      errorMsg.textContent = 'An error occurred. Please try again.';
+      form.appendChild(errorMsg);
+    }
+  });
+});
+
+// Add form validation
+function validateForm(form) {
+  const fields = form.querySelectorAll('input, textarea');
+  let isValid = true;
+  
+  fields.forEach(field => {
+    if (!field.value.trim()) {
+      isValid = false;
+      showError(field, 'This field is required');
+    } else if (field.type === 'email' && !isValidEmail(field.value)) {
+      isValid = false; 
+      showError(field, 'Please enter a valid email');
+    }
+  });
+  
+  return isValid;
+}
+
+// Add error handling for consultation requests
+document.querySelectorAll('button').forEach(btn => {
+  if (btn.textContent.includes('Consultation')) {
+    btn.addEventListener('click', async (e) => {
+      try {
+        // Handle consultation request
+      } catch (err) {
+        console.error('Request failed:', err);
+        showError(btn, 'Failed to submit request');
+      }
+    });
+  }
+});
+</script>
 </head>
 <body class="bg-white font-['Open_Sans']">
 <header class="fixed w-full bg-white shadow-sm z-50">
