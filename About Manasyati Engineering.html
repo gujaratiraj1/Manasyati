@@ -155,6 +155,34 @@
         0% { d: path("M0,96L48,112C96,128,192,160,288,160..."); }
         100% { d: path("M0,160L48,144C96,128,192,96,288,96..."); }
       }
+
+      /* Add to existing styles */
+      @keyframes fadeInSlide {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .timeline-item {
+        opacity: 0;
+        animation: fadeInSlide 0.6s ease forwards;
+      }
+
+      .timeline-item:nth-child(even) {
+        animation-delay: 0.3s;
+      }
+
+      @media (max-width: 768px) {
+        .timeline-mobile {
+          padding-left: 2rem;
+          border-left: 2px solid #2E7D32;
+        }
+      }
     </style>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="/js/hero.js"></script>
@@ -334,6 +362,161 @@
             </div>
           </div>
         </div>
+      </section>
+      <section class="py-20 bg-gray-50 overflow-hidden">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">
+              Our Project Delivery Approach
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              A comprehensive methodology ensuring excellence at every step
+            </p>
+          </div>
+
+          <div class="relative max-w-6xl mx-auto">
+            <!-- Interactive Process Flow -->
+            <div class="process-flow grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Planning Phase -->
+              <div class="process-phase bg-white rounded-xl shadow-lg p-6 transform hover:-translate-y-2 transition-all duration-300">
+                <div class="phase-header flex items-center mb-6">
+                  <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">1</div>
+                  <h3 class="text-xl font-bold text-primary">Planning Phase</h3>
+                </div>
+                <div class="space-y-4">
+                  <div class="step-item p-4 bg-primary bg-opacity-5 rounded-lg border-l-4 border-primary">
+                    <div class="flex items-center mb-2">
+                      <i class="ri-file-list-3-line text-primary text-xl mr-2"></i>
+                      <h4 class="font-bold">Initial Review</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Comprehensive analysis of architectural plans and requirements</p>
+                  </div>
+                  <div class="step-connector flex justify-center py-2">
+                    <i class="ri-arrow-down-s-line text-primary text-2xl"></i>
+                  </div>
+                  <div class="step-item p-4 bg-primary bg-opacity-5 rounded-lg border-l-4 border-primary">
+                    <div class="flex items-center mb-2">
+                      <i class="ri-discuss-line text-primary text-xl mr-2"></i>
+                      <h4 class="font-bold">Client Consultation</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Detailed requirements gathering and project scope definition</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Design Phase -->
+              <div class="process-phase bg-white rounded-xl shadow-lg p-6 transform hover:-translate-y-2 transition-all duration-300">
+                <div class="phase-header flex items-center mb-6">
+                  <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">2</div>
+                  <h3 class="text-xl font-bold text-secondary">Design Phase</h3>
+                </div>
+                <div class="space-y-4">
+                  <div class="step-item p-4 bg-secondary bg-opacity-5 rounded-lg border-l-4 border-secondary">
+                    <div class="flex items-center mb-2">
+                      <i class="ri-draft-line text-secondary text-xl mr-2"></i>
+                      <h4 class="font-bold">Concept Development</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Initial design strategy and technical specifications</p>
+                  </div>
+                  <div class="step-connector flex justify-center py-2">
+                    <i class="ri-arrow-down-s-line text-secondary text-2xl"></i>
+                  </div>
+                  <div class="step-item p-4 bg-secondary bg-opacity-5 rounded-lg border-l-4 border-secondary">
+                    <div class="flex items-center mb-2">
+                      <i class="ri-tools-line text-secondary text-xl mr-2"></i>
+                      <h4 class="font-bold">Detailed Engineering</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Comprehensive technical documentation and drawings</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Execution Phase -->
+              <div class="process-phase bg-white rounded-xl shadow-lg p-6 transform hover:-translate-y-2 transition-all duration-300">
+                <div class="phase-header flex items-center mb-6">
+                  <div class="w-12 h-12 bg-tertiary rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">3</div>
+                  <h3 class="text-xl font-bold text-tertiary">Execution Phase</h3>
+                </div>
+                <div class="space-y-4">
+                  <div class="step-item p-4 bg-tertiary bg-opacity-5 rounded-lg border-l-4 border-tertiary">
+                    <div class="flex items-center mb-2">
+                      <i class="ri-building-line text-tertiary text-xl mr-2"></i>
+                      <h4 class="font-bold">Implementation</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Project execution and site supervision</p>
+                  </div>
+                  <div class="step-connector flex justify-center py-2">
+                    <i class="ri-arrow-down-s-line text-tertiary text-2xl"></i>
+                  </div>
+                  <div class="step-item p-4 bg-tertiary bg-opacity-5 rounded-lg border-l-4 border-tertiary">
+                    <div class="flex items-center mb-2">
+                      <i class="ri-checkbox-circle-line text-tertiary text-xl mr-2"></i>
+                      <h4 class="font-bold">Commissioning</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Final testing, validation, and project handover</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Connecting Lines for Desktop -->
+            <div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-tertiary -translate-y-1/2 -z-10"></div>
+            
+            <!-- Key Benefits -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div class="benefit-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                  <i class="ri-timer-line text-primary text-2xl"></i>
+                </div>
+                <h4 class="font-bold mb-2">Time-Efficient</h4>
+                <p class="text-sm text-gray-600">Optimized process flow ensuring timely delivery</p>
+              </div>
+              <div class="benefit-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                  <i class="ri-shield-check-line text-secondary text-2xl"></i>
+                </div>
+                <h4 class="font-bold mb-2">Quality Assured</h4>
+                <p class="text-sm text-gray-600">Rigorous quality checks at every stage</p>
+              </div>
+              <div class="benefit-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 bg-tertiary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                  <i class="ri-team-line text-tertiary text-2xl"></i>
+                </div>
+                <h4 class="font-bold mb-2">Collaborative</h4>
+                <p class="text-sm text-gray-600">Continuous client engagement throughout the process</p>
+              </div>
+              <div class="benefit-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                  <i class="ri-space-ship-line text-accent text-2xl"></i>
+                </div>
+                <h4 class="font-bold mb-2">Future-Ready</h4>
+                <p class="text-sm text-gray-600">Innovative solutions for long-term sustainability</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          .process-phase {
+            position: relative;
+            z-index: 1;
+          }
+          
+          .step-item {
+            transition: all 0.3s ease;
+          }
+          
+          .step-item:hover {
+            transform: translateX(10px);
+          }
+
+          @media (max-width: 768px) {
+            .process-phase {
+              max-width: 400px;
+              margin: 0 auto;
+            }
+          }
+        </style>
       </section>
       <section class="py-20">
         <div class="container mx-auto px-4">
