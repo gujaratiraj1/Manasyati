@@ -4,5 +4,22 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /wp-admin/
 Disallow: /wp-includes/
+Disallow: /cgi-bin/
+Disallow: /*.json$
+Disallow: /*?q=*
 
+# Allow specific bots with custom crawl rates
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Sitemap declaration
 Sitemap: https://manasyati.com/sitemap.xml

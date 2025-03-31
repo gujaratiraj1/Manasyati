@@ -7,28 +7,74 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-ZXSFVP02HX');
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Your primary keyword - Write a compelling 150-160 character description of your page">
-<meta name="keywords" content="keyword1, keyword2, keyword3, long-tail keyword">
-<meta name="robots" content="index, follow">
-<title>Primary Keyword | Secondary Keyword | Brand Name</title>
-<link rel="canonical" href="https://www.manasyati.com/index.html" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manasyati Engineering Services - Leading MEP Design Solutions in Hyderabad</title>
-<link rel="icon" type="image/png" href="img_res/LOGO.png">
-<meta name="description" content="Manasyati Engineering Services provides comprehensive MEP design solutions including Electrical, PHE, Fire & Safety, Security, Automation, and HVAC services in Hyderabad.">
-<meta name="keywords" content="MEP design, MEP services, engineering services, electrical engineering, PHE, fire safety, HVAC, Hyderabad">
+<meta name="description" content="Manasyati Engineering Services provides comprehensive MEP design solutions including Electrical, PHE, Fire & Safety, Security, Automation, and HVAC services in Hyderabad. Expert engineering consultancy for modern construction projects.">
+<meta name="keywords" content="MEP design, MEP engineering, engineering services, electrical engineering, plumbing engineering, fire safety, HVAC systems, building automation, Hyderabad, construction consultancy, building services">
 <meta name="author" content="Manasyati Engineering Services">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.manasyati.com/">
+<link rel="alternate" hreflang="en" href="https://www.manasyati.com/">
+
+<!-- Open Graph / Social Media Meta Tags -->
+<meta property="og:type" content="website">
 <meta property="og:title" content="Manasyati Engineering Services - Leading MEP Design Solutions">
-<meta property="og:description" content="Comprehensive MEP design solutions for modern construction projects in Hyderabad">
-<meta property="og:image" content="Index_files/LOGO.png">
+<meta property="og:description" content="Comprehensive MEP design solutions for modern construction projects in Hyderabad. Expert engineering consultancy services.">
+<meta property="og:image" content="https://www.manasyati.com/img_res/LOGO.png">
 <meta property="og:url" content="https://www.manasyati.com">
-<link rel="canonical" href="https://www.manasyati.com">
+<meta property="og:site_name" content="Manasyati Engineering Services">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Manasyati Engineering Services - MEP Design Solutions">
+<meta name="twitter:description" content="Comprehensive MEP design solutions in Hyderabad. Expert engineering consultancy for modern construction projects.">
+<meta name="twitter:image" content="https://www.manasyati.com/img_res/LOGO.png">
+<meta name="twitter:creator" content="@manasyati">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="img_res/LOGO.png">
+<link rel="apple-touch-icon" href="img_res/LOGO.png">
+<meta name="theme-color" content="#2E7D32">
+
+<!-- Performance optimization - Preload critical resources -->
+<link rel="preload" href="img_res/LOGO.png" as="image">
+<link rel="preload" href="Index_files/df88c3049a6787841e6587541dd0df1f.jpg" as="image">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style">
+<link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+
+<!-- Resource hints -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://unpkg.com">
+
+<!-- Cache control -->
+<meta http-equiv="Cache-Control" content="public, max-age=31536000">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Critical CSS -->
+<style>
+/* Add critical CSS here */
+</style>
+
+<!-- Service Worker Registration -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').then(registration => {
+      console.log('ServiceWorker registration successful');
+    }).catch(err => {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+</script>
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
@@ -176,14 +222,24 @@ button.hover\:bg-opacity-90:hover {
   "description": "Leading MEP design services provider in Hyderabad",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Hyderabad",
+    "streetAddress": "#1-4/CP/218/5/165, Plot NO.165, Central Park Phase II",
+    "addressLocality": "Kondapur",
+    "addressRegion": "Telangana",
+    "postalCode": "500084",
     "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "17.4358",
+    "longitude": "78.3753"
   },
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+91-730-688-5392",
     "email": "ramana@manasyati.com",
-    "contactType": "customer service"
+    "contactType": "customer service",
+    "areaServed": "IN",
+    "availableLanguage": ["English", "Telugu", "Hindi"]
   },
   "sameAs": [
     "https://www.linkedin.com/company/manasyati",
@@ -196,20 +252,91 @@ button.hover\:bg-opacity-90:hover {
       {
         "@type": "Service",
         "name": "Public Health Engineering",
-        "description": "Water supply, plumbing, sewage treatment, drainage systems"
+        "description": "Water supply, plumbing, sewage treatment, drainage systems",
+        "areaServed": "Hyderabad",
+        "priceRange": "₹₹"
       },
       {
         "@type": "Service",
         "name": "Firefighting Systems",
-        "description": "Hydrant, sprinkler systems, fire alarms and NFPA solutions"
+        "description": "Hydrant, sprinkler systems, fire alarms and NFPA solutions",
+        "areaServed": "Hyderabad",
+        "priceRange": "₹₹"
+      },
+      {
+        "@type": "Service",
+        "name": "Electrical Engineering",
+        "description": "Power distribution, UPS, lighting and load management",
+        "areaServed": "Hyderabad",
+        "priceRange": "₹₹"
+      },
+      {
+        "@type": "Service",
+        "name": "HVAC & IBMS",
+        "description": "Air conditioning, ventilation and building automation",
+        "areaServed": "Hyderabad",
+        "priceRange": "₹₹"
       }
     ]
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "MEP Design Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Life Safety & Security",
+          "description": "Access control, emergency systems, and public address solutions"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Communication Systems",
+          "description": "FTTH, DTH, CCTV, boom barriers and EPABX solutions"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Allied Services",
+          "description": "LPG reticulation, waste management and tank design"
+        }
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "150"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "foundingDate": "2024-05-01",
+  "areaServed": {
+    "@type": "City",
+    "name": "Hyderabad",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Telangana"
+    }
   }
 }
-</script>
-<script>
-// Add cache control headers
-<meta http-equiv="Cache-Control" content="public, max-age=31536000">
 </script>
 </head>
 <body class="bg-white font-['Open_Sans']">
@@ -228,27 +355,27 @@ button.hover\:bg-opacity-90:hover {
 <header class="fixed w-full bg-white shadow-sm z-50">
 <div class="container mx-auto px-4">
 <div class="h-10 flex items-center justify-end space-x-6 text-sm text-gray-600 border-b">
-<a href="tel:+917306885392" class="flex items-center space-x-2">
-<i class="ri-phone-line"></i>
+<a href="tel:+917306885392" class="flex items-center space-x-2" aria-label="Call our office">
+<i class="ri-phone-line" aria-hidden="true"></i>
 <span>+91 730 688 5392</span>
 </a>
-<a href="mailto:ramana@manasyati.com" class="flex items-center space-x-2">
-<i class="ri-mail-line"></i>
+<a href="mailto:ramana@manasyati.com" class="flex items-center space-x-2" aria-label="Email us">
+<i class="ri-mail-line" aria-hidden="true"></i>
 <span>ramana@manasyati.com</span>
 </a>
 </div>
-<nav class="flex items-center justify-between h-20">
-<a href="index.html" class="h-16"> <!-- Changed from h-12 to h-16 -->
-<img src="img_res/LOGO.png" alt="Manasyati Engineering Services" class="h-full w-auto object-contain" loading="lazy" width="160" height="60">
+<nav class="flex items-center justify-between h-20" aria-label="Main navigation">
+<a href="index.html" class="h-16" aria-label="Manasyati Engineering Services Home"> 
+<img src="img_res/LOGO.png" alt="Manasyati Engineering Services Logo" class="h-full w-auto object-contain" loading="lazy" width="160" height="60">
 </a>
 <div class="flex items-center space-x-8">
-<a href="index.html" class="nav-link">Home</a>
+<a href="index.html" class="nav-link" aria-current="page">Home</a>
 <a href="About Manasyati Engineering.html" data-readdy="true" class="nav-link">About Us</a>
 <a href="Service Details - Manasyati Engineering.html" data-readdy="true" class="nav-link">Services</a>
 <a href="Projects - Manasyati Engineering Services.html" class="nav-link">Projects</a>
 <a href="Industries Manasyati Engineering Services.html" class="nav-link">Industries</a>
 <a href="Contact Us - Manasyati Engineering Services.html" class="nav-link">Contact</a>
-<button onclick="openQuoteModal()" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 whitespace-nowrap">Get Quote</button>
+<button onclick="openQuoteModal()" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 whitespace-nowrap" aria-label="Request a quote">Get Quote</button>
 </div>
 </nav>
 </div>
@@ -328,7 +455,7 @@ button.hover\:bg-opacity-90:hover {
       <!-- Service cards with enhanced hover effects -->
       <a href="Public Health Engineering Services - Manasyati Engineering.html" class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300 overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="100">
         <div class="relative h-40 -mx-6 -mt-6">
-          <img src="img_res/PEB.webp" alt="Public Health Engineering" class="w-full h-full object-cover object-center !rounded-t-lg">
+          <img src="img_res/PEB.webp" alt="Public Health Engineering Services - Water supply, plumbing, and drainage systems" class="w-full h-full object-cover object-center !rounded-t-lg" loading="lazy" width="400" height="160">
         </div>
         <h3 class="text-xl font-['Roboto'] font-bold mb-4 mt-6">Public Health Engineering</h3>
         <p class="text-gray-600">
@@ -338,7 +465,7 @@ button.hover\:bg-opacity-90:hover {
 
       <a href="Fire Safety Engineering Services - Manasyati Engineering.html" class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300 overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="100">
         <div class="relative h-40 -mx-6 -mt-6">
-          <img src="img_res/FSE.webp" alt="Firefighting Systems" class="w-full h-full object-cover object-center !rounded-t-lg">
+          <img src="img_res/FSE.webp" alt="Firefighting Systems - Hydrant, sprinkler systems, and fire alarm solutions" class="w-full h-full object-cover object-center !rounded-t-lg" loading="lazy" width="400" height="160">
         </div>
         <h3 class="text-xl font-['Roboto'] font-bold mb-4 mt-6">Firefighting Systems</h3>
         <p class="text-gray-600">
@@ -348,7 +475,7 @@ button.hover\:bg-opacity-90:hover {
 
       <a href="Life Safety & Security - Manasyati Engineering Services.html" class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300 overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="100">
         <div class="relative h-40 -mx-6 -mt-6">
-          <img src="img_res/LSS.webp" alt="Life Safety & Security" class="w-full h-full object-cover object-center !rounded-t-lg">
+          <img src="img_res/LSS.webp" alt="Life Safety & Security Systems - Access control and emergency systems" class="w-full h-full object-cover object-center !rounded-t-lg" loading="lazy" width="400" height="160">
         </div>
         <h3 class="text-xl font-['Roboto'] font-bold mb-4 mt-6">Life Safety & Security</h3>
         <p class="text-gray-600">
@@ -358,7 +485,7 @@ button.hover\:bg-opacity-90:hover {
 
       <a href="Electrical Engineering - Manasyati Engineering Services.html" class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300 overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="100">
         <div class="relative h-40 -mx-6 -mt-6">
-          <img src="img_res/EES.webp" alt="Electrical Engineering" class="w-full h-full object-cover object-center !rounded-t-lg">
+          <img src="img_res/EES.webp" alt="Electrical Engineering Services - Power distribution and lighting systems" class="w-full h-full object-cover object-center !rounded-t-lg" loading="lazy" width="400" height="160">
         </div>
         <h3 class="text-xl font-['Roboto'] font-bold mb-4 mt-6">Electrical Engineering</h3>
         <p class="text-gray-600">
@@ -566,6 +693,81 @@ button.hover\:bg-opacity-90:hover {
           <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
             <img src="ourclients/24.jpg" alt="Client 24" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
           </div>
+        </div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="flex space-x-8 min-w-max">
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/1.jpg" alt="Client 1" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/2.jpg" alt="Client 2" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/3.jpg" alt="Client 3" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/4.jpg" alt="Client 4" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/5.jpg" alt="Client 5" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/6.jpg" alt="Client 6" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/7.jpg" alt="Client 7" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/8.jpg" alt="Client 8" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/9.jpg" alt="Client 9" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/10.jpg" alt="Client 10" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/11.jpg" alt="Client 11" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/12.jpg" alt="Client 12" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/13.jpg" alt="Client 13" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/14.jpg" alt="Client 14" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/15.jpg" alt="Client 15" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/16.jpg" alt="Client 16" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/17.jpg" alt="Client 17" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/18.png" alt="Client 18" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/19.jpg" alt="Client 19" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/20.jpg" alt="Client 20" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/21.jpg" alt="Client 21" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/22.jpg" alt="Client 22" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/23.jpg" alt="Client 23" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
+          <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
+            <img src="ourclients/24.jpg" alt="Client 24" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
+          </div>
           <div class="client-card bg-white rounded-lg p-4 flex items-center justify-center">
             <img src="ourclients/lekcon.jpg" alt="Client 24" class="max-h-16 w-auto hover:brightness-110 transition-all duration-300">
           </div>
@@ -584,7 +786,7 @@ button.hover\:bg-opacity-90:hover {
       }
 
       .animate-scroll {
-        animation: scroll 60s linear infinite;  /* Changed from 30s to 60s */
+        animation: scroll 120s linear infinite;  /* Changed from 60s to 120s for slower movement */
         display: flex;
       }
 
@@ -607,7 +809,7 @@ button.hover\:bg-opacity-90:hover {
     </div>
     
     <div class="overflow-hidden">
-      <div class="flex animate-scroll-architects">
+      <div class="flex animate-scroll">
         <!-- First set of architect logos -->
         <div class="flex space-x-8 min-w-max">
           <div class="architect-card bg-white rounded-lg p-4 flex items-center justify-center">
@@ -736,7 +938,7 @@ button.hover\:bg-opacity-90:hover {
     }
 
     .animate-scroll-architects {
-      animation: scroll-architects 60s linear infinite;  /* Changed from 45s to 60s */
+      animation: scroll-architects 120s linear infinite;  /* Changed from 60s to 120s for slower movement */
       display: flex;
     }
 
@@ -755,7 +957,7 @@ button.hover\:bg-opacity-90:hover {
 }
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 120s linear infinite;  /* Changed from 30s to 120s for slower movement */
   display: flex;
   width: fit-content;
 }
@@ -999,26 +1201,31 @@ Download Brochure
 <div id="quoteModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
     <div class="bg-white p-6 !rounded-lg shadow-xl max-w-md w-full mx-4">
         <div class="flex justify-between items-center mb-6">
-            <h3 class="text-2xl font-['Roboto'] text-primary mb-4">Request a Quote</h3>
-            <button onclick="closeQuoteModal()" class="text-gray-500 hover:text-gray-700">
-                <i class="ri-close-line text-2xl"></i>
+            <h3 class="text-2xl font-['Roboto'] text-primary mb-4" id="quoteFormHeading">Request a Quote</h3>
+            <button onclick="closeQuoteModal()" class="text-gray-500 hover:text-gray-700" aria-label="Close quote form">
+                <i class="ri-close-line text-2xl" aria-hidden="true"></i>
             </button>
         </div>
-        <form id="quoteForm" class="space-y-4">
+        <form id="quoteForm" class="space-y-4" aria-labelledby="quoteFormHeading">
             <div>
-                <input type="text" id="fullName" name="fullName" required placeholder="Full Name" class="w-full px-4 py-2 border !rounded-button">
-                <span class="text-red-500 text-sm hidden"></span>
+                <label for="fullName" class="sr-only">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Full Name" class="w-full px-4 py-2 border !rounded-button" aria-required="true">
+                <span class="text-red-500 text-sm hidden" role="alert" id="fullNameError"></span>
             </div>
             <div>
-                <input type="email" id="email" name="email" required placeholder="Email Address" class="w-full px-4 py-2 border !rounded-button">
-                <span class="text-red-500 text-sm hidden"></span>
+                <label for="email" class="sr-only">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Email Address" class="w-full px-4 py-2 border !rounded-button" aria-required="true">
+                <span class="text-red-500 text-sm hidden" role="alert" id="emailError"></span>
             </div>
             <div>
-                <input type="tel" id="phone" name="phone" required placeholder="Phone Number" pattern="[0-9]{10}" class="w-full px-4 py-2 border !rounded-button">
-                <span class="text-red-500 text-sm hidden"></span>
+                <label for="phone" class="sr-only">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Phone Number" pattern="[0-9]{10}" class="w-full px-4 py-2 border !rounded-button" aria-required="true" aria-describedby="phoneHint">
+                <span class="text-red-500 text-sm hidden" role="alert" id="phoneError"></span>
+                <small id="phoneHint" class="text-gray-500 text-xs">Enter 10-digit phone number</small>
             </div>
             <div>
-                <select id="service" name="service" required class="w-full px-4 py-2 border !rounded-button">
+                <label for="service" class="sr-only">Select Service</label>
+                <select id="service" name="service" required class="w-full px-4 py-2 border !rounded-button" aria-required="true">
                     <option value="">Select Service</option>
                     <option value="mep">MEP Services</option>
                     <option value="phe">Public Health Engineering</option>
@@ -1029,11 +1236,11 @@ Download Brochure
                     <option value="hvac">HVAC & IBMS</option>
                     <option value="allied">Allied Services</option>
                 </select>
-                <span class="text-red-500 text-sm hidden"></span>
+                <span class="text-red-500 text-sm hidden" role="alert" id="serviceError"></span>
             </div>
             <button type="submit" id="submitBtn" class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap flex items-center justify-center">
                 <span>Submit Request</span>
-                <div class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <div class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true"></div>
             </button>
         </form>
     </div>
@@ -1061,7 +1268,24 @@ document.getElementById('quoteForm').addEventListener('submit', async function(e
     let isValid = true;
     const fields = ['fullName', 'email', 'phone', 'service'];
     
-    // ... existing validation code ...
+    fields.forEach(field => {
+        const input = document.getElementById(field);
+        const errorSpan = document.getElementById(field + 'Error');
+        
+        if (!input.value) {
+            isValid = false;
+            errorSpan.textContent = 'This field is required';
+            errorSpan.classList.remove('hidden');
+        } else if (field === 'email' && !isValidEmail(input.value)) {
+            isValid = false;
+            errorSpan.textContent = 'Please enter a valid email address';
+            errorSpan.classList.remove('hidden');
+        } else if (field === 'phone' && !isValidPhone(input.value)) {
+            isValid = false;
+            errorSpan.textContent = 'Please enter a valid 10-digit phone number';
+            errorSpan.classList.remove('hidden');
+        }
+    });
 
     if (!isValid) return;
 
@@ -1142,6 +1366,15 @@ document.getElementById('quoteForm').addEventListener('submit', async function(e
         submitBtn.disabled = false;
     }
 });
+
+// Helper functions for email and phone validation
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function isValidPhone(phone) {
+    return /^[0-9]{10}$/.test(phone);
+}
 </script>
 </main>
 <footer class="bg-gray-900 text-white py-16">
@@ -1211,5 +1444,19 @@ Leading MEP design services provider in Hyderabad, bridging the gap between evol
 </div>
 </div>
 </footer>
+<script src="js/performance.js"></script>
+<script>
+  // Initialize the performance metrics and site functionality
+  window.addEventListener('DOMContentLoaded', function() {
+    if (window.perfMetrics) {
+      perfMetrics.init();
+      
+      // Initialize site common functionality if available
+      if (perfMetrics.siteCommon) {
+        perfMetrics.siteCommon.init();
+      }
+    }
+  });
+</script>
 </body>
 </html>

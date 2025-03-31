@@ -6,20 +6,33 @@
 <title>MEP Engineering Services in Hyderabad | Manasyati Engineering</title>
 <meta name="description" content="Leading MEP engineering services in Hyderabad offering public health, firefighting, electrical, HVAC & IBMS solutions. Get expert consultation for your construction projects.">
 <meta name="keywords" content="MEP engineering, engineering services, public health engineering, firefighting systems, HVAC, IBMS, electrical engineering, Hyderabad">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://manasyati.com/services" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="img_res/LOGO.png">
+
+<!-- Performance optimization - Preload critical resources -->
+<link rel="preload" href="img_res/LOGO.png" as="image">
+<link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" as="style">
+
+<!-- Cache control -->
+<meta http-equiv="Cache-Control" content="public, max-age=86400">
 
 <!-- Open Graph tags -->
 <meta property="og:title" content="MEP Engineering Services in Hyderabad | Manasyati Engineering" />
 <meta property="og:description" content="Leading MEP engineering services in Hyderabad offering public health, firefighting, electrical, HVAC & IBMS solutions." />
-<meta property="og:image" content="https://manasyati.com/image/services-banner.jpg" />
+<meta property="og:image" content="https://manasyati.com/img_res/services-banner.jpg" />
 <meta property="og:url" content="https://manasyati.com/services" />
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="Manasyati Engineering Services">
 
 <!-- Twitter Card tags -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="MEP Engineering Services in Hyderabad | Manasyati Engineering" />
 <meta name="twitter:description" content="Leading MEP engineering services in Hyderabad offering public health, firefighting, electrical, HVAC & IBMS solutions." />
-<meta name="twitter:image" content="https://manasyati.com/image/services-banner.jpg" />
+<meta name="twitter:image" content="https://manasyati.com/img_res/services-banner.jpg" />
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -84,6 +97,11 @@ tailwind.config = {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<!-- Animation libraries -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+<script src="/js/performance.js" defer></script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 .nav-link:hover { 
@@ -194,6 +212,51 @@ button.hover\:bg-opacity-90:hover {
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize AOS animations
+  AOS.init({
+    duration: 800,
+    once: true,
+    disable: window.innerWidth < 768 // Disable on mobile for performance
+  });
+
+  // Initialize Particles.js for the hero background
+  if (document.getElementById('particles-js')) {
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        opacity: { value: 0.5, random: false },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        }
+      },
+      retina_detect: true
+    });
+  }
+
+  // Counter animation with improved performance
   const counters = document.querySelectorAll('.counter');
   const speed = 200;
 
@@ -206,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (count < target) {
         count = Math.ceil(count + inc);
         counter.innerText = count;
-        setTimeout(updateCount, 1);
+        requestAnimationFrame(updateCount); // Use requestAnimationFrame for better performance
       } else {
         counter.innerText = target;
       }
@@ -215,47 +278,74 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCount();
   };
 
-  const observerCallback = (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(observerCallback, {
-    threshold: 0.5
-  });
+  // Use Intersection Observer for better performance
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target); // Stop observing once animation starts
+        }
+      });
+    },
+    { threshold: 0.5, rootMargin: '0px 0px -100px 0px' }
+  );
 
   counters.forEach(counter => observer.observe(counter));
+  
+  // Add scroll event for sticky header
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('floating-nav', window.scrollY > 0);
+    header.classList.toggle('scrolled', window.scrollY > 100);
+  });
 });
+
+// Add quote form functionality if it exists
+function openQuoteModal() {
+  const modal = document.getElementById('quoteModal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  } else {
+    console.warn("Quote modal element not found");
+  }
+}
+
+function closeQuoteModal() {
+  const modal = document.getElementById('quoteModal');
+  if (modal) {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+}
 </script>
 </head>
 <body class="bg-white font-['Open_Sans']">
 <header class="fixed w-full bg-white shadow-sm z-50">
 <div class="container mx-auto px-4">
 <div class="h-10 flex items-center justify-end space-x-6 text-sm text-gray-600 border-b">
-<a href="tel:+917306885392" class="flex items-center space-x-2">
-<i class="ri-phone-line"></i>
+<a href="tel:+917306885392" class="flex items-center space-x-2" aria-label="Call our office">
+<i class="ri-phone-line" aria-hidden="true"></i>
 <span>+91 730 688 5392</span>
 </a>
-<a href="mailto:ramana@manasyati.com" class="flex items-center space-x-2">
-<i class="ri-mail-line"></i>
+<a href="mailto:ramana@manasyati.com" class="flex items-center space-x-2" aria-label="Email us">
+<i class="ri-mail-line" aria-hidden="true"></i>
 <span>ramana@manasyati.com</span>
 </a>
 </div>
-<nav class="flex items-center justify-between h-20">
-  <a href="index.html" class="h-16">
-  <img src="img_res/LOGO.png" alt="Manasyati Engineering Services" class="h-full w-auto object-contain">
+<nav class="flex items-center justify-between h-20" aria-label="Main Navigation">
+  <a href="index.html" class="h-16" aria-label="Manasyati Engineering Services Home">
+  <img src="img_res/LOGO.png" alt="Manasyati Engineering Services Logo" class="h-full w-auto object-contain" width="160" height="60" loading="eager">
   </a>
 <div class="flex items-center space-x-8">
 <a href="index.html" data-readdy="true" class="nav-link hover:text-primary">Home</a>
 <a href="About Manasyati Engineering.html" class="nav-link hover:text-primary">About Us</a>
-<a href="Service Details - Manasyati Engineering.html" class="text-primary font-semibold">Services</a>
+<a href="Service Details - Manasyati Engineering.html" class="text-primary font-semibold" aria-current="page">Services</a>
 <a href="Projects - Manasyati Engineering Services.html" data-readdy="true" class="nav-link hover:text-primary">Projects</a>
 <a href="Industries Manasyati Engineering Services.html" class="nav-link hover:text-primary">Industries</a>
 <a href="Contact Us - Manasyati Engineering Services.html" class="nav-link hover:text-primary">Contact</a>
-<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 whitespace-nowrap">Get Quote</button>
+<button onclick="openQuoteModal()" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 whitespace-nowrap" aria-label="Request a Quote">Get Quote</button>
 </div>
 </nav>
 </div>
@@ -302,14 +392,14 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   </div>
   <div class="absolute bottom-0 left-0 right-0">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" class="waves" preserveAspectRatio="none">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" class="waves" preserveAspectRatio="none" aria-hidden="true">
       <path fill="#f9fafb" fill-opacity="1" d="M0,32L1440,64L1440,100L0,100Z"></path>
     </svg>
   </div>
 </section>
 
 <!-- Services Section -->
-<section class="py-20">
+<section class="py-20" id="services">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
@@ -319,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
            data-aos-delay="100"
            onclick="window.location.href='Public Health Engineering Services - Manasyati Engineering.html'">
         <div class="relative h-40 -mx-6 -mt-6">
-          <img src="img_res/PEB.webp" alt="Public Health Engineering" class="w-full h-full object-cover object-center !rounded-t-lg">
+          <img src="img_res/PEB.webp" alt="Public Health Engineering - Water supply, plumbing and drainage systems" class="w-full h-full object-cover object-center !rounded-t-lg" loading="lazy" width="400" height="160">
         </div>
         <h3 class="text-xl font-['Roboto'] font-bold mb-4 mt-6">Public Health Engineering</h3>
         <p class="text-gray-600 mb-4">
@@ -327,19 +417,19 @@ document.addEventListener('DOMContentLoaded', () => {
         </p>
         <div class="space-y-4 mb-8">
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Water supply & distribution systems</span>
           </div>
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Drainage & sewerage networks</span>
           </div>
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Rainwater harvesting systems</span>
           </div>
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Water treatment & recycling</span>
           </div>
         </div>
@@ -351,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
            data-aos-delay="100"
            onclick="window.location.href='Fire Safety Engineering Services - Manasyati Engineering.html'">
         <div class="relative h-40 -mx-6 -mt-6">
-          <img src="img_res/FSE.webp" alt="Firefighting Systems" class="w-full h-full object-cover object-center !rounded-t-lg">
+          <img src="img_res/FSE.webp" alt="Firefighting Systems - Hydrant, sprinkler systems and fire alarms" class="w-full h-full object-cover object-center !rounded-t-lg" loading="lazy" width="400" height="160">
         </div>
         <h3 class="text-xl font-['Roboto'] font-bold mb-4 mt-6">Firefighting Systems</h3>
         <p class="text-gray-600 mb-4">
@@ -413,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300 overflow-hidden cursor-pointer" 
            data-aos="fade-up" 
            data-aos-delay="100"
-           onclick="window.location.href='Electrical Design Services - Manasyati Engineering.html'">
+           onclick="window.location.href='Electrical Engineering - Manasyati Engineering Services.html'">
         <div class="relative h-40 -mx-6 -mt-6">
           <img src="img_res/EES.webp" alt="Electrical Engineering" class="w-full h-full object-cover object-center !rounded-t-lg">
         </div>
@@ -447,7 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
            data-aos-delay="100"
            onclick="window.location.href='Communication Systems - Manasyati Engineering Services.html'">
         <div class="relative h-40 -mx-6 -mt-6">
-          <img src="img_res/CMS.webp" alt="Communication Systems" class="w-full h-full object-cover object-center !rounded-t-lg">
+          <img src="img_res/CMS.webp" alt="Communication Systems - FTTH, DTH, and EPABX solutions" class="w-full h-full object-cover object-center !rounded-t-lg" loading="lazy" width="400" height="160">
         </div>
         <h3 class="text-xl font-['Roboto'] font-bold mb-4 mt-6">Communication Systems</h3>
         <p class="text-gray-600 mb-4">
@@ -455,19 +545,19 @@ document.addEventListener('DOMContentLoaded', () => {
         </p>
         <div class="space-y-4 mb-8">
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">FTTH networks</span>
           </div>
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Structured cabling</span>
           </div>
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">EPABX systems</span>
           </div>
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Digital signage</span>
           </div>
         </div>
@@ -479,7 +569,7 @@ document.addEventListener('DOMContentLoaded', () => {
            data-aos-delay="100"
            onclick="window.location.href='HVAC & IBMS - Manasyati Engineering Services.html'">
         <div class="relative h-40 -mx-6 -mt-6">
-          <img src="img_res/HVAC.webp" alt="HVAC & IBMS" class="w-full h-full object-cover object-center !rounded-t-lg">
+          <img src="img_res/HVAC.webp" alt="HVAC & IBMS - Air conditioning, ventilation and building automation" class="w-full h-full object-cover object-center !rounded-t-lg" loading="lazy" width="400" height="160">
         </div>
         <h3 class="text-xl font-['Roboto'] font-bold mb-4 mt-6">HVAC & IBMS</h3>
         <p class="text-gray-600 mb-4">
@@ -487,19 +577,19 @@ document.addEventListener('DOMContentLoaded', () => {
         </p>
         <div class="space-y-4 mb-8">
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Air conditioning design</span>
           </div>
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Ventilation systems</span>
           </div>
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Building automation</span>
           </div>
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Energy optimization</span>
           </div>
         </div>
@@ -511,7 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
            data-aos-delay="100"
            onclick="window.location.href='Allied Services - Manasyati Engineering Services.html'">
         <div class="relative h-40 -mx-6 -mt-6">
-          <img src="img_res/alied.webp" alt="Allied Services" class="w-full h-full object-cover object-center !rounded-t-lg">
+          <img src="img_res/alied.webp" alt="Allied Services - LPG reticulation, waste management and tank design" class="w-full h-full object-cover object-center !rounded-t-lg" loading="lazy" width="400" height="160">
         </div>
         <h3 class="text-xl font-['Roboto'] font-bold mb-4 mt-6">Allied Services</h3>
         <p class="text-gray-600 mb-4">
@@ -519,19 +609,19 @@ document.addEventListener('DOMContentLoaded', () => {
         </p>
         <div class="space-y-4 mb-8">
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">LPG reticulation systems</span>
           </div>
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Waste management solutions</span>
           </div>
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Tank design & engineering</span>
           </div>
           <div class="flex items-start">
-            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3" aria-hidden="true"></i>
             <span class="text-gray-600">Infrastructure planning</span>
           </div>
         </div>
@@ -544,16 +634,16 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-16">
 <div class="container mx-auto px-4">
-<div class="grid grid-cols-4 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 <div>
-<a href="/" class="h-12 mb-6 block">
-<img src="Index_files/LOGO.png" alt="Manasyati Engineering Services" class="h-full">
+<a href="index.html" class="h-12 mb-6 block" aria-label="Manasyati Engineering Services Home">
+<img src="img_res/LOGO.png" alt="Manasyati Engineering Services Logo" class="h-full" width="120" height="48" loading="lazy">
 </a>
 <p class="text-gray-400 mb-6">Leading MEP design services provider in Hyderabad, bridging the gap between evolving construction needs and consultancy services since May 2024</p>
 <div class="flex space-x-4">
-<a href="#" class="hover:text-primary"><i class="ri-facebook-fill text-xl"></i></a>
-<a href="#" class="hover:text-primary"><i class="ri-twitter-fill text-xl"></i></a>
-<a href="#" class="hover:text-primary"><i class="ri-linkedin-fill text-xl"></i></a>
+<a href="#" class="hover:text-primary" aria-label="Facebook"><i class="ri-facebook-fill text-xl" aria-hidden="true"></i></a>
+<a href="#" class="hover:text-primary" aria-label="Twitter"><i class="ri-twitter-fill text-xl" aria-hidden="true"></i></a>
+<a href="#" class="hover:text-primary" aria-label="LinkedIn"><i class="ri-linkedin-fill text-xl" aria-hidden="true"></i></a>
 </div>
 </div>
 <div>
@@ -582,16 +672,15 @@ document.addEventListener('DOMContentLoaded', () => {
 <h4 class="text-lg font-bold mb-6">Contact Info</h4>
 <ul class="space-y-3">
 <li class="flex items-center">
-<i class="ri-map-pin-line mr-3"></i>
-<span class="text-gray-400">#1-4/CP/218/5/165, Plot NO.165, Central Park Phase II, Kondapur S1. Hyderabad. 500084
-</span>
+<i class="ri-map-pin-line mr-3" aria-hidden="true"></i>
+<span class="text-gray-400">#1-4/CP/218/5/165, Plot NO.165, Central Park Phase II, Kondapur S1. Hyderabad. 500084</span>
 </li>
 <li class="flex items-center">
-<i class="ri-phone-line mr-3"></i>
+<i class="ri-phone-line mr-3" aria-hidden="true"></i>
 <span class="text-gray-400">+91 730 688 5392</span>
 </li>
 <li class="flex items-center">
-<i class="ri-mail-line mr-3"></i>
+<i class="ri-mail-line mr-3" aria-hidden="true"></i>
 <span class="text-gray-400">ramana@manasyati.com</span>
 </li>
 </ul>
@@ -602,48 +691,160 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 </div>
 </footer>
+
+<!-- Quote Modal -->
+<div id="quoteModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 !rounded-lg shadow-xl max-w-md w-full mx-4">
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="text-2xl font-['Roboto'] text-primary mb-4" id="quoteFormHeading">Request a Quote</h3>
+            <button onclick="closeQuoteModal()" class="text-gray-500 hover:text-gray-700" aria-label="Close quote form">
+                <i class="ri-close-line text-2xl" aria-hidden="true"></i>
+            </button>
+        </div>
+        <form id="quoteForm" class="space-y-4" aria-labelledby="quoteFormHeading">
+            <div>
+                <label for="fullName" class="sr-only">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Full Name" class="w-full px-4 py-2 border !rounded-button" aria-required="true">
+                <span class="text-red-500 text-sm hidden" role="alert" id="fullNameError"></span>
+            </div>
+            <div>
+                <label for="email" class="sr-only">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Email Address" class="w-full px-4 py-2 border !rounded-button" aria-required="true">
+                <span class="text-red-500 text-sm hidden" role="alert" id="emailError"></span>
+            </div>
+            <div>
+                <label for="phone" class="sr-only">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Phone Number" pattern="[0-9]{10}" class="w-full px-4 py-2 border !rounded-button" aria-required="true" aria-describedby="phoneHint">
+                <span class="text-red-500 text-sm hidden" role="alert" id="phoneError"></span>
+                <small id="phoneHint" class="text-gray-500 text-xs">Enter 10-digit phone number</small>
+            </div>
+            <div>
+                <label for="service" class="sr-only">Select Service</label>
+                <select id="service" name="service" required class="w-full px-4 py-2 border !rounded-button" aria-required="true">
+                    <option value="">Select Service</option>
+                    <option value="mep">MEP Services</option>
+                    <option value="phe">Public Health Engineering</option>
+                    <option value="firefighting">Firefighting Systems</option>
+                    <option value="safety">Life Safety & Security</option>
+                    <option value="electrical">Electrical Engineering</option>
+                    <option value="communication">Communication Systems</option>
+                    <option value="hvac">HVAC & IBMS</option>
+                    <option value="allied">Allied Services</option>
+                </select>
+                <span class="text-red-500 text-sm hidden" role="alert" id="serviceError"></span>
+            </div>
+            <button type="submit" id="submitBtn" class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-opacity-90 whitespace-nowrap flex items-center justify-center">
+                <span>Submit Request</span>
+                <div class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true"></div>
+            </button>
+        </form>
+    </div>
+</div>
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  AOS.init({
-    duration: 800,
-    once: true
-  });
-
-  // Counter animation
-  const counters = document.querySelectorAll('.counter');
-  const speed = 200;
-
-  const animateCounter = (counter) => {
-    const target = +counter.getAttribute('data-target');
-    let count = 0;
+// Add form submission handler
+document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
     
-    const updateCount = () => {
-      const inc = target / speed;
-      if (count < target) {
-        count = Math.ceil(count + inc);
-        counter.innerText = count;
-        setTimeout(updateCount, 1);
-      } else {
-        counter.innerText = target;
-      }
-    };
+    // Reset previous errors
+    document.querySelectorAll('.text-red-500').forEach(span => span.classList.add('hidden'));
     
-    updateCount();
-  };
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
+    // Validate form
+    let isValid = true;
+    const fields = ['fullName', 'email', 'phone', 'service'];
+    
+    fields.forEach(field => {
+        const input = document.getElementById(field);
+        const errorSpan = document.getElementById(field + 'Error');
+        
+        if (!input.value) {
+            isValid = false;
+            errorSpan.textContent = 'This field is required';
+            errorSpan.classList.remove('hidden');
+        } else if (field === 'email' && !isValidEmail(input.value)) {
+            isValid = false;
+            errorSpan.textContent = 'Please enter a valid email address';
+            errorSpan.classList.remove('hidden');
+        } else if (field === 'phone' && !isValidPhone(input.value)) {
+            isValid = false;
+            errorSpan.textContent = 'Please enter a valid 10-digit phone number';
+            errorSpan.classList.remove('hidden');
         }
-      });
-    },
-    { threshold: 0.5 }
-  );
+    });
 
-  counters.forEach(counter => observer.observe(counter));
+    if (!isValid) return;
+
+    // Show loading state
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = submitBtn.querySelector('span');
+    const spinner = submitBtn.querySelector('div');
+    btnText.textContent = 'Submitting...';
+    spinner.classList.remove('hidden');
+    submitBtn.disabled = true;
+
+    try {
+        // Prepare form data
+        const formData = {
+            fullName: document.getElementById('fullName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            service: document.getElementById('service').value,
+            timestamp: new Date().toISOString(),
+            status: 'new'
+        };
+
+        // Send to server
+        const response = await fetch('https://api.manasyati.com/quotes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to submit quote request');
+        }
+
+        // Show success message
+        closeQuoteModal();
+        const successDialog = document.createElement('div');
+        successDialog.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+        successDialog.innerHTML = `
+            <div class="bg-white !rounded-lg p-8 max-w-md w-full mx-4">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 !rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-check-line text-3xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Quote Request Sent!</h3>
+                    <p class="text-gray-600 mb-6">Thank you for your interest. We'll get back to you with a quote shortly.</p>
+                    <button onclick="this.closest('.fixed').remove()" class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90">Close</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(successDialog);
+        
+        // Reset form
+        e.target.reset();
+    } catch (error) {
+        console.error('Submission failed:', error);
+        // Show error message to user
+        alert('Failed to submit quote request. Please try again later.');
+    } finally {
+        btnText.textContent = 'Submit Request';
+        spinner.classList.add('hidden');
+        submitBtn.disabled = false;
+    }
 });
+
+// Helper functions for email and phone validation
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function isValidPhone(phone) {
+    return /^[0-9]{10}$/.test(phone);
+}
 </script>
 </body>
 </html>

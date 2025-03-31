@@ -2,9 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://manasyati.com/</loc>
-        <lastmod>2024-01-09</lastmod>
+        <lastmod>2024-03-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-    <!-- Add more URLs for other pages -->
+    <url>
+        <loc>https://manasyati.com/About%20Manasyati%20Engineering.html</loc>
+        <lastmod>2024-03-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://manasyati.com/Service%20Details%20-%20Manasyati%20Engineering.html</loc>
+        <lastmod>2024-03-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://manasyati.com/Projects%20-%20Manasyati%20Engineering%20Services.html</loc>
+        <lastmod>2024-03-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://manasyati.com/Industries%20Manasyati%20Engineering%20Services.html</loc>
+        <lastmod>2024-03-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://manasyati.com/Contact%20Us%20-%20Manasyati%20Engineering%20Services.html</loc>
+        <lastmod>2024-03-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://manasyati.com/Public%20Health%20Engineering%20Services%20-%20Manasyati%20Engineering.html</loc>
+        <lastmod>2024-03-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://manasyati.com/Fire%20Safety%20Engineering%20Services%20-%20Manasyati%20Engineering.html</loc>
+        <lastmod>2024-03-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://manasyati.com/Life%20Safety%20%26%20Security%20-%20Manasyati%20Engineering%20Services.html</loc>
+        <lastmod>2024-03-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://manasyati.com/Electrical%20Engineering%20-%20Manasyati%20Engineering%20Services.html</loc>
+        <lastmod>2024-03-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://manasyati.com/Communication%20Systems%20-%20Manasyati%20Engineering%20Services.html</loc>
+        <lastmod>2024-03-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://manasyati.com/HVAC%20%26%20IBMS%20-%20Manasyati%20Engineering%20Services.html</loc>
+        <lastmod>2024-03-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://manasyati.com/Allied%20Services%20-%20Manasyati%20Engineering%20Services.html</loc>
+        <lastmod>2024-03-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
