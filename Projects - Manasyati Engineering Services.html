@@ -111,6 +111,218 @@
           box-shadow: 0 0 10px #673AB7, 0 0 20px #FFD700, 0 0 30px #2E7D32;
         }
       }
+
+      /* Project cards and image display improvements */
+      .project-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 1.5rem;
+      }
+      
+      .project-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        background-color: white;
+      }
+      
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      
+      .project-image-container {
+        position: relative;
+        width: 100%;
+        padding-top: 66.67%; /* 3:2 aspect ratio */
+        overflow: hidden;
+      }
+      
+      .project-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      
+      .project-card:hover .project-image {
+        transform: scale(1.05);
+      }
+      
+      .project-image-loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f3f4f6;
+      }
+      
+      .project-image-fallback {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(135deg, #e5e7eb 25%, #f3f4f6 25%, #f3f4f6 50%, #e5e7eb 50%, #e5e7eb 75%, #f3f4f6 75%);
+        background-size: 20px 20px;
+        color: #6b7280;
+        font-size: 1.5rem;
+      }
+
+      .project-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+      }
+
+      .project-category {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.025em;
+      }
+
+      .project-category.commercial {
+        background-color: #dbeafe;
+        color: #1e40af;
+      }
+
+      .project-category.residential {
+        background-color: #ede9fe;
+        color: #5b21b6;
+      }
+
+      .project-category.healthcare {
+        background-color: #dcfce7;
+        color: #166534;
+      }
+
+      .project-category.industrial {
+        background-color: #fff7ed;
+        color: #9a3412;
+      }
+
+      .project-category.hotel {
+        background-color: #fef3c7;
+        color: #92400e;
+      }
+
+      .project-category.assembly {
+        background-color: #fce7f3;
+        color: #9d174d;
+      }
+
+      .project-status {
+        display: flex;
+        align-items: center;
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+
+      .project-status.ongoing {
+        color: #2563eb;
+      }
+
+      .project-status.completed {
+        color: #059669;
+      }
+
+      .project-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-description {
+        color: #4b5563;
+        margin-bottom: 1rem;
+        flex-grow: 1;
+      }
+
+      .project-details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .project-detail-label {
+        font-size: 0.75rem;
+        color: #6b7280;
+        display: block;
+      }
+
+      .project-detail-value {
+        font-weight: 600;
+      }
+
+      @media (max-width: 1024px) {
+        .project-gallery {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .project-gallery {
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .project-gallery {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Loading animation */
+      .loading-pulse {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .loading-pulse div {
+        position: absolute;
+        border: 4px solid #1e40af;
+        opacity: 1;
+        border-radius: 50%;
+        animation: loading-pulse 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+      .loading-pulse div:nth-child(2) {
+        animation-delay: -0.5s;
+      }
+      @keyframes loading-pulse {
+        0% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+        100% {
+          top: 0px;
+          left: 0px;
+          width: 72px;
+          height: 72px;
+          opacity: 0;
+        }
+      }
     </style>
   </head>
   <body class="bg-white font-['Open_Sans']">
@@ -278,132 +490,148 @@
 
       <section class="py-12 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
-            <div class="flex space-x-2">
-              <button
-                class="project-filter active px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
-              >
-                All Projects
-              </button>
-              <button
-                class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
-              >
-                Commercial
-              </button>
-              <button
-                class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
-              >
-                Healthcare
-              </button>
-              <button
-                class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
-              >
-                Residential
-              </button>
-              <button
-                class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
-              >
-                Industrial
-              </button>
-              <button
-                class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
-              >
-                Hotel
-              </button>
-              <!-- Add new Assembly category button -->
-              <button
-                class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap"
-              >
-                Assembly
-              </button>
+          <!-- Filter and search controls -->
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+            <div class="flex flex-wrap gap-2">
+              <button class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap bg-primary text-white">All</button>
+              <button class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap">Commercial</button>
+              <button class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap">Healthcare</button>
+              <button class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap">Residential</button>
+              <button class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap">Industrial</button>
+              <button class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap">Hotel</button>
+              <button class="project-filter px-6 py-2 !rounded-full text-sm font-semibold transition-all whitespace-nowrap">Assembly</button>
             </div>
-            <div class="flex items-center space-x-4">
+            
+            <div class="flex items-center gap-4">
               <div class="relative">
-                <input
-                  type="text"
-                  placeholder="Search projects..."
-                  class="pl-10 pr-4 py-2 !rounded-full border-none bg-white shadow-sm w-64"
-                />
-                <i
-                  class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                ></i>
+                <input type="text" placeholder="Search projects..." class="pl-10 pr-4 py-2 !rounded-full border-none bg-white shadow-sm w-64" />
+                <i class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
               </div>
-              <div class="flex space-x-2">
-                <button
-                  class="w-10 h-10 flex items-center justify-center bg-white shadow-sm !rounded-full"
-                >
-                  <i class="ri-layout-grid-line text-gray-600"></i>
-                </button>
-                <button
-                  class="w-10 h-10 flex items-center justify-center bg-white shadow-sm !rounded-full"
-                >
-                  <i class="ri-list-check-2 text-gray-600"></i>
-                </button>
+              <div class="flex gap-2">
+                <button class="w-10 h-10 flex items-center justify-center bg-primary text-white shadow-sm !rounded-full"><i class="ri-layout-grid-line"></i></button>
+                <button class="w-10 h-10 flex items-center justify-center bg-white shadow-sm !rounded-full"><i class="ri-list-check-2 text-gray-600"></i></button>
               </div>
             </div>
           </div>
 
-          <div class="grid grid-cols-3 gap-8">
+          <!-- Project Gallery -->
+          <div class="project-gallery">
             <!-- Meenakshi Eco Park Tower 1 -->
-            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
-              <img src="commercial_res/MEENAKSHI ECO PARK.jpg" alt="Meenakshi Eco Park" class="w-full h-[250px] object-cover"/>
-              <div class="p-6">
-                <div class="flex items-center justify-between mb-4">
-                  <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full">Commercial</span>
-                  <span class="text-blue-600 text-sm font-semibold flex items-center">
+            <div class="project-card" data-category="commercial">
+              <div class="project-image-container">
+                <img src="commercial_res/MEENAKSHI ECO PARK.jpg" alt="Meenakshi Eco Park" class="project-image" loading="lazy" 
+                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'project-image-fallback\'><i class=\'ri-image-line\'></i></div>'">
+                <div class="project-image-loading loading-pulse">
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+              <div class="project-content">
+                <div class="flex justify-between items-center">
+                  <span class="project-category commercial">Commercial</span>
+                  <span class="project-status ongoing">
                     <i class="ri-time-line mr-1"></i>Ongoing
                   </span>
                 </div>
-                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Meenakshi Eco Park Tower 1</h3>
-                <p class="text-gray-600 mb-4">3 Basements + Ground + 24 floors commercial complex with PHE & Fire services spanning 28.76 lakh sq ft</p>
-                <div class="grid grid-cols-2 gap-4 mb-6">
-                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Meenakshi Builders</p></div>
-                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Chakrapani & Sons</p></div>
-                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
-                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">28.76 Lakh SFT</p></div>
+                <h3 class="project-title">Meenakshi Eco Park Tower 1</h3>
+                <p class="project-description">3 Basements + Ground + 24 floors commercial complex with PHE & Fire services spanning 28.76 lakh sq ft</p>
+                <div class="project-details">
+                  <div>
+                    <span class="project-detail-label">Client</span>
+                    <p class="project-detail-value">Meenakshi Builders</p>
+                  </div>
+                  <div>
+                    <span class="project-detail-label">Architect</span>
+                    <p class="project-detail-value">Chakrapani & Sons</p>
+                  </div>
+                  <div>
+                    <span class="project-detail-label">Location</span>
+                    <p class="project-detail-value">Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="project-detail-label">Area</span>
+                    <p class="project-detail-value">28.76 Lakh SFT</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <!-- Sangisetti Commercial Building -->
-            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
-              <img src="commercial_res/Commerical Building Sangeetha.jpg" alt="Commercial Building Sangisetti" class="w-full h-[250px] object-cover"/>
-              <div class="p-6">
-                <div class="flex items-center justify-between mb-4">
-                  <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full">Commercial</span>
-                  <span class="text-blue-600 text-sm font-semibold flex items-center">
+            <div class="project-card" data-category="commercial">
+              <div class="project-image-container">
+                <img src="commercial_res/Commerical Building Sangeetha.jpg" alt="Commercial Building Sangisetti" class="project-image" loading="lazy" 
+                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'project-image-fallback\'><i class=\'ri-image-line\'></i></div>'">
+                <div class="project-image-loading loading-pulse">
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+              <div class="project-content">
+                <div class="flex justify-between items-center">
+                  <span class="project-category commercial">Commercial</span>
+                  <span class="project-status ongoing">
                     <i class="ri-time-line mr-1"></i>Ongoing
                   </span>
                 </div>
-                <h3 class="text-xl font-['Roboto'] font-bold mb-2">Commercial Building (Sangisetti)</h3>
-                <p class="text-gray-600 mb-4">1B + G + 5 floors commercial complex with comprehensive MEP services spanning 1 lakh sq ft</p>
-                <div class="grid grid-cols-2 gap-4 mb-6">
-                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Mr. Sangisetti</p></div>
-                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Deepa Architect</p></div>
-                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Hyderabad</p></div>
-                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">1 Lakh SFT</p></div>
+                <h3 class="project-title">Commercial Building (Sangisetti)</h3>
+                <p class="project-description">1B + G + 5 floors commercial complex with comprehensive MEP services spanning 1 lakh sq ft</p>
+                <div class="project-details">
+                  <div>
+                    <span class="project-detail-label">Client</span>
+                    <p class="project-detail-value">Mr. Sangisetti</p>
+                  </div>
+                  <div>
+                    <span class="project-detail-label">Architect</span>
+                    <p class="project-detail-value">Deepa Architect</p>
+                  </div>
+                  <div>
+                    <span class="project-detail-label">Location</span>
+                    <p class="project-detail-value">Hyderabad</p>
+                  </div>
+                  <div>
+                    <span class="project-detail-label">Area</span>
+                    <p class="project-detail-value">1 Lakh SFT</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <!-- GMR Commercial Building -->
-            <div class="project-card bg-white !rounded-lg overflow-hidden shadow-lg transition duration-300">
-              <img src="commercial_res/GMR.jpg" alt="GMR Commercial Building" class="w-full h-[250px] object-cover"/>
-              <div class="p-6">
-                <div class="flex items-center justify-between mb-4">
-                  <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 !rounded-full">Commercial</span>
-                  <span class="text-blue-600 text-sm font-semibold flex items-center">
-                    <i class="ri-time-line mr-1"></i>
-                    Ongoing
+            <div class="project-card" data-category="commercial">
+              <div class="project-image-container">
+                <img src="commercial_res/GMR.jpg" alt="GMR Commercial Building" class="project-image" loading="lazy" 
+                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'project-image-fallback\'><i class=\'ri-image-line\'></i></div>'">
+                <div class="project-image-loading loading-pulse">
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+              <div class="project-content">
+                <div class="flex justify-between items-center">
+                  <span class="project-category commercial">Commercial</span>
+                  <span class="project-status ongoing">
+                    <i class="ri-time-line mr-1"></i>Ongoing
                   </span>
                 </div>
-                <h3 class="text-xl font-['Roboto'] font-bold mb-2">GMR Commercial Building</h3>
-                <p class="text-gray-600 mb-4">1B + G + 5 floors commercial complex with comprehensive MEP services spanning 1 lakh sq ft</p>
-                <div class="grid grid-cols-2 gap-4 mb-6">
-                  <div><span class="text-gray-500 text-sm">Client</span><p class="font-semibold">Mr. G M Reddy</p></div>
-                  <div><span class="text-gray-500 text-sm">Architect</span><p class="font-semibold">Aleven Concepts Architect</p></div>
-                  <div><span class="text-gray-500 text-sm">Location</span><p class="font-semibold">Ananthapuram</p></div>
-                  <div><span class="text-gray-500 text-sm">Area</span><p class="font-semibold">1 Lakh SFT</p></div>
+                <h3 class="project-title">GMR Commercial Building</h3>
+                <p class="project-description">1B + G + 5 floors commercial complex with comprehensive MEP services spanning 1 lakh sq ft</p>
+                <div class="project-details">
+                  <div>
+                    <span class="project-detail-label">Client</span>
+                    <p class="project-detail-value">Mr. G M Reddy</p>
+                  </div>
+                  <div>
+                    <span class="project-detail-label">Architect</span>
+                    <p class="project-detail-value">Aleven Concepts Architect</p>
+                  </div>
+                  <div>
+                    <span class="project-detail-label">Location</span>
+                    <p class="project-detail-value">Ananthapuram</p>
+                  </div>
+                  <div>
+                    <span class="project-detail-label">Area</span>
+                    <p class="project-detail-value">1 Lakh SFT</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1643,6 +1871,120 @@ Leading MEP design services provider in Hyderabad, bridging the gap between evol
             `;
             document.body.appendChild(successDialog);
             quoteForm.reset();
+          });
+        }
+      });
+    </script>
+
+    <script>
+      // Wait for DOM to load
+      document.addEventListener('DOMContentLoaded', function() {
+        // Handle image loading
+        const projectImages = document.querySelectorAll('.project-image');
+        
+        projectImages.forEach(function(img) {
+          img.addEventListener('load', function() {
+            // Remove loading animation when image is loaded
+            const loadingElement = this.nextElementSibling;
+            if (loadingElement && loadingElement.classList.contains('project-image-loading')) {
+              loadingElement.style.display = 'none';
+            }
+          });
+        });
+        
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.project-filter');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        // Set the initial active filter
+        document.querySelector('.project-filter').classList.add('bg-primary', 'text-white');
+        
+        // Set correct data-category attributes for all project cards
+        projectCards.forEach(function(card) {
+          // Find the category span text within the card
+          const categoryElement = card.querySelector('.project-category, [class*="bg-"][class*="-100"]');
+          if (categoryElement) {
+            let category = '';
+            
+            // Handle both new and old HTML structures
+            if (categoryElement.classList.contains('commercial')) {
+              category = 'commercial';
+            } else if (categoryElement.classList.contains('residential')) {
+              category = 'residential';
+            } else if (categoryElement.classList.contains('healthcare')) {
+              category = 'healthcare';
+            } else if (categoryElement.classList.contains('industrial')) {
+              category = 'industrial';
+            } else if (categoryElement.classList.contains('hotel')) {
+              category = 'hotel';
+            } else if (categoryElement.classList.contains('assembly')) {
+              category = 'assembly';
+            } else {
+              // Extract from old HTML structure with colored backgrounds
+              const categoryText = categoryElement.textContent.trim().toLowerCase();
+              if (categoryText.includes('commercial')) {
+                category = 'commercial';
+              } else if (categoryText.includes('residential')) {
+                category = 'residential';
+              } else if (categoryText.includes('healthcare')) {
+                category = 'healthcare';
+              } else if (categoryText.includes('industrial')) {
+                category = 'industrial';
+              } else if (categoryText.includes('hotel')) {
+                category = 'hotel';
+              } else if (categoryText.includes('assembly')) {
+                category = 'assembly';
+              }
+            }
+            
+            if (category) {
+              card.setAttribute('data-category', category);
+            }
+          }
+        });
+        
+        filterButtons.forEach(function(button) {
+          button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('bg-primary', 'text-white'));
+            
+            // Add active class to clicked button
+            this.classList.add('bg-primary', 'text-white');
+            
+            // Get category to filter
+            const filterCategory = this.textContent.trim().toLowerCase();
+            
+            // Show/hide projects based on category
+            projectCards.forEach(function(card) {
+              if (filterCategory === 'all' || filterCategory.includes(card.dataset.category)) {
+                card.style.display = '';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
+        
+        // Search functionality
+        const searchInput = document.querySelector('input[placeholder="Search projects..."]');
+        
+        if (searchInput) {
+          searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            projectCards.forEach(function(card) {
+              const projectTitle = card.querySelector('.project-title, h3')?.textContent.toLowerCase() || '';
+              const projectDescription = card.querySelector('.project-description, p')?.textContent.toLowerCase() || '';
+              const projectClient = card.querySelector('.project-detail-value, .font-semibold')?.textContent.toLowerCase() || '';
+              
+              if (projectTitle.includes(searchTerm) || 
+                  projectDescription.includes(searchTerm) || 
+                  projectClient.includes(searchTerm)) {
+                card.style.display = '';
+              } else {
+                card.style.display = 'none';
+              }
+            });
           });
         }
       });
