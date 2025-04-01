@@ -1,0 +1,178 @@
+/**
+ * Manasyati Engineering Services Website - Main CSS
+ * This file contains shared styles used across the website
+ */
+
+/* Variables */
+:root {
+  --color-primary: #1a56db;
+  --color-secondary: #7e22ce;
+  --color-tertiary: #047857;
+  --color-accent: #f97316;
+  --color-text-dark: #111827;
+  --color-text-light: #6b7280;
+  --color-bg-light: #f9fafb;
+  --color-bg-dark: #1f2937;
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 1.5rem;
+  --border-radius-full: 9999px;
+  --transition-standard: all 0.3s ease;
+  --box-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --box-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --box-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Typography */
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text-dark);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* Common Components */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  text-align: center;
+  transition: var(--transition-standard);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0f46c7;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #6617a7;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid currentColor;
+}
+
+/* Card styles */
+.card {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-md);
+  overflow: hidden;
+  transition: var(--transition-standard);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-lg);
+}
+
+/* Section styles */
+.section {
+  padding: 5rem 0;
+}
+
+.section-light {
+  background-color: var(--color-bg-light);
+}
+
+.section-dark {
+  background-color: var(--color-bg-dark);
+  color: white;
+}
+
+/* Grid layouts */
+.grid-container {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2-cols {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3-cols {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-4-cols {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Icon containers */
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: rgba(26, 86, 219, 0.1);
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease forwards;
+}
+
+.animate-scale {
+  transition: transform 0.3s ease;
+}
+
+.animate-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid-container {
+    gap: 1.5rem;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+} 

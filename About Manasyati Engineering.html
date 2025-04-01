@@ -338,201 +338,179 @@
       </section>
       <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">
-              Mission & Vision
-            </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-              Driving innovation and excellence in engineering services
-            </p>
-          </div>
-          <div class="grid grid-cols-2 gap-8">
-            <div class="bg-white overflow-hidden !rounded-lg shadow-lg flex">
-              <div class="w-1/2">
-                <img src="img_res/ourmission.webp" alt="Our Mission" class="w-full h-full object-cover">
-              </div>
-              <div class="w-1/2 p-8">
-                <h3 class="text-2xl font-['Roboto'] font-bold text-primary mb-4">
-                  Our Mission
-                </h3>
-                <p class="text-gray-600">
-                  To deliver innovative and sustainable MEP solutions that exceed
-                  client expectations while maintaining the highest standards of
-                  quality, safety, and environmental responsibility. We strive to
-                  be at the forefront of technological advancement in engineering
-                  services.
-                </p>
-              </div>
-            </div>
-            <div class="bg-white overflow-hidden !rounded-lg shadow-lg flex">
-              <div class="w-1/2 p-8">
-                <h3 class="text-2xl font-['Roboto'] font-bold text-primary mb-4">Our Vision</h3>
-                <p class="text-gray-600">
-                  To be recognized as the leading MEP engineering services
-                  provider in India, known for our technical excellence,
-                  innovative solutions, and commitment to sustainable development.
-                  We aim to shape the future of engineering through continuous
-                  innovation and expertise.
-                </p>
-              </div>
-              <div class="w-1/2">
-                <img src="img_res/ourvission.webp" alt="Our Vision" class="w-full h-full object-cover">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-20 bg-gray-50 overflow-hidden">
-        <div class="container mx-auto px-4">
           <div class="text-center mb-16">
-            <h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">
+            <h2 class="text-4xl font-['Roboto'] font-bold text-primary mb-4">
               Our Project Delivery Approach
             </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-              A comprehensive methodology ensuring excellence at every step
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+              A comprehensive methodology ensuring excellence at every stage of your project
             </p>
           </div>
 
+          <!-- Interactive Timeline Process -->
           <div class="relative max-w-6xl mx-auto">
-            <!-- Interactive Process Flow -->
-            <div class="process-flow grid grid-cols-1 md:grid-cols-3 gap-8">
-              <!-- Planning Phase -->
-              <div class="process-phase bg-white rounded-xl shadow-lg p-6 transform hover:-translate-y-2 transition-all duration-300">
-                <div class="phase-header flex items-center mb-6">
-                  <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">1</div>
-                  <h3 class="text-xl font-bold text-primary">Planning Phase</h3>
+            <!-- Main Process Timeline -->
+            <div class="hidden lg:block absolute top-32 left-0 right-0 h-4 bg-gradient-to-r from-primary via-secondary to-tertiary rounded-full z-0"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+              <!-- Phase 1: Initial Consultation -->
+              <div class="process-card bg-white p-8 rounded-3xl shadow-xl transform hover:-translate-y-3 transition-all duration-500 relative z-10">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white text-xl font-bold border-4 border-white">1</div>
+                <div class="mb-6 pt-4">
+                  <h3 class="text-xl font-bold text-primary mb-4 text-center">Initial Consultation</h3>
+                  <p class="text-gray-600 mb-4 text-center">Understanding your vision and requirements</p>
                 </div>
                 <div class="space-y-4">
-                  <div class="step-item p-4 bg-primary bg-opacity-5 rounded-lg border-l-4 border-primary">
-                    <div class="flex items-center mb-2">
-                      <i class="ri-file-list-3-line text-primary text-xl mr-2"></i>
-                      <h4 class="font-bold">Initial Review</h4>
-                    </div>
-                    <p class="text-sm text-gray-600">Comprehensive analysis of architectural plans and requirements</p>
+                  <div class="flex items-center p-3 bg-primary bg-opacity-5 rounded-xl border-l-4 border-primary">
+                    <i class="ri-user-voice-line text-primary text-xl mr-3"></i>
+                    <span class="text-gray-700">Client Interview</span>
                   </div>
-                  <div class="step-connector flex justify-center py-2">
-                    <i class="ri-arrow-down-s-line text-primary text-2xl"></i>
-                  </div>
-                  <div class="step-item p-4 bg-primary bg-opacity-5 rounded-lg border-l-4 border-primary">
-                    <div class="flex items-center mb-2">
-                      <i class="ri-discuss-line text-primary text-xl mr-2"></i>
-                      <h4 class="font-bold">Client Consultation</h4>
-                    </div>
-                    <p class="text-sm text-gray-600">Detailed requirements gathering and project scope definition</p>
+                  <div class="flex items-center p-3 bg-primary bg-opacity-5 rounded-xl border-l-4 border-primary">
+                    <i class="ri-file-list-3-line text-primary text-xl mr-3"></i>
+                    <span class="text-gray-700">Requirement Analysis</span>
                   </div>
                 </div>
               </div>
-
-              <!-- Design Phase -->
-              <div class="process-phase bg-white rounded-xl shadow-lg p-6 transform hover:-translate-y-2 transition-all duration-300">
-                <div class="phase-header flex items-center mb-6">
-                  <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">2</div>
-                  <h3 class="text-xl font-bold text-secondary">Design Phase</h3>
+              
+              <!-- Phase 2: Planning & Strategy -->
+              <div class="process-card bg-white p-8 rounded-3xl shadow-xl transform hover:-translate-y-3 transition-all duration-500 relative z-10 lg:mt-16">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white text-xl font-bold border-4 border-white">2</div>
+                <div class="mb-6 pt-4">
+                  <h3 class="text-xl font-bold text-secondary mb-4 text-center">Planning & Strategy</h3>
+                  <p class="text-gray-600 mb-4 text-center">Creating the roadmap for success</p>
                 </div>
                 <div class="space-y-4">
-                  <div class="step-item p-4 bg-secondary bg-opacity-5 rounded-lg border-l-4 border-secondary">
-                    <div class="flex items-center mb-2">
-                      <i class="ri-draft-line text-secondary text-xl mr-2"></i>
-                      <h4 class="font-bold">Concept Development</h4>
-                    </div>
-                    <p class="text-sm text-gray-600">Initial design strategy and technical specifications</p>
+                  <div class="flex items-center p-3 bg-secondary bg-opacity-5 rounded-xl border-l-4 border-secondary">
+                    <i class="ri-calendar-check-line text-secondary text-xl mr-3"></i>
+                    <span class="text-gray-700">Timeline Development</span>
                   </div>
-                  <div class="step-connector flex justify-center py-2">
-                    <i class="ri-arrow-down-s-line text-secondary text-2xl"></i>
-                  </div>
-                  <div class="step-item p-4 bg-secondary bg-opacity-5 rounded-lg border-l-4 border-secondary">
-                    <div class="flex items-center mb-2">
-                      <i class="ri-tools-line text-secondary text-xl mr-2"></i>
-                      <h4 class="font-bold">Detailed Engineering</h4>
-                    </div>
-                    <p class="text-sm text-gray-600">Comprehensive technical documentation and drawings</p>
+                  <div class="flex items-center p-3 bg-secondary bg-opacity-5 rounded-xl border-l-4 border-secondary">
+                    <i class="ri-funds-line text-secondary text-xl mr-3"></i>
+                    <span class="text-gray-700">Resource Allocation</span>
                   </div>
                 </div>
               </div>
-
-              <!-- Execution Phase -->
-              <div class="process-phase bg-white rounded-xl shadow-lg p-6 transform hover:-translate-y-2 transition-all duration-300">
-                <div class="phase-header flex items-center mb-6">
-                  <div class="w-12 h-12 bg-tertiary rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">3</div>
-                  <h3 class="text-xl font-bold text-tertiary">Execution Phase</h3>
+              
+              <!-- Phase 3: Design Development -->
+              <div class="process-card bg-white p-8 rounded-3xl shadow-xl transform hover:-translate-y-3 transition-all duration-500 relative z-10">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-tertiary rounded-full flex items-center justify-center text-white text-xl font-bold border-4 border-white">3</div>
+                <div class="mb-6 pt-4">
+                  <h3 class="text-xl font-bold text-tertiary mb-4 text-center">Design Development</h3>
+                  <p class="text-gray-600 mb-4 text-center">Engineering solutions that exceed expectations</p>
                 </div>
                 <div class="space-y-4">
-                  <div class="step-item p-4 bg-tertiary bg-opacity-5 rounded-lg border-l-4 border-tertiary">
-                    <div class="flex items-center mb-2">
-                      <i class="ri-building-line text-tertiary text-xl mr-2"></i>
-                      <h4 class="font-bold">Implementation</h4>
-                    </div>
-                    <p class="text-sm text-gray-600">Project execution and site supervision</p>
+                  <div class="flex items-center p-3 bg-tertiary bg-opacity-5 rounded-xl border-l-4 border-tertiary">
+                    <i class="ri-layout-2-line text-tertiary text-xl mr-3"></i>
+                    <span class="text-gray-700">Conceptual Design</span>
                   </div>
-                  <div class="step-connector flex justify-center py-2">
-                    <i class="ri-arrow-down-s-line text-tertiary text-2xl"></i>
+                  <div class="flex items-center p-3 bg-tertiary bg-opacity-5 rounded-xl border-l-4 border-tertiary">
+                    <i class="ri-tools-line text-tertiary text-xl mr-3"></i>
+                    <span class="text-gray-700">Technical Specifications</span>
                   </div>
-                  <div class="step-item p-4 bg-tertiary bg-opacity-5 rounded-lg border-l-4 border-tertiary">
-                    <div class="flex items-center mb-2">
-                      <i class="ri-checkbox-circle-line text-tertiary text-xl mr-2"></i>
-                      <h4 class="font-bold">Commissioning</h4>
-                    </div>
-                    <p class="text-sm text-gray-600">Final testing, validation, and project handover</p>
+                </div>
+              </div>
+              
+              <!-- Phase 4: Implementation -->
+              <div class="process-card bg-white p-8 rounded-3xl shadow-xl transform hover:-translate-y-3 transition-all duration-500 relative z-10 lg:mt-16">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white text-xl font-bold border-4 border-white">4</div>
+                <div class="mb-6 pt-4">
+                  <h3 class="text-xl font-bold text-accent mb-4 text-center">Implementation</h3>
+                  <p class="text-gray-600 mb-4 text-center">Bringing designs to life with precision</p>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-center p-3 bg-accent bg-opacity-5 rounded-xl border-l-4 border-accent">
+                    <i class="ri-building-line text-accent text-xl mr-3"></i>
+                    <span class="text-gray-700">Site Coordination</span>
+                  </div>
+                  <div class="flex items-center p-3 bg-accent bg-opacity-5 rounded-xl border-l-4 border-accent">
+                    <i class="ri-hammer-line text-accent text-xl mr-3"></i>
+                    <span class="text-gray-700">Material Selection</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Phase 5: Handover & Support -->
+              <div class="process-card bg-white p-8 rounded-3xl shadow-xl transform hover:-translate-y-3 transition-all duration-500 relative z-10">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white text-xl font-bold border-4 border-white">5</div>
+                <div class="mb-6 pt-4">
+                  <h3 class="text-xl font-bold text-primary mb-4 text-center">Handover & Support</h3>
+                  <p class="text-gray-600 mb-4 text-center">Ensuring long-term success and satisfaction</p>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-center p-3 bg-primary bg-opacity-5 rounded-xl border-l-4 border-primary">
+                    <i class="ri-file-paper-2-line text-primary text-xl mr-3"></i>
+                    <span class="text-gray-700">Documentation</span>
+                  </div>
+                  <div class="flex items-center p-3 bg-primary bg-opacity-5 rounded-xl border-l-4 border-primary">
+                    <i class="ri-customer-service-2-line text-primary text-xl mr-3"></i>
+                    <span class="text-gray-700">Ongoing Support</span>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- Connecting Lines for Desktop -->
-            <div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-tertiary -translate-y-1/2 -z-10"></div>
             
-            <!-- Key Benefits -->
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div class="benefit-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
-                  <i class="ri-timer-line text-primary text-2xl"></i>
-                </div>
-                <h4 class="font-bold mb-2">Time-Efficient</h4>
-                <p class="text-sm text-gray-600">Optimized process flow ensuring timely delivery</p>
+            <!-- Our Advantages -->
+            <div class="mt-24 bg-white rounded-3xl shadow-lg overflow-hidden">
+              <div class="bg-gradient-to-r from-primary to-tertiary p-6">
+                <h3 class="text-2xl font-bold text-white text-center">Why Our Approach Works</h3>
               </div>
-              <div class="benefit-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div class="w-12 h-12 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
-                  <i class="ri-shield-check-line text-secondary text-2xl"></i>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8">
+                <div class="advantage-card flex flex-col items-center text-center">
+                  <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+                    <i class="ri-time-line text-3xl text-primary"></i>
+                  </div>
+                  <h4 class="text-lg font-bold mb-2">Time Efficiency</h4>
+                  <p class="text-gray-600">Our streamlined process reduces project timelines by up to 30%</p>
                 </div>
-                <h4 class="font-bold mb-2">Quality Assured</h4>
-                <p class="text-sm text-gray-600">Rigorous quality checks at every stage</p>
-              </div>
-              <div class="benefit-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div class="w-12 h-12 bg-tertiary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
-                  <i class="ri-team-line text-tertiary text-2xl"></i>
+                
+                <div class="advantage-card flex flex-col items-center text-center">
+                  <div class="w-16 h-16 flex items-center justify-center bg-secondary bg-opacity-10 rounded-full mb-4">
+                    <i class="ri-coin-line text-3xl text-secondary"></i>
+                  </div>
+                  <h4 class="text-lg font-bold mb-2">Cost Effectiveness</h4>
+                  <p class="text-gray-600">Smart resource allocation minimizes waste and maximizes value</p>
                 </div>
-                <h4 class="font-bold mb-2">Collaborative</h4>
-                <p class="text-sm text-gray-600">Continuous client engagement throughout the process</p>
-              </div>
-              <div class="benefit-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div class="w-12 h-12 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-4">
-                  <i class="ri-space-ship-line text-accent text-2xl"></i>
+                
+                <div class="advantage-card flex flex-col items-center text-center">
+                  <div class="w-16 h-16 flex items-center justify-center bg-tertiary bg-opacity-10 rounded-full mb-4">
+                    <i class="ri-shield-check-line text-3xl text-tertiary"></i>
+                  </div>
+                  <h4 class="text-lg font-bold mb-2">Quality Assurance</h4>
+                  <p class="text-gray-600">Rigorous testing and validation at every project milestone</p>
                 </div>
-                <h4 class="font-bold mb-2">Future-Ready</h4>
-                <p class="text-sm text-gray-600">Innovative solutions for long-term sustainability</p>
+                
+                <div class="advantage-card flex flex-col items-center text-center">
+                  <div class="w-16 h-16 flex items-center justify-center bg-accent bg-opacity-10 rounded-full mb-4">
+                    <i class="ri-group-line text-3xl text-accent"></i>
+                  </div>
+                  <h4 class="text-lg font-bold mb-2">Client Involvement</h4>
+                  <p class="text-gray-600">Transparent communication and collaborative decision-making</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <style>
-          .process-phase {
-            position: relative;
-            z-index: 1;
+          .process-card {
+            transition: all 0.5s ease;
           }
           
-          .step-item {
+          .process-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+          }
+          
+          .advantage-card {
             transition: all 0.3s ease;
           }
           
-          .step-item:hover {
-            transform: translateX(10px);
+          .advantage-card:hover {
+            transform: translateY(-10px);
           }
 
-          @media (max-width: 768px) {
-            .process-phase {
-              max-width: 400px;
-              margin: 0 auto;
+          @media (max-width: 1024px) {
+            .process-card {
+              margin-top: 2rem !important;
             }
           }
         </style>
@@ -665,78 +643,164 @@
       </section>
       <section class="py-20">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-['Roboto'] font-bold text-primary mb-4">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-['Roboto'] font-bold text-primary mb-4">
               Company Milestones
             </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
               Our journey of growth and achievement
             </p>
           </div>
-          <div class="relative pl-8">
-            <div class="space-y-12">
-              <div class="timeline-item relative pl-8 pb-8">
-                <div
-                  class="absolute left-0 top-0 w-8 h-8 bg-primary !rounded-full flex items-center justify-center"
-                >
-                  <div class="w-4 h-4 bg-white !rounded-full"></div>
+          
+          <!-- New Modern Timeline Design -->
+          <div class="relative">
+            <!-- Progress Line -->
+            <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-tertiary transform -translate-x-1/2"></div>
+            
+            <div class="space-y-16 md:space-y-0 relative">
+              <!-- May 2024 -->
+              <div class="md:flex items-center md:space-x-12 mb-24">
+                <div class="md:w-1/2 md:text-right order-1 milestone-card">
+                  <div class="bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl relative">
+                    <div class="absolute -top-6 right-8 w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
+                    <h3 class="text-2xl font-['Roboto'] font-bold text-primary mb-4">May 2024</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                      Company founded with a vision to transform MEP engineering services in Hyderabad and beyond
+                    </p>
+                    <div class="mt-6 flex justify-start">
+                      <span class="px-4 py-2 bg-primary bg-opacity-10 text-primary rounded-full text-sm font-semibold">Foundation</span>
+                    </div>
+                  </div>
                 </div>
-                <h3 class="text-xl font-['Roboto'] font-bold mb-2">May 2024</h3>
-                <p class="text-gray-600">
-                  Company founded with a vision to transform MEP engineering services
-                </p>
-              </div>
-              <div class="timeline-item relative pl-8 pb-8">
-                <div
-                  class="absolute left-0 top-0 w-8 h-8 bg-primary !rounded-full flex items-center justify-center"
-                >
-                  <div class="w-4 h-4 bg-white !rounded-full"></div>
+                <div class="hidden md:block w-12 relative z-10 order-2">
+                  <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center border-4 border-white">
+                    <i class="ri-building-line text-white text-xl"></i>
+                  </div>
                 </div>
-                <h3 class="text-xl font-['Roboto'] font-bold mb-2">June 2024</h3>
-                <p class="text-gray-600">
-                  Awarded prestigious 5 Million SFT project
-                </p>
-              </div>
-              
-              <div class="timeline-item relative pl-8 pb-8">
-                <div
-                  class="absolute left-0 top-0 w-8 h-8 bg-primary !rounded-full flex items-center justify-center"
-                >
-                  <div class="w-4 h-4 bg-white !rounded-full"></div>
-                </div>
-                <h3 class="text-xl font-['Roboto'] font-bold mb-2">August 2024</h3>
-                <p class="text-gray-600">
-                  Awarded multiple projects totaling 10 Million SFT
-                </p>
+                <div class="md:w-1/2 invisible md:visible order-3"></div>
               </div>
               
-              <div class="timeline-item relative pl-8 pb-8">
-                <div
-                  class="absolute left-0 top-0 w-8 h-8 bg-primary !rounded-full flex items-center justify-center"
-                >
-                  <div class="w-4 h-4 bg-white !rounded-full"></div>
+              <!-- June 2024 -->
+              <div class="md:flex items-center md:space-x-12 mb-24">
+                <div class="md:w-1/2 invisible md:visible order-1"></div>
+                <div class="hidden md:block w-12 relative z-10 order-2">
+                  <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center border-4 border-white">
+                    <i class="ri-award-line text-white text-xl"></i>
+                  </div>
                 </div>
-                <h3 class="text-xl font-['Roboto'] font-bold mb-2">December 2024</h3>
-                <p class="text-gray-600">
-                  Achieved milestone of 30 Million SFT in awarded projects
-                </p>
+                <div class="md:w-1/2 order-3 milestone-card">
+                  <div class="bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl relative">
+                    <div class="absolute -top-6 left-8 w-16 h-16 bg-gradient-to-br from-secondary to-tertiary rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
+                    <h3 class="text-2xl font-['Roboto'] font-bold text-secondary mb-4">June 2024</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                      Awarded first prestigious 5 Million SFT project, marking our entry into large-scale MEP engineering
+                    </p>
+                    <div class="mt-6 flex justify-start">
+                      <span class="px-4 py-2 bg-secondary bg-opacity-10 text-secondary rounded-full text-sm font-semibold">First Major Project</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="timeline-item relative pl-8">
-                <div
-                  class="absolute left-0 top-0 w-8 h-8 bg-primary !rounded-full flex items-center justify-center"
-                >
-                  <div class="w-4 h-4 bg-white !rounded-full"></div>
+              
+              <!-- August 2024 -->
+              <div class="md:flex items-center md:space-x-12 mb-24">
+                <div class="md:w-1/2 md:text-right order-1 milestone-card">
+                  <div class="bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl relative">
+                    <div class="absolute -top-6 right-8 w-16 h-16 bg-gradient-to-br from-tertiary to-primary rounded-full flex items-center justify-center text-white text-2xl font-bold">3</div>
+                    <h3 class="text-2xl font-['Roboto'] font-bold text-tertiary mb-4">August 2024</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                      Awarded multiple projects totaling 10 Million SFT, demonstrating industry trust in our expertise
+                    </p>
+                    <div class="mt-6 flex justify-end">
+                      <span class="px-4 py-2 bg-tertiary bg-opacity-10 text-tertiary rounded-full text-sm font-semibold">Rapid Growth</span>
+                    </div>
+                  </div>
                 </div>
-                <h3 class="text-xl font-['Roboto'] font-bold mb-2">
-                  January 2025
-                </h3>
-                <p class="text-gray-600">
-                  Expanded team to 15+ engineering professionals
-                </p>
+                <div class="hidden md:block w-12 relative z-10 order-2">
+                  <div class="w-12 h-12 bg-tertiary rounded-full flex items-center justify-center border-4 border-white">
+                    <i class="ri-stack-line text-white text-xl"></i>
+                  </div>
+                </div>
+                <div class="md:w-1/2 invisible md:visible order-3"></div>
+              </div>
+              
+              <!-- December 2024 -->
+              <div class="md:flex items-center md:space-x-12 mb-24">
+                <div class="md:w-1/2 invisible md:visible order-1"></div>
+                <div class="hidden md:block w-12 relative z-10 order-2">
+                  <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center border-4 border-white">
+                    <i class="ri-medal-line text-white text-xl"></i>
+                  </div>
+                </div>
+                <div class="md:w-1/2 order-3 milestone-card">
+                  <div class="bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl relative">
+                    <div class="absolute -top-6 left-8 w-16 h-16 bg-gradient-to-br from-accent to-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold">4</div>
+                    <h3 class="text-2xl font-['Roboto'] font-bold text-accent mb-4">December 2024</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                      Achieved milestone of 30 Million SFT in awarded projects, establishing ourselves as a major MEP player
+                    </p>
+                    <div class="mt-6 flex justify-start">
+                      <span class="px-4 py-2 bg-accent bg-opacity-10 text-accent rounded-full text-sm font-semibold">Market Leadership</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- January 2025 -->
+              <div class="md:flex items-center md:space-x-12">
+                <div class="md:w-1/2 md:text-right order-1 milestone-card">
+                  <div class="bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl relative">
+                    <div class="absolute -top-6 right-8 w-16 h-16 bg-gradient-to-br from-primary to-tertiary rounded-full flex items-center justify-center text-white text-2xl font-bold">5</div>
+                    <h3 class="text-2xl font-['Roboto'] font-bold text-primary mb-4">January 2025</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                      Expanded team to 15+ engineering professionals, bringing diverse expertise to serve our growing client base
+                    </p>
+                    <div class="mt-6 flex justify-end">
+                      <span class="px-4 py-2 bg-primary bg-opacity-10 text-primary rounded-full text-sm font-semibold">Team Expansion</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden md:block w-12 relative z-10 order-2">
+                  <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center border-4 border-white">
+                    <i class="ri-team-line text-white text-xl"></i>
+                  </div>
+                </div>
+                <div class="md:w-1/2 invisible md:visible order-3"></div>
               </div>
             </div>
           </div>
         </div>
+        
+        <style>
+          .milestone-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+          }
+          
+          .milestone-card:nth-child(1) { animation-delay: 0.2s; }
+          .milestone-card:nth-child(3) { animation-delay: 0.4s; }
+          .milestone-card:nth-child(5) { animation-delay: 0.6s; }
+          .milestone-card:nth-child(7) { animation-delay: 0.8s; }
+          .milestone-card:nth-child(9) { animation-delay: 1s; }
+          
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          
+          @media (max-width: 768px) {
+            .milestone-card {
+              margin-bottom: 3rem;
+            }
+          }
+        </style>
       </section>
       <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
