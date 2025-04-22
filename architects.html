@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Partner Architects in India - Manasyati Engineering Services</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Collaborate with Manasyati's network of 29+ trusted architect partners including Aleven Concepts, Anagha Architects, and Architectural Dialogue. Expert architectural design services across India.">
+    <meta name="keywords" content="architects in India, architectural firms, Aleven Concepts, Anagha Architects, Architectural Dialogue, Arkah Studios, engineering partners, architectural design, building design, commercial architects">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Top Partner Architects in India - Manasyati Engineering Services">
+    <meta property="og:description" content="Network of 29+ professional architect partners collaborating with Manasyati Engineering for comprehensive building design solutions across India">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://manasyati.com/architects.html">
+    <meta property="og:image" content="https://manasyati.com/ARCHITECTS/ARCHITECTURAL DIALOGUE.png">
+    <meta property="og:site_name" content="Manasyati Engineering">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Top Partner Architects in India - Manasyati Engineering">
+    <meta name="twitter:description" content="Network of 29+ professional architect partners collaborating with Manasyati Engineering">
+    <meta name="twitter:image" content="https://manasyati.com/ARCHITECTS/ARCHITECTURAL DIALOGUE.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://manasyati.com/architects.html">
+    
+    <!-- Include your existing head template -->
+    <script src="document.js" defer></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/img_res/favicon.ico" type="image/x-icon">
+    
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Manasyati Engineering Services - Partner Architects",
+      "url": "https://manasyati.com/architects.html",
+      "logo": "https://manasyati.com/img_res/LOGO.png",
+      "description": "Network of professional architect partners collaborating with Manasyati Engineering Services across India",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "India"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Partner Architects",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Architectural Design Services",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Partner Architect Network"
+              }
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://manasyati.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Partner Architects",
+          "item": "https://manasyati.com/architects.html"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- CSS for improved design -->
+    <style>
+        .architect-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .architect-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .architect-logo {
+            aspect-ratio: 16/9;
+            object-fit: contain;
+        }
+        /* Breadcrumb styles */
+        .breadcrumb {
+            display: flex;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 0.25rem;
+        }
+        .breadcrumb-item {
+            margin-right: 0.5rem;
+        }
+        .breadcrumb-item:after {
+            content: '/';
+            margin-left: 0.5rem;
+        }
+        .breadcrumb-item:last-child:after {
+            content: '';
+        }
+    </style>
+    
+    <!-- Include the architect schema generator -->
+    <script src="scripts/architect-schema.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    
+    <main class="container mx-auto px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Partner Architects</li>
+            </ol>
+        </nav>
+        
+        <h1 class="text-3xl font-bold mb-3">Our Partner Architects</h1>
+        <p class="text-gray-600 mb-8">Manasyati Engineering collaborates with these top architectural firms to deliver exceptional design solutions across India.</p>
+        
+        <!-- Search and filter controls -->
+        <div class="mb-6">
+            <input type="text" id="architect-search" placeholder="Search architects..." class="px-4 py-2 border rounded-lg w-full md:w-1/3">
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="architects-grid">
+            <!-- Architect cards will be dynamically populated -->
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const architectsGrid = document.getElementById('architects-grid');
+        const searchInput = document.getElementById('architect-search');
+        
+        // Complete list of architects with more detailed data
+        const architects = [
+            { 
+                name: 'Aleven Concepts', 
+                image: 'ARCHITECTS/ALEVEN CONCEPTS.jpg',
+                specialty: 'Commercial Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'Anagha Architects', 
+                image: 'ARCHITECTS/ANAGHA ARCHITECTS.png',
+                specialty: 'Residential Design',
+                location: 'India'
+            },
+            { 
+                name: 'Architectural Dialogue', 
+                image: 'ARCHITECTS/ARCHITECTURAL DIALOGUE.png',
+                specialty: 'Urban Planning',
+                location: 'India'
+            },
+            { 
+                name: 'Arkah Studios', 
+                image: 'ARCHITECTS/ARKAH STUDIOS.jpg',
+                specialty: 'Modern Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'Aslam Architects', 
+                image: 'ARCHITECTS/ASLAM ARCHITECTS.png',
+                specialty: 'Contemporary Design',
+                location: 'India'
+            },
+            { 
+                name: 'B Design Studios', 
+                image: 'ARCHITECTS/B DESIGN STUDIOS.jpg',
+                specialty: 'Innovative Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'Bare Foot Architects', 
+                image: 'ARCHITECTS/BARE FOOT ARCHITECTS.jpg',
+                specialty: 'Sustainable Design',
+                location: 'India'
+            },
+            { 
+                name: 'BK Thati & Associates', 
+                image: 'ARCHITECTS/BK THATI & ASSOCIATES.jpg',
+                specialty: 'Institutional Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'DS Design Studio', 
+                image: 'ARCHITECTS/DS DESIGN STUDIO.png',
+                specialty: 'Interior Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'DV Arkitekt', 
+                image: 'ARCHITECTS/DV ARKITEKT.png',
+                specialty: 'Modern Design',
+                location: 'India'
+            },
+            { 
+                name: 'FHD India', 
+                image: 'ARCHITECTS/FHD INDIA.png',
+                specialty: 'Mixed-Use Development',
+                location: 'India'
+            },
+            { 
+                name: 'Fluid Grid Architects', 
+                image: 'ARCHITECTS/FLUID GRID ARCHITECTS.jpg',
+                specialty: 'Contemporary Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'Grid & Design Architects', 
+                image: 'ARCHITECTS/GRID & DESIGN ARCHITECTS.jpg',
+                specialty: 'Residential Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'GV Associates', 
+                image: 'ARCHITECTS/GV ASSOCIATES.jpg',
+                specialty: 'Commercial Projects',
+                location: 'India'
+            },
+            { 
+                name: 'Hydezign Studio', 
+                image: 'ARCHITECTS/HYDEZIGN STUDIO.jpg',
+                specialty: 'Urban Design',
+                location: 'India'
+            },
+            { 
+                name: 'Mdeepa Architects', 
+                image: 'ARCHITECTS/MDEEPA ARCHITECTS.png',
+                specialty: 'Residential Design',
+                location: 'India'
+            },
+            { 
+                name: 'MEE Architects', 
+                image: 'ARCHITECTS/MEE ARCHITECTS.webp',
+                specialty: 'Sustainable Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'R Chakra Pani and Sons', 
+                image: 'ARCHITECTS/R CHAKRA PANI AND SONS.jpg',
+                specialty: 'Traditional Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'Ravi Kumbham Architects', 
+                image: 'ARCHITECTS/RAVI KUMBHAM ARCHITECTS.jpg',
+                specialty: 'Contemporary Design',
+                location: 'India'
+            },
+            { 
+                name: 'Roots and Crafts Studio', 
+                image: 'ARCHITECTS/ROOTS AND CRAFTS STUDIO.jpg',
+                specialty: 'Eco-friendly Design',
+                location: 'India'
+            },
+            { 
+                name: 'Royal Civil Associates', 
+                image: 'ARCHITECTS/ROYAL CIVIL ASSOCIATES.png',
+                specialty: 'Civic Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'SAS Infra Interiors', 
+                image: 'ARCHITECTS/SAS INFRA INTERIORS.jpg',
+                specialty: 'Interior Design',
+                location: 'India'
+            },
+            { 
+                name: 'Shilpa Architects', 
+                image: 'ARCHITECTS/SHILPA ARCHITECTS.png',
+                specialty: 'Residential Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'SPAARCS Architects', 
+                image: 'ARCHITECTS/SPAARCS ARCHITECTS.png',
+                specialty: 'Innovative Design',
+                location: 'India'
+            },
+            { 
+                name: 'Span Associates', 
+                image: 'ARCHITECTS/SPAN ASSOCIATES.png',
+                specialty: 'Commercial Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'Squares Design Studio', 
+                image: 'ARCHITECTS/SQUARES DESIGN STUDIO.png',
+                specialty: 'Modern Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'Studio BAD', 
+                image: 'ARCHITECTS/STUDIO BAD.png',
+                specialty: 'Contemporary Design',
+                location: 'India'
+            },
+            { 
+                name: 'Tree Trendz in Design', 
+                image: 'ARCHITECTS/TREE TRENDZ IN DESIGN.jpg',
+                specialty: 'Green Architecture',
+                location: 'India'
+            },
+            { 
+                name: 'Varma Consultancy Services', 
+                image: 'ARCHITECTS/VARMA CONSULTANCY SERVICES.jpg',
+                specialty: 'Commercial Design',
+                location: 'India'
+            }
+        ];
+
+        // Function to render architects with structured microdata
+        function renderArchitects(architectsList) {
+            architectsGrid.innerHTML = '';
+            
+            architectsList.forEach(architect => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-lg shadow-md p-4 architect-card';
+                card.setAttribute('itemscope', '');
+                card.setAttribute('itemtype', 'https://schema.org/ProfessionalService');
+                
+                card.innerHTML = `
+                    <img src="${architect.image}" 
+                         alt="${architect.name} - ${architect.specialty} Firm partnered with Manasyati Engineering" 
+                         class="w-full h-48 object-contain mb-4 architect-logo"
+                         loading="lazy"
+                         itemprop="image">
+                    <h2 class="text-xl font-semibold" itemprop="name">${architect.name}</h2>
+                    <p class="text-gray-600" itemprop="description">Specializes in ${architect.specialty}</p>
+                    <meta itemprop="location" content="${architect.location}">
+                `;
+                architectsGrid.appendChild(card);
+            });
+        }
+        
+        // Initial render
+        renderArchitects(architects);
+        
+        // Search functionality
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredArchitects = architects.filter(architect => 
+                architect.name.toLowerCase().includes(searchTerm) || 
+                architect.specialty.toLowerCase().includes(searchTerm)
+            );
+            renderArchitects(filteredArchitects);
+        });
+        
+        // Initialize AOS for animation if available
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out'
+            });
+        }
+    });
+    </script>
+</body>
+</html>

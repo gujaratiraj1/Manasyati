@@ -8,6 +8,9 @@ Disallow: /cgi-bin/
 Disallow: /*.json$
 Disallow: /*?q=*
 
+# Allow ARCHITECTS directory to be indexed and crawled
+Allow: /ARCHITECTS/
+
 # Allow specific bots with custom crawl rates
 User-agent: Googlebot
 Allow: /
