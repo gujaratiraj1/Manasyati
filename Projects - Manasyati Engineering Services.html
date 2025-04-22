@@ -32,6 +32,7 @@
     <link rel="canonical" href="https://manasyati.com/projects" />
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -61,12 +62,19 @@
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <script src="https://cdn.emailjs.com/sdk/2.6.4/email.min.js"></script>
+    <script>
+      (function() {
+        emailjs.init("XRtVzp0NF4SYE-yw1");
+      })();
+    </script>
     <style>
       :where([class^="ri-"])::before { content: "\f3c2"; }
       .nav-link:hover { 
         color: #FFC107; 
         background: linear-gradient(45deg, #2E7D32, #FFC107);
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
       }
       .project-card:hover { transform: translateY(-5px); }
@@ -1398,6 +1406,122 @@
     <script src="js/project-filter.js"></script>
 
     <script>
+      function openQuoteModal() {
+        const modal = document.getElementById('quoteModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+
+      function closeQuoteModal() {
+        const modal = document.getElementById('quoteModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+
+      document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Reset previous errors
+        document.querySelectorAll('.text-red-500').forEach(span => span.classList.add('hidden'));
+        
+        // Validate form
+        let isValid = true;
+        const fields = ['fullName', 'email', 'phone', 'service'];
+        
+        fields.forEach(field => {
+          const input = document.getElementById(field);
+          const errorSpan = document.getElementById(field + 'Error');
+          
+          if (!input.value) {
+            isValid = false;
+            errorSpan.textContent = 'This field is required';
+            errorSpan.classList.remove('hidden');
+          } else if (field === 'email' && !isValidEmail(input.value)) {
+            isValid = false;
+            errorSpan.textContent = 'Please enter a valid email address';
+            errorSpan.classList.remove('hidden');
+          } else if (field === 'phone' && !isValidPhone(input.value)) {
+            isValid = false;
+            errorSpan.textContent = 'Please enter a valid 10-digit phone number';
+            errorSpan.classList.remove('hidden');
+          }
+        });
+
+        if (!isValid) return;
+
+        // Show loading state
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = submitBtn.querySelector('span');
+        const spinner = submitBtn.querySelector('div');
+        btnText.textContent = 'Submitting...';
+        spinner.classList.remove('hidden');
+        submitBtn.disabled = true;
+
+        try {
+          // Prepare form data
+          const formData = {
+            fullName: document.getElementById('fullName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            service: document.getElementById('service').value,
+            timestamp: new Date().toISOString(),
+            status: 'new'
+          };
+
+          // Send email using EmailJS
+          await emailjs.send(
+            'service_7udkx9w',
+            'template_wmafhwd',
+            {
+              to_email: 'ramana@manasyati.com',
+              from_name: formData.fullName,
+              from_email: formData.email,
+              phone: formData.phone,
+              service: formData.service,
+              message: `New quote request received for ${formData.service}`
+            }
+          );
+
+          // Show success message
+          closeQuoteModal();
+          const successDialog = document.createElement('div');
+          successDialog.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+          successDialog.innerHTML = `
+            <div class="bg-white !rounded-lg p-8 max-w-md w-full mx-4">
+              <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 !rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="ri-check-line text-3xl text-green-500"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Quote Request Sent!</h3>
+                <p class="text-gray-600 mb-6">Thank you for your interest. We'll get back to you with a quote shortly.</p>
+                <button onclick="this.closest('.fixed').remove()" class="bg-primary text-white px-6 py-2 !rounded-button font-semibold hover:bg-opacity-90">Close</button>
+              </div>
+            </div>
+          `;
+          document.body.appendChild(successDialog);
+          
+          // Reset form
+          e.target.reset();
+        } catch (error) {
+          console.error('Submission failed:', error);
+          // Show error message to user
+          alert('Failed to submit quote request. Please try again later.');
+        } finally {
+          btnText.textContent = 'Submit Request';
+          spinner.classList.add('hidden');
+          submitBtn.disabled = false;
+        }
+      });
+
+      // Helper functions for email and phone validation
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function isValidPhone(phone) {
+        return /^[0-9]{10}$/.test(phone);
+      }
+
       document.addEventListener('DOMContentLoaded', function() {
         // Sector Chart
         const sectorChart = echarts.init(document.getElementById('sectorChart'));
