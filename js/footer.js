@@ -16,8 +16,7 @@ class FooterComponent extends HTMLElement {
                             <p class="text-gray-400 mb-6">
                                 Leading MEP design services provider in Hyderabad, bridging the gap between evolving construction needs and consultancy services since May 2024
                             </p>
-                            <div class="flex space-x-4">
-                                <a href="#" class="hover:text-primary">
+                            <div class="flex space-x-4">                                <a href="https://www.linkedin.com/in/manasyati-engineering-services-71b89b367/" target="_blank" rel="noopener noreferrer" class="hover:text-primary">
                                     <i class="ri-linkedin-fill text-xl"></i>
                                 </a>
                                 <a href="#" class="hover:text-primary">
