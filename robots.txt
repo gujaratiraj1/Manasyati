@@ -1,15 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
-Disallow: /wp-admin/
-Disallow: /wp-includes/
-Disallow: /cgi-bin/
-Disallow: /*.json$
-Disallow: /*?q=*
-
-# Allow ARCHITECTS directory to be indexed and crawled
-Allow: /ARCHITECTS/
 
 # Allow crawling of all MEP consultant pages
 Allow: /mep-consultants.html
@@ -22,18 +12,49 @@ Allow: /Electrical Engineering Services - Manasyati Engineering.html
 Allow: /Public Health Engineering Services - Manasyati Engineering.html
 Allow: /Fire Safety Engineering Services - Manasyati Engineering.html
 
-# Allow specific bots with custom crawl rates
-User-agent: Googlebot
-Allow: /
+# Allow crawling of core pages
+Allow: /index.html
+Allow: /About Manasyati Engineering.html
+Allow: /Projects - Manasyati Engineering.html
+Allow: /Contact Us - Manasyati Engineering.html
+
+# Disallow crawling of unnecessary files
+Disallow: /404.html
+Disallow: /500.html
+Disallow: /sw.js
+Disallow: /manifest.json
+Disallow: /package.json
+Disallow: /README.md
+Disallow: /scripts/
+Disallow: /node_modules/
+Disallow: /public/
+
+# Crawl delay for better server performance
 Crawl-delay: 1
 
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 2
+# Sitemap location
+Sitemap: https://www.manasyati.com/sitemap.xml
 
-User-agent: Slurp
-Allow: /
-Crawl-delay: 2
+# Host directive
+Host: https://www.manasyati.com
 
-# Sitemap declaration
-Sitemap: https://manasyati.com/sitemap.xml
+# Additional directives for better SEO
+Allow: /img_res/
+Allow: /css/
+Allow: /js/
+Allow: /ARCHITECTS/
+Allow: /ourclients/
+Allow: /project_res/
+Allow: /commercial_res/
+Allow: /hotel_res/
+Allow: /hospital_res/
+Allow: /ass_res/
+Allow: /indus_res/
+
+# Block access to sensitive files
+Disallow: /.git/
+Disallow: /.env
+Disallow: /config/
+Disallow: /logs/
+Disallow: /temp/
+Disallow: /cache/
