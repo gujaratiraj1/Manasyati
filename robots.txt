@@ -11,6 +11,17 @@ Disallow: /*?q=*
 # Allow ARCHITECTS directory to be indexed and crawled
 Allow: /ARCHITECTS/
 
+# Allow crawling of all MEP consultant pages
+Allow: /mep-consultants.html
+Allow: /mep-consultants-india.html
+Allow: /mep-consultants-bangalore.html
+
+# Allow crawling of service pages
+Allow: /Mechanical Engineering Services - Manasyati Engineering.html
+Allow: /Electrical Engineering Services - Manasyati Engineering.html
+Allow: /Public Health Engineering Services - Manasyati Engineering.html
+Allow: /Fire Safety Engineering Services - Manasyati Engineering.html
+
 # Allow specific bots with custom crawl rates
 User-agent: Googlebot
 Allow: /

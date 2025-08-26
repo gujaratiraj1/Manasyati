@@ -425,17 +425,29 @@ button.hover\:bg-opacity-90:hover {
     
     <!-- Enhanced service cards grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- MEP Consultants - Featured Service -->
-      <a href="mep-consultants.html" class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300 overflow-hidden cursor-pointer border-2 border-primary" data-aos="fade-up" data-aos-delay="50">
-        <div class="relative h-40 -mx-6 -mt-6">
-          <img src="img_res/LOGO.png" alt="MEP Consultants Hyderabad - Comprehensive Engineering Consultancy Services" class="w-full h-full object-contain object-center !rounded-t-lg bg-gradient-to-br from-primary to-green-600 p-4" loading="lazy" width="400" height="160">
-        </div>
-        <div class="absolute top-2 right-2 bg-primary text-white px-2 py-1 rounded-full text-xs font-semibold">Featured</div>
-        <h3 class="text-xl font-['Roboto'] font-bold mb-4 mt-6 text-primary">MEP Consultants</h3>
-        <p class="text-gray-600">
-          Comprehensive Mechanical, Electrical & Plumbing engineering consultancy services
-        </p>
-      </a>
+              <!-- MEP Consultants - Featured Service -->
+        <a href="mep-consultants.html" class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300 overflow-hidden cursor-pointer border-2 border-primary" data-aos="fade-up" data-aos-delay="50">
+          <div class="relative h-40 -mx-6 -mt-6">
+            <img src="img_res/LOGO.png" alt="MEP Consultants Hyderabad - Comprehensive Engineering Consultancy Services" class="w-full h-full object-contain object-center !rounded-t-lg bg-gradient-to-br from-primary to-green-600 p-4" loading="lazy" width="400" height="160">
+          </div>
+          <div class="absolute top-2 right-2 bg-primary text-white px-2 py-1 rounded-full text-xs font-semibold">Featured</div>
+          <h3 class="text-xl font-['Roboto'] font-bold mb-4 mt-6 text-primary">MEP Consultants</h3>
+          <p class="text-gray-600">
+            Comprehensive Mechanical, Electrical & Plumbing engineering consultancy services
+          </p>
+        </a>
+        
+        <!-- MEP Consultants India - Nationwide Coverage -->
+        <a href="mep-consultants-india.html" class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300 overflow-hidden cursor-pointer hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-40 -mx-6 -mt-6">
+            <img src="img_res/LOGO.png" alt="MEP Consultants India - Nationwide Engineering Consultancy Services" class="w-full h-full object-contain object-center !rounded-t-lg bg-gradient-to-br from-secondary to-blue-600 p-4" loading="lazy" width="400" height="160">
+          </div>
+          <div class="absolute top-2 right-2 bg-secondary text-white px-2 py-1 rounded-full text-xs font-semibold">Nationwide</div>
+          <h3 class="text-xl font-['Roboto'] font-bold mb-4 mt-6 text-secondary">MEP Consultants India</h3>
+          <p class="text-gray-600">
+            Professional MEP consultancy services across 80+ cities including Bangalore, Chennai, Mumbai, Delhi, Pune, Gurgaon, Noida, Kolkata, Ahmedabad, Hyderabad and more
+          </p>
+        </a>
 
       <!-- Service cards with enhanced hover effects -->
       <a href="Public Health Engineering Services - Manasyati Engineering.html" class="service-card bg-white p-6 !rounded-lg shadow-lg transition duration-300 overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="100">
@@ -1367,6 +1379,28 @@ function isValidPhone(phone) {
                   </button>
                   <div class="px-6 pb-4 hidden">
                     <p class="text-gray-600">Yes, we provide comprehensive post-construction support including system commissioning, performance testing, maintenance planning, and ongoing technical support. Our MEP consultancy relationship continues beyond project completion to ensure long-term system performance.</p>
+                  </div>
+                </div>
+                
+                <!-- FAQ Item 7 - City-specific -->
+                <div class="bg-white !rounded-lg shadow-md overflow-hidden">
+                  <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+                    <h3 class="text-lg font-semibold text-gray-900">Which cities do you serve for MEP consultancy services?</h3>
+                    <i class="ri-arrow-down-s-line text-xl text-primary transition-transform"></i>
+                  </button>
+                  <div class="px-6 pb-4 hidden">
+                    <p class="text-gray-600">We serve 80+ cities across India including major metropolitan areas like Bangalore, Chennai, Mumbai, Delhi, Pune, Gurgaon, Noida, Kolkata, Ahmedabad, Hyderabad, and tier-2 cities like Coimbatore, Kochi, Vizag, Jaipur, Indore, Lucknow, Chandigarh, Bhubaneswar, and many more. <a href="mep-consultants-india.html" class="text-primary hover:underline">View complete city list</a>.</p>
+                  </div>
+                </div>
+                
+                <!-- FAQ Item 8 - Local expertise -->
+                <div class="bg-white !rounded-lg shadow-md overflow-hidden">
+                  <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+                    <h3 class="text-lg font-semibold text-gray-900">Do you have local expertise in different cities?</h3>
+                    <i class="ri-arrow-down-s-line text-xl text-primary transition-transform"></i>
+                  </button>
+                  <div class="px-6 pb-4 hidden">
+                    <p class="text-gray-600">Yes, we maintain local partnerships and teams across major cities to ensure we understand regional building codes, climate considerations, local regulations, and market-specific requirements. This local expertise helps us deliver more effective and compliant MEP solutions.</p>
                   </div>
                 </div>
               </div>
