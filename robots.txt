@@ -1,60 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /tmp/
 
-# Allow crawling of all MEP consultant pages
-Allow: /mep-consultants.html
-Allow: /mep-consultants-india.html
-Allow: /mep-consultants-bangalore.html
-
-# Allow crawling of service pages
-Allow: /Mechanical Engineering Services - Manasyati Engineering.html
-Allow: /Electrical Engineering Services - Manasyati Engineering.html
-Allow: /Public Health Engineering Services - Manasyati Engineering.html
-Allow: /Fire Safety Engineering Services - Manasyati Engineering.html
-
-# Allow crawling of core pages
-Allow: /index.html
-Allow: /About Manasyati Engineering.html
-Allow: /Projects - Manasyati Engineering.html
-Allow: /Contact Us - Manasyati Engineering.html
-
-# Disallow crawling of unnecessary files
-Disallow: /404.html
-Disallow: /500.html
-Disallow: /sw.js
-Disallow: /manifest.json
-Disallow: /package.json
-Disallow: /README.md
-Disallow: /scripts/
-Disallow: /node_modules/
-Disallow: /public/
-
-# Crawl delay for better server performance
-Crawl-delay: 1
-
-# Sitemap location
-Sitemap: https://www.manasyati.com/sitemap.xml
-
-# Host directive
-Host: https://www.manasyati.com
-
-# Additional directives for better SEO
-Allow: /img_res/
-Allow: /css/
-Allow: /js/
-Allow: /ARCHITECTS/
-Allow: /ourclients/
-Allow: /project_res/
-Allow: /commercial_res/
-Allow: /hotel_res/
-Allow: /hospital_res/
-Allow: /ass_res/
-Allow: /indus_res/
-
-# Block access to sensitive files
-Disallow: /.git/
-Disallow: /.env
-Disallow: /config/
-Disallow: /logs/
-Disallow: /temp/
-Disallow: /cache/
+Sitemap: https://yourdomain.com/sitemap.xml
